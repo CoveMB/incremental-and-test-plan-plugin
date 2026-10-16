@@ -1,0 +1,30 @@
+# Operating-system metadata
+.DS_Store
+._*
+Thumbs.db
+
+# Editor temporary files
+*.swp
+*.swo
+*~
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Python tooling caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local worktrees and evaluation output
+/.worktrees/
+/.evaluation-runs/
+/.skill-eval-artifacts/

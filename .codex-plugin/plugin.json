@@ -1,0 +1,23 @@
+{
+  "name": "incremental-plan-plugin",
+  "version": "0.1.0",
+  "description": "Create and continue coherent incremental plans with independent review and evidence-based handoffs.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Incremental Plan",
+    "shortDescription": "Plan and continue reviewable development increments.",
+    "longDescription": "Turn authoritative plans into coherent increments, reconcile revisions and executor evidence, and prepare the next bounded handoff or final scope reconciliation.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Turn my implementation plan into a reviewable draft."
+    ]
+  }
+}
