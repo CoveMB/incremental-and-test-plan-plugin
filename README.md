@@ -12,6 +12,10 @@ New plans remain drafts until three distinct independent reports are reconciled.
 
 The planner does not implement products, run application tests, write Git state, use provider credentials, install, publish, schedule or create/message execution tasks. Gate 2 approves a concrete execution plan; Gate 3 approves its verified result. Planning alone grants neither. Source/repository gates and explicit scoped user decisions remain visible.
 
+Evidence guidance favors usable existing references and minimal selected captures. The external executor estimates selected contents before potentially large copying, applies target-project warning thresholds with their units/scope, and reports a bounded estimate or honest unknown/rationale where no threshold exists. There is no universal plugin byte limit. Exclusions are selective: names such as dependencies or caches do not make unique inputs, persistent data or required failed environments disposable. Instructions do not enforce limits or intercept copying; deterministic enforcement belongs to target artifact-producing tools.
+
+Every new plan schedules a final **Evidence retention and cleanup review** outside feature-increment counts. It records preservation and proposed dispositions separately from product acceptance and executor cleanup; no artifacts can yield no-cleanup-needed. Optional storage decisions do not block demonstrated scope, while missing mandatory proof and source-required cleanup remain obligations. The planner never deletes or compacts evidence, and acceptance supplies no cleanup permission. Concrete executor cleanup needs its own applicable explicit authority. Old plans continue without migration and receive the review when closure is requested.
+
 ## Try the checked-out source
 
 In a disposable workspace, ask Codex to read `skills/incremental-plan/SKILL.md` from this checkout, then provide a request such as:
@@ -46,6 +50,8 @@ These are host development tools, not plugin dependencies. Follow the host's she
 ## Installation status and design
 
 The complete planning capability is implemented. Local installation and native CLI acceptance were verified on 2026-10-13 with Codex CLI `0.162.1` on macOS arm64: fresh loading, explicit qualified invocation, automatic discovery and an implementation-only negative case passed. Behavioral cases used synthetic inputs with memory disabled and verified filesystem restrictions. Desktop UI activation and universal routing reliability remain unverified.
+
+Those historical activation results do not validate the evidence-storage/retention amendment. Its E01–E08 definitions require observed fresh-agent evaluation; source-level synthetic observations remain distinct from installed usability, actual executor capture, real failed-environment recovery and uncontrolled filesystem races.
 
 For explicit installed use, begin a planning request with `$incremental-plan-plugin:incremental-plan`, then identify the source and destination. Ordinary planning requests can also select it automatically. Implementation-only requests remain ordinary development work.
 

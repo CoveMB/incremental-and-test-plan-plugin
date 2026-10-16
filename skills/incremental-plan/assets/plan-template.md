@@ -10,6 +10,7 @@ Status: <draft/review-pending, current continuation state, or reconciled selecte
 - Supporting sources: <paths and identities; explain their supporting role when needed>.
 - Inspected baseline: <repository, branch/base or non-Git/unborn state, relevant existing/dirty work and date>.
 - Assumptions and unresolved decisions: <material unknowns; do not resolve them by invention>.
+- Shared evidence/capture context: <briefly state reusable durable references or no new capture expected; when relevant, selected owned roots/contents, expected size or unknown with rationale, target warning units/scope and retention exceptions/consumers. Reuse this context across cards; omit irrelevant inventories>.
 
 ## Parts and increments
 
@@ -37,7 +38,7 @@ Map material requirements, exclusions, constraints and source gates. A global ob
 - **Owning areas / interfaces:** <known owners and affected contracts; future exact details remain provisional>.
 - **Human review focus:** <the bounded effect a reviewer needs to understand; explain only difficult splits>.
 - **Safe intermediate state / compatibility:** <what works after this increment and what must remain compatible>.
-- **Acceptance / verification:** <observable criteria and proposed meaningful checks, including the tests belonging with this behavior; distinguish planned from observed evidence>.
+- **Acceptance / verification:** <observable criteria and proposed meaningful checks, including the tests belonging with this behavior; distinguish planned from observed evidence. Refer to shared capture context and add only applicable differences>.
 - **Recovery:** <how to preserve or restore a safe state within actual authority, without assuming permission for destructive/Git/external actions>.
 - **Gates / review scope:** <Gate 2, Gate 3, relevant independent scopes and source/repository obligations; actual scoped bypasses only>.
 - **Future impact:** <dependencies/interfaces/acceptance to reassess during preparation and after a later accepted result>.
@@ -64,7 +65,7 @@ For material revisions, map replaced pending IDs to replacement cards and update
 
 ## Final scope reconciliation
 
-Use when assessing closure; omit while unrelated to the current step. Reconcile each original/amended requirement, exclusion and gate through its owner. Bare status and the last card's acceptance are insufficient.
+At creation include the terminal task below as planned; leave the outcome table unperformed until assessing closure. Reconcile each original/amended requirement, exclusion and gate through its owner. Bare status and the last card's acceptance are insufficient.
 
 | Obligation / source locator | Owning increment(s) | Candidate and applicable result/review evidence | Achieved, approved amendment/deferral, or unresolved condition |
 | --- | --- | --- | --- |
@@ -72,6 +73,14 @@ Use when assessing closure; omit while unrelated to the current step. Reconcile 
 
 Selected scope demonstrated: <what the combined evidence establishes, or why completion is blocked>.
 Separate acceptance/release obligations: <integration/certification/deployment evidence still required; omit if none>.
+
+### Evidence retention and cleanup review
+
+Task status: <planned at creation; later factual completed or blocked status with evidence gaps>. Schedule after the selected scope's relevant verification/reviews; outside feature-increment counts, with no new approval gate.
+
+Identify plan-owned artifacts and owners; confirm required content/references remain available. Record concise keep/hold/cleanup-candidate/unknown dispositions with reasons, outstanding consumers and review events where needed. Include applicable location, measured/estimated/unknown size and retention exceptions from shared context. No new artifacts: record no-cleanup-needed when actually reviewed. Do not invent artifacts or completed outcomes at creation.
+
+Executor cleanup follow-up: <only for concrete necessary work: exact selected paths, preserved evidence, explicit applicable action authority or missing decision, surviving-reference/outcome checks; otherwise omit>. Record proposed/pending/performed separately from review completion; blocked cleanup stays held for its named consumer/event. The planner never deletes or infers permission. Optional undecided storage disposition alone does not block demonstrated product scope; missing mandatory evidence or unmet source-mandated cleanup blocks affected completeness unless explicitly amended.
 
 Next action: <specific evidence/review/decision request, same-increment preparation return, next eligible increment, or final reconciliation outcome>.
 Current handoff: [handoff.md](handoff.md).
