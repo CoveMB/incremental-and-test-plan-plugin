@@ -12,7 +12,7 @@
 - Make the smallest resilient change within scope. Follow existing conventions, use clear names, reuse established helpers, and avoid unrelated refactoring or speculative abstractions. Brevity must not weaken correctness, security, privacy, accessibility, compatibility, or maintainability.
 - Identify the canonical owner of each behavior; update affected instructions, references, templates, metadata, documentation, and tests together. Keep shared rules in one owner and link consumers. Edit canonical repository sources; regenerate derived artifacts rather than maintaining installed copies, caches, or generated output as another source of truth.
 - When package files exist, keep `.codex-plugin/plugin.json` valid and aligned with shipped capabilities. Skill directory names must match `SKILL.md` frontmatter names in lowercase kebab-case; descriptions must distinguish planning from implementation requests.
-- Keep procedure in `SKILL.md`, supporting policy in references, and output structure in templates. Every referenced resource must ship with the package.
+- Keep procedure in [SKILL.md](skills/incremental-plan/SKILL.md), gate and review policy in [gates-and-reviews.md](skills/incremental-plan/references/gates-and-reviews.md), and output structure in [assets/](skills/incremental-plan/assets/). Read these when changing the behavior they own; every referenced resource must ship with the package.
 
 ## Authority and privacy
 
@@ -24,7 +24,8 @@
 
 ## Verification
 
-- Use documented checks once available; do not invent commands or results. Run focused deterministic checks while editing and the full relevant suite once on the settled candidate; repeat only for changed inputs or new evidence.
+- For package changes, use the static validation commands in [README.md](README.md#package-and-validation). Run focused deterministic checks while editing and the full relevant deterministic checks once on the settled candidate; repeat only for changed inputs or new evidence. Do not invent commands or results.
+- [tests/scenarios.md](tests/scenarios.md) defines fresh-agent behavioral evaluations, not an automated test suite. Running them requires explicit live-model authorization; scenario definitions alone are not passing results.
 - Test observable behavior and meaningful failure paths; use parsed checks for package contracts. Avoid tests that merely repeat instructional prose.
 - Static validation cannot prove planning quality, model behavior, human reviewability, or installed usability. Keep source checks, behavioral evaluations, and native activation evidence distinct.
 - Before completion, inspect the whole change for missing requirements, stale consumers, unnecessary complexity, and useful duplication removal. Report changes, checks, and material limitations concisely.
