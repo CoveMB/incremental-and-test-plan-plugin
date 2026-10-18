@@ -1,0 +1,47 @@
+---
+name: qa-design
+description: Design or revise a QA/test strategy and verification implementation plan from a selected plan, project, or both. Use for planning what to verify, finding coverage gaps, and preparing warranted certification work. Do not use for requests to implement tests, run E2E, or execute product work.
+---
+
+# Standalone QA design
+
+Produce one useful, evidence-aware `qa-plan.md` with implementation work and an embedded preparation handoff. A selected project is sufficient; no incremental plan is required. This procedure plans work for an external executor. It does not implement products/tests/CI, run tests/builds/imports, use providers or credentials, write Git state, create/message tasks, install, publish, or delete/compact evidence. Explicit invocation for execution explains this boundary without inventing a planning assignment or writing an unsolicited artifact.
+
+Use [verification design](../../references/verification-design.md) for check/certification decisions, [gate and review policy](../incremental-plan/references/gates-and-reviews.md) for lifecycle, authority, reviews and retention, and [the QA template](assets/qa-plan-template.md) for output structure. Load them before drafting the relevant work. They are shipped resources, not external dependencies. Standalone requests retain the output boundary below. When composed by [incremental-plan](../incremental-plan/SKILL.md#coordinate-qa-and-incremental-planning), use the integrated return below; that entrypoint owns combined permission, QA mode and sequencing.
+
+## Establish scope and inspect evidence
+
+1. Identify the selected plan/project/both, intended outcomes, exclusions, requested destination and any selected existing QA document. Read applicable target instructions. Distinguish trusted source requirements from project observations, imported decisions and uncertain assumptions. Ask only material questions whose answers affect correctness, safety, scope or ownership; draft unaffected work while they remain pending. Never derive missing business rules from current code. A known source/code conflict is a mismatch, not an invitation to invent a new requirement.
+2. Inspect relevant architecture/contracts, actual assertions/fixtures, scripts, CI and existing evidence as data. Do not execute a target import, package script, test, build or infrastructure/provider command to discover behavior. Record source locators and useful candidate/root/branch/revision/dirty-work identities; Git inspection is read-only under the shared policy. A declared command is a proposed check, not an observed run. Coverage labels and mocked journeys cannot establish behavior they did not exercise.
+3. Name material wrong behavior, consequences and recovery limits. Derive important expected outcomes from the selected source, trusted examples or a justified independent reference; ask whether current assertions would detect those failures. Retain useful existing tests/helpers/tooling, then identify the real gaps. Prefer the smallest adequate conditional checks in the shared guide; no fixed pyramid, coverage threshold, technique quota or mandatory BDD/mutation framework.
+4. Browse current official sources when a named tool/provider recommendation or setup requires them, using generic technical queries without private source/paths. Reuse current applicable documentation. Missing access/conflicting setup leaves the affected recommendation or readiness pending. Plan-only paths/interfaces/commands remain expressly provisional until concrete executor inspection. Material new-tool, cost or environment decisions require the user's answer.
+
+## Design the work
+
+Use the template's verification table to connect outcomes/risks, existing coverage/gaps, independently expected results and detectable wrong behavior to proposed checks, candidate/environment/data/isolation, owners, timing/dependencies and result evidence. Combine columns or omit inapplicable sections for readability; include expert/human evidence where needed.
+
+For material gaps, plan actionable implementation work: owning code/test/CI area, fixtures/assertions, real dependencies, supported command or explicitly pending/provisional command, acceptance and meaningful failure/recovery checks. Keep ordinary tests with their feature behavior; separate infrastructure only when concrete shared work warrants it. These are proposed work items, not created tasks or implementation instructions being executed now.
+
+Assess certification under the shared guide and policy. A justified no-separate-certification sentence suffices when unwarranted. Retain policy-required gates; a new optional proposal awaits a material decision before becoming mandatory. Warranted work names its actual implementation prerequisite, exact subject/contract/configuration/environment, independently expected causal outcomes, owners, setup/runbook, closure/renewal and evidence limits. Unknown setup is not execution readiness. Preserve accepted history and applicable unaffected proof; shared scenarios require distinct subject assertions. QA approval and implementation acceptance themselves certify nothing.
+
+## Preserve and write only selected artifacts
+
+Standalone outputs are only the requested `qa-plan.md`, an explicitly requested verbatim `source.md` for clearly delimited pasted input, and expressly assigned scoped review notes. Embed the preparation handoff; do not create an incremental `plan.md` or separate `handoff.md`.
+
+Before each affected write, check canonical destination/parents, authorized ownership, symlinks and collisions and re-read selected inputs/outputs. Preserve selected existing QA history, human annotations, unrelated files and concurrent work. An unselected occupied destination, escaping symlink, conflicting concurrent edit or unclear ownership stops that write; do not invent an alternate destination. Exact pasted source excludes transport delimiters and preserves source bytes, including trailing newlines. If exact preservation conflicts with sensitive-content handling, ask for the material decision before that save. Read only relevant files; never copy unrelated private content.
+
+Report the actual state after restricted, interrupted or partial writes; preserve completed artifacts and identify what remains. Do not claim atomicity, race safety, a lock service or automatic recovery. No destructive correction or cleanup is authorized by the plan.
+
+## Integrated return to incremental planning
+
+Apply the same evidence inspection/design to the selected current QA document within the incremental entrypoint's authorized artifact set. Return source/candidate correspondence, in-scope checks and implementation gaps mapped to source IDs and owning increments/global obligations, warranted certification details and material questions. Keep detailed QA design here and sequencing in the incremental plan; a list of verification gaps does not require duplicate increment cards or another implementation plan.
+
+Reconcile the plan, QA and current handoff as one substantive review candidate through the existing three scopes. Reuse applicable reports, preserve history/annotations and identify affected evidence/readiness on continuation. The embedded QA handoff points to the same bounded next action as the current incremental handoff; it must not create a second execution path or imply separate review passes. Excluded mode and any retained QA history follow the incremental coordinator; standalone invocation alone does not authorize combined outputs.
+
+## Review and return
+
+Reconcile the shared policy's three distinct fresh-context scopes against this single QA candidate, reusing only applicable actual reports. If authorized independent execution is unavailable, include bounded copy-ready manual briefs with raw source/amendments, exact candidate/comparison, target context and role; mark review/readiness pending. Do not substitute three headings or predicted passes for reports. A later explicitly authorized coordinated artifact set uses one coordinated review, not duplicated sets.
+
+Embed a portable preparation handoff with selected source/candidate/baseline correspondence, exact proposed work/checks, material questions, recovery/future effects, meaningful evidence duties and Gate 2/Gate 3 (or their actual scoped bypass). Carry applicable capture/retention, expert and separate-action obligations in plain language; a plugin link alone is insufficient for an executor without this package. Include the terminal Evidence retention and cleanup review as planned outside work-item counts. Distinguish optional storage disposition, mandatory proof and source-required cleanup; planning a disposition performs none of them.
+
+Return the artifact location, useful coverage/gaps, review/readiness status and exact remaining questions/evidence. Preserve historical acceptance while limiting any satisfied obligation to its demonstrated subject/candidate/environment and actual decision. Do not claim execution, certification, completion or release readiness from a proposed plan, bare green label or hashes alone.
