@@ -2,7 +2,7 @@
 
 ## Product scope
 
-- Package identity is `incremental-and-qa-plan-plugin`, first version `0.1.0`; keep the independent skill names `incremental-plan` and `qa-design`.
+- Package identity is `incremental-and-test-plans`, first version `0.1.0`; keep the independent skill names `incremental-plan` and `test-design`.
 - Build self-contained, Codex-only planning skills: authoritative plans become coherent increments, continuation notes and copy-ready handoffs; standalone QA design turns a selected plan, project or both into a verification implementation plan. Label unimplemented capabilities honestly.
 - The plugin does not implement products, run application tests, write Git state, create or message tasks, install, or publish. These limits concern plugin behavior, not authorized development of this repository.
 - Follow the user-selected specification or plan. Do not add an execution engine, custom state or approval machinery, runtime dependencies, hooks, an MCP server, or mandatory plugin integrations without an explicit requirement.
@@ -14,7 +14,7 @@
 - Make the smallest resilient change within scope. Follow existing conventions, use clear names, reuse established helpers, and avoid unrelated refactoring or speculative abstractions. Brevity must not weaken correctness, security, privacy, accessibility, compatibility, or maintainability.
 - Identify the canonical owner of each behavior; update affected instructions, references, templates, metadata, documentation, and tests together. Keep shared rules in one owner and link consumers. Edit canonical repository sources; regenerate derived artifacts rather than maintaining installed copies, caches, or generated output as another source of truth.
 - When package files exist, keep `.codex-plugin/plugin.json` valid and aligned with shipped capabilities. Skill directory names must match `SKILL.md` frontmatter names in lowercase kebab-case; descriptions must distinguish planning from implementation requests.
-- Keep incremental procedure in [incremental-plan/SKILL.md](skills/incremental-plan/SKILL.md) and its output structure in [assets/](skills/incremental-plan/assets/); standalone QA procedure in [qa-design/SKILL.md](skills/qa-design/SKILL.md) and its [QA template](skills/qa-design/assets/qa-plan-template.md). Shared [verification design](references/verification-design.md) owns check/certification decisions, and [gates-and-reviews.md](skills/incremental-plan/references/gates-and-reviews.md) owns gate/review/evidence policy. Read the affected canonical owners; every referenced resource must ship with the package.
+- Keep incremental procedure in [incremental-plan/SKILL.md](skills/incremental-plan/SKILL.md) and its output structure in [assets/](skills/incremental-plan/assets/); standalone QA procedure in [test-design/SKILL.md](skills/test-design/SKILL.md) and its [QA template](skills/test-design/assets/qa-plan-template.md). Shared [verification design](references/verification-design.md) owns check/certification decisions, and [gates-and-reviews.md](skills/incremental-plan/references/gates-and-reviews.md) owns gate/review/evidence policy. Read the affected canonical owners; every referenced resource must ship with the package.
 
 ## Authority and privacy
 

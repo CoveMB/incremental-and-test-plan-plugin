@@ -1,15 +1,15 @@
 {
-  "name": "incremental-and-qa-plan-plugin",
+  "name": "incremental-and-test-plans",
   "version": "0.1.0",
-  "description": "Create and continue coherent incremental plans with QA design by default, or design standalone QA plans, with independent review and evidence-based handoffs.",
+  "description": "Create and continue coherent incremental plans with test design by default, or design standalone test and QA plans, with independent review and evidence-based handoffs.",
   "author": {
     "name": "Local developer"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "Incremental and QA Plan",
-    "shortDescription": "Plan coherent increments with QA, or standalone QA work.",
-    "longDescription": "Turn authoritative plans into coherent increments with QA design by default or explicit supplementary-QA exclusion. Reconcile executor evidence, or design standalone QA and warranted certification work from a plan, project or both. Prepare evidence-aware handoffs without executing product work.",
+    "displayName": "Incremental and Test Plans",
+    "shortDescription": "Plan coherent increments and test or QA work.",
+    "longDescription": "Turn authoritative plans into coherent increments with test and QA design by default or explicit supplementary-QA exclusion. Reconcile executor evidence, or design standalone test, QA and warranted certification work from a plan, project or both. Prepare evidence-aware handoffs without executing product work.",
     "developerName": "Local developer",
     "category": "Productivity",
     "capabilities": [

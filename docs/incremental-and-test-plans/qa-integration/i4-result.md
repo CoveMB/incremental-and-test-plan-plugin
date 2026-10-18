@@ -73,7 +73,7 @@ The final evidence correction added that raw masked failure/recovery to bookkeep
 
 Final candidate `b49df6a4320d47453460623cf179de34a896e3f7f5c8659b02766144b6c55832`; I4 local-source eligibility is established by its actual verification report and controller disposition in result-reconciliation.json. This is source/evidence reconciliation, not human approval of unseen results, public distribution or native activation.
 
-Raw authority is repository `docs/incremental-plans/qa-integration/{source.md,review-inputs.md,certification-amendment.md}` and actual direct human chain/method/evaluation messages retained in `native-authority-0.json`/`native-authority-1.json`. No source requirement or certification gate was waived by a QA proposal or exit code. Exact checked predecessor bodies are indexed in `historical-lineage-checks.json` and I3's `lineage-and-preservation.json`.
+Raw authority is repository `docs/incremental-and-test-plans/qa-integration/{source.md,review-inputs.md,certification-amendment.md}` and actual direct human chain/method/evaluation messages retained in `native-authority-0.json`/`native-authority-1.json`. No source requirement or certification gate was waived by a QA proposal or exit code. Exact checked predecessor bodies are indexed in `historical-lineage-checks.json` and I3's `lineage-and-preservation.json`.
 
 | Obligation | Owning delivered source and actual evidence | Disposition / boundary |
 | --- | --- | --- |

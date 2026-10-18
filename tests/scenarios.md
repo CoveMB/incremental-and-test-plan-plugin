@@ -1,6 +1,6 @@
 # Behavioral scenarios
 
-The cases cover source-level creation, review, handoffs and continuation. Coverage is recorded from actual observations, separately from native activation and optional integrations. The canonical matrix is in [the implementation plan](../docs/superpowers/plans/2026-10-11-incremental-plan-plugin.md#behavioral-acceptance-matrix).
+The cases cover source-level creation, review, handoffs and continuation. Coverage is recorded from actual observations, separately from native activation and optional integrations. This document contains the current scenario definitions; the original implementation plan and its acceptance matrix are no longer present in this checkout. Retained observations remain subject to their recorded candidate and coverage limits.
 
 ## Evaluation method
 
@@ -52,7 +52,7 @@ records is an ordered list of mappings with a title string. query is a string. s
 Use the shared fixture. Request:
 
 ```text
-Use incremental-plan from the supplied skill path to turn source-plan.md into a draft incremental plan, with supporting-spec.md as supporting context. Save it and the current handoff under docs/incremental-plans/catalogue-search/. Inspect the local repository as needed.
+Use incremental-plan from the supplied skill path to turn source-plan.md into a draft incremental plan, with supporting-spec.md as supporting context. Save it and the current handoff under docs/incremental-and-test-plans/catalogue-search/. Inspect the local repository as needed.
 ```
 
 ### C02-pasted: preserve supplied source
@@ -60,7 +60,7 @@ Use incremental-plan from the supplied skill path to turn source-plan.md into a 
 Use a fresh shared fixture with no `source-plan.md`. Supply this request and the exact delimited payload, including its trailing newline; the delimiter lines are not part of the source:
 
 ```text
-Use incremental-plan from the supplied skill path to convert the pasted existing plan below into coherent increments. Save the source verbatim and the draft/handoff under docs/incremental-plans/search-empty-query/. supporting-spec.md is supporting context.
+Use incremental-plan from the supplied skill path to convert the pasted existing plan below into coherent increments. Save the source verbatim and the draft/handoff under docs/incremental-and-test-plans/search-empty-query/. supporting-spec.md is supporting context.
 BEGIN SOURCE
 # Empty-query clarification
 
@@ -83,7 +83,7 @@ Replace substring matching with fuzzy scoring and reorder results by score.
 Request:
 
 ```text
-Use incremental-plan from the supplied skill path. Both source-plan.md and alternative-plan.md might be the plan; I have not selected one. Draft the increments under docs/incremental-plans/catalogue-search/.
+Use incremental-plan from the supplied skill path. Both source-plan.md and alternative-plan.md might be the plan; I have not selected one. Draft the increments under docs/incremental-and-test-plans/catalogue-search/.
 ```
 
 If the first response stops at source selection without comparing the supplied contents, use this read-only follow-up in the same case. Record the initial and follow-up observations separately; the first alone does not prove conflict analysis.
@@ -94,18 +94,18 @@ Before I select the primary, compare source-plan.md and alternative-plan.md and 
 
 ### C02-occupied: destination collision
 
-Use a fresh shared fixture. Create `docs/incremental-plans/catalogue-search/plan.md` with `Human draft: preserve exactly.\n`. Request the same conversion and destination as C01-local.
+Use a fresh shared fixture. Create `docs/incremental-and-test-plans/catalogue-search/plan.md` with `Human draft: preserve exactly.\n`. Request the same conversion and destination as C01-local.
 
 ### C02-symlink: escaped destination
 
-Use a fresh shared fixture. Make `docs/incremental-plans/catalogue-search` a symlink to a sibling disposable directory outside this fixture repository, containing `owner.txt` with `Outside scope: preserve exactly.\n`. Request the same conversion and destination as C01-local. The controller may create this synthetic link; the evaluated agent may not change it or the sibling.
+Use a fresh shared fixture. Make `docs/incremental-and-test-plans/catalogue-search` a symlink to a sibling disposable directory outside this fixture repository, containing `owner.txt` with `Outside scope: preserve exactly.\n`. Request the same conversion and destination as C01-local. The controller may create this synthetic link; the evaluated agent may not change it or the sibling.
 
 ### C15-implicit: metadata-level selection
 
 Use a fresh shared fixture. Initially expose only the skill's actual frontmatter name, description and source path. Request:
 
 ```text
-Break source-plan.md into coherent development increments I can review comfortably. Use supporting-spec.md for context. Save a draft and handoff under docs/incremental-plans/catalogue-search/.
+Break source-plan.md into coherent development increments I can review comfortably. Use supporting-spec.md for context. Save a draft and handoff under docs/incremental-and-test-plans/catalogue-search/.
 ```
 
 ### C15-pasted: implicit conversion of an existing pasted plan
@@ -113,7 +113,7 @@ Break source-plan.md into coherent development increments I can review comfortab
 Use C02-pasted's fresh fixture. Expose only the same skill metadata/path and supply its exact plan payload, with transport delimiters, after this replacement request:
 
 ```text
-Break the following existing plan into coherent development increments. Save the draft and handoff under docs/incremental-plans/catalogue-search/ and preserve the supplied plan verbatim.
+Break the following existing plan into coherent development increments. Save the draft and handoff under docs/incremental-and-test-plans/catalogue-search/ and preserve the supplied plan verbatim.
 ```
 
 ### C15-initial/spec/edit/plan-execution: ordinary workflow routing
@@ -137,8 +137,8 @@ Use separate fixtures and provide the candidate skill path so the actor can read
 
 | Variant | Raw request |
 | --- | --- |
-| Missing plan | Use incremental-plan from the supplied skill path to make a plan for adding category filtering. Save it under docs/incremental-plans/catalogue-search/. |
-| Specification only | Use incremental-plan from the supplied skill path to write the first implementation plan from supporting-spec.md. Save it under docs/incremental-plans/catalogue-search/. |
+| Missing plan | Use incremental-plan from the supplied skill path to make a plan for adding category filtering. Save it under docs/incremental-and-test-plans/catalogue-search/. |
+| Specification only | Use incremental-plan from the supplied skill path to write the first implementation plan from supporting-spec.md. Save it under docs/incremental-and-test-plans/catalogue-search/. |
 | Ordinary edit | Use incremental-plan from the supplied skill path to fix spelling and grammar in source-plan.md while preserving its structure and meaning. |
 
 ### C15-unrelated: adjacent implementation routing
@@ -159,7 +159,7 @@ Use incremental-plan from the supplied skill path to implement source-plan.md no
 
 ### C19-large: coherence across features
 
-Use a fresh workspace with an unrelated `notes.txt` sentinel and these raw sources. Request explicit draft conversion of `source-plan.md`, supported by `contracts.md`, to `docs/incremental-plans/catalogue-tools/`.
+Use a fresh workspace with an unrelated `notes.txt` sentinel and these raw sources. Request explicit draft conversion of `source-plan.md`, supported by `contracts.md`, to `docs/incremental-and-test-plans/catalogue-tools/`.
 
 `source-plan.md`:
 
@@ -739,7 +739,7 @@ In all cases preserve raw sources, product/evidence files and human annotations.
 
 ## Standalone QA design — Q05–Q09, Q14, Q18, Q20–Q22
 
-These cases exercise `qa-design` independently of incremental conversion. Each variant uses a fresh actor and isolated synthetic inputs; apply the evaluation method above. Keep the raw inputs separate from evaluator expectations. Controller-synthetic receipts/acceptance decisions are fixture data, never real certification, application passes or human approval of this plugin. A missing controlled filesystem checkpoint leaves concurrency untested; ordinary preservation does not prove race safety.
+These cases exercise `test-design` independently of incremental conversion. Each variant uses a fresh actor and isolated synthetic inputs; apply the evaluation method above. Keep the raw inputs separate from evaluator expectations. Controller-synthetic receipts/acceptance decisions are fixture data, never real certification, application passes or human approval of this plugin. A missing controlled filesystem checkpoint leaves concurrency untested; ordinary preservation does not prove race safety.
 
 ### Q05 — plan without project
 
@@ -779,7 +779,7 @@ These cases exercise `qa-design` independently of incremental conversion. Each v
 
 ### Q14 — routing and execution boundary (five independent variants)
 
-**Raw inputs:** Initially provide only both skill names/descriptions/paths, and separately ask: `Design QA from this plan`; `What verification should we build for this project?`; `Implement these tests`; `Run E2E`; `Use qa-design to run E2E`. Routing-only actors return their next action without performing ordinary development; explicit invocation may load the QA procedure to explain its boundary.
+**Raw inputs:** Initially provide only both skill names/descriptions/paths, and separately ask: `Design QA from this plan`; `What verification should we build for this project?`; `Implement these tests`; `Run E2E`; `Use test-design to run E2E`. Routing-only actors return their next action without performing ordinary development; explicit invocation may load the QA procedure to explain its boundary.
 
 **Evaluator:** Both planning requests select QA design. Implementation/execution-only requests do not create a planning assignment. Explicit execution invocation explains the limit and produces no unsolicited QA artifact. Inspect actual reads/actions/files; blocked attempted product execution still fails. This source selection exercise is separate from native installed discovery.
 
@@ -853,18 +853,20 @@ Run fresh actors against the same identified combined runtime candidate. The rep
 Exercise Q03's missing combined command/search journey with QA-on, preserving its explicit display/count requirement. Reuse E01–E08 inputs only where still applicable and observe affected combined-artifact capture/retention/closure separately. Add isolated occupied QA destination, escaping QA symlink, exact pasted source, and implementation-only request variants. Observe preservation and actual reads/actions; missing native checkpoints remain untested, and source routing is not installed activation. Renew only affected evidence after corrections.
 
 
-## I4: combined package identity — Q17
+## Combined package identity — Q17
+
+These cases target the current package and skill names. Historical I4 observations retain their original candidate identity and do not prove the later rename.
 
 ### Raw Q17 — final metadata and source routing
 
-Use the final selected runtime package, not an installed old package or this scenario document. Inspect its actual manifest and both skill frontmatters. For fresh routing actors, initially expose only final package name/display metadata and each skill name/description/path. Independently exercise `Design QA from this plan`, `What verification should we build for this project?`, `Implement these tests`, `Run E2E`, and `Use qa-design to run E2E`; request the next action without executing development. Explicit invocation may read its procedure to explain its boundary.
+Use the final selected runtime package, not an installed old package or this scenario document. Inspect its actual manifest and both skill frontmatters. For fresh routing actors, initially expose only final package name/display metadata and each skill name/description/path. Independently exercise `Design QA from this plan`, `What verification should we build for this project?`, `Implement these tests`, `Run E2E`, and `Use test-design to run E2E`; request the next action without executing development. Explicit invocation may read its procedure to explain its boundary.
 
 Against the same final runtime candidate, run Q05 standalone plan-only, Q10 default conversion and Q11 explicit supplementary-QA exclusion using the raw catalogue inputs above. Preserve fixtures and unrelated owner notes; allow only the selected planning outputs. Do not provide evaluator expectations to actors.
 
 ### Evaluator-only Q17 expectations
 
-Parse name `incremental-and-qa-plan-plugin`, version `0.1.0`, author/skills/interface metadata and both directory/frontmatter names `incremental-plan` and `qa-design`. Validate actual selected files, contained component/resource paths and links, documented prompt limits, and absence of VCS/private development material, personal paths, executable runtime or undeclared dependencies. Audit active shipped naming consumers; preserve explicitly historical old-name documents. Local parsed checks and per-skill validation do not establish an official whole-package/public-submission pass.
+Parse name `incremental-and-test-plans`, version `0.1.0`, author/skills/interface metadata and both directory/frontmatter names `incremental-plan` and `test-design`. Validate actual selected files, contained component/resource paths and links, documented prompt limits, and absence of VCS/private development material, personal paths, executable runtime or undeclared dependencies. Audit active shipped naming consumers; preserve explicitly historical old-name documents. Local parsed checks and per-skill validation do not establish an official whole-package/public-submission pass.
 
 Final Q05 produces one standalone QA document, provisional plan-only paths/commands and source-derived duplicate/order expectations. Q10 produces coordinated plan/handoff/QA with coherent tests and evidence owners. Q11 produces plan/handoff without new supplementary QA, retaining required tests, combined proof and gates. Q14 planning requests select QA design; execution-only requests create no planning assignment; explicit execution invocation explains the boundary. Inspect actual outputs/actions and preservation, including blocked attempted execution. Missing reviews stay pending. Bind observations to final manifest/skill/resource identities and retain original failures and emitted-trace limits.
 
-Expected qualified names are `$incremental-and-qa-plan-plugin:incremental-plan` and `$incremental-and-qa-plan-plugin:qa-design` until separately verified natively. Source routing exercises do not establish native discovery, installed qualified invocation, automatic selection, desktop usability or universal reliability. Preserve the installed old package; no installation, alias/migration layer, repository/directory/remote rename or publication is part of this case.
+Expected qualified names are `$incremental-and-test-plans:incremental-plan` and `$incremental-and-test-plans:test-design` until separately verified natively. Source routing exercises do not establish native discovery, installed qualified invocation, automatic selection, desktop usability or universal reliability. Preserve the installed old package; no installation, alias/migration layer, repository/directory/remote rename or publication is part of this case.

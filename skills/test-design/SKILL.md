@@ -1,9 +1,9 @@
 ---
-name: qa-design
+name: test-design
 description: Design or revise a QA/test strategy and verification implementation plan from a selected plan, project, or both. Use for planning what to verify, finding coverage gaps, and preparing warranted certification work. Do not use for requests to implement tests, run E2E, or execute product work.
 ---
 
-# Standalone QA design
+# Standalone test design
 
 Produce one useful, evidence-aware `qa-plan.md` with implementation work and an embedded preparation handoff. A selected project is sufficient; no incremental plan is required. This procedure plans work for an external executor. It does not implement products/tests/CI, run tests/builds/imports, use providers or credentials, write Git state, create/message tasks, install, publish, or delete/compact evidence. Explicit invocation for execution explains this boundary without inventing a planning assignment or writing an unsolicited artifact.
 

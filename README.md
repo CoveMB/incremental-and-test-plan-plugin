@@ -1,6 +1,8 @@
-# Incremental and QA Plan Plugin
+# Incremental and Test Plans
 
-A Codex-only instruction package named `incremental-and-qa-plan-plugin`, version `0.1.0`, for reviewable development increments and standalone QA planning.
+A Codex-only instruction package named `incremental-and-test-plans`, version `0.1.0`, for reviewable development increments and standalone test and QA planning.
+
+This replaces the source identity `incremental-and-qa-plan-plugin` and renames its `qa-design` skill to `test-design`. The `incremental-plan` skill is unchanged. Existing `qa-plan.md` artifacts, QA/certification responsibilities and user-selected planning locations remain supported. New default destinations use `docs/incremental-and-test-plans/<descriptive-slug>/`; existing plans do not require migration. The repository directory and remote are unchanged, and no old-name invocation alias is provided.
 
 ## Current scope
 
@@ -8,7 +10,7 @@ The **`incremental-plan`** skill converts a **selected existing plan** into cohe
 
 For a first implementation plan from goals, requirements or a specification, use the host's ordinary planning workflow, such as Superpowers `writing-plans` when available. Superpowers is optional, not a package dependency. Merely having a document or asking to edit prose or execute an existing plan does not trigger incremental planning. An explicit invocation missing either entry condition explains the boundary and requests the missing plan/intent or routes the clear request to its ordinary workflow before creating artifacts.
 
-The separate **`qa-design`** entrypoint designs a QA/test strategy and actionable verification implementation plan from a selected plan, project or both. It inspects relevant contracts, actual assertions/fixtures, configured checks/CI and existing evidence without running them. Its one-document `qa-plan.md` contains proportionate verification, coverage gaps, implementation work, warranted certification preparation, readiness and an embedded copy-ready handoff. Commands/paths stay provisional when the target has not been inspected. Unknown business rules need material answers; current code and coverage percentages do not supply them.
+The separate **`test-design`** entrypoint designs a QA/test strategy and actionable verification implementation plan from a selected plan, project or both. It inspects relevant contracts, actual assertions/fixtures, configured checks/CI and existing evidence without running them. Its one-document `qa-plan.md` contains proportionate verification, coverage gaps, implementation work, warranted certification preparation, readiness and an embedded copy-ready handoff. Commands/paths stay provisional when the target has not been inspected. Unknown business rules need material answers; current code and coverage percentages do not supply them.
 
 Certification is conditional: preserve target policy, otherwise propose only warranted work and obtain a material decision before introducing a mandatory gate. Concrete preparation needs matching implementation prerequisites, independent causal outcomes, usable setup/runbook and owners, bounded resources, cleanup/recovery evidence and actual closure authority. Planning does not certify or execute those actions. Detailed QA/certification design lives in the QA document; the incremental plan owns coherent sequencing and actual prerequisites. Standalone QA remains useful without incremental conversion.
 
@@ -32,17 +34,17 @@ Every new plan schedules a final **Evidence retention and cleanup review** outsi
 
 In a disposable workspace, ask Codex to read `skills/incremental-plan/SKILL.md` from this checkout, then provide a request such as:
 
-> Turn `docs/search-plan.md` into a draft incremental plan. Use `docs/search-contract.md` as supporting context. Save the plan and handoff under `docs/incremental-plans/search/`.
+> Turn `docs/search-plan.md` into a draft incremental plan. Use `docs/search-contract.md` as supporting context. Save the plan and handoff under `docs/incremental-and-test-plans/search/`.
 
 For a pasted existing plan, identify exactly which text is the source, request incremental conversion and name its destination. The skill saves that plan verbatim as `source.md`; a raw change request or specification is not a pasted plan. Existing source files are preserved. Ambiguous primaries, occupied output paths and escaping symlinks require a decision before affected writes.
 
 For an existing plan, supply the saved plan/handoff and linked executor evidence:
 
-> Continue `docs/incremental-plans/search/plan.md` from the executor return. Reconcile current evidence and update its plan and handoff.
+> Continue `docs/incremental-and-test-plans/search/plan.md` from the executor return. Reconcile current evidence and update its plan and handoff.
 
 Supply the selected current QA document when one exists. Default conversion creates QA in the plan destination; an unselected occupied QA path requires a decision before affected writes. To omit supplementary design:
 
-> Turn `docs/search-plan.md` into a draft incremental plan under `docs/incremental-plans/search/`. Exclude supplementary QA design.
+> Turn `docs/search-plan.md` into a draft incremental plan under `docs/incremental-and-test-plans/search/`. Exclude supplementary QA design.
 
 Before each affected write, the planner re-reads all selected plan/QA/handoff artifacts, preserves human work and reports partial or conflicting updates. These are ordinary document edits, with no atomicity or filesystem-race guarantee.
 
@@ -50,7 +52,7 @@ For a refinement, identify the authorized scope change and ask to revise the pen
 
 An implementation-only request should use the ordinary development workflow, without activating this planner. Loading a source file manually is a source-level exercise, not proof of installed skill discovery.
 
-For standalone QA, ask Codex to read `skills/qa-design/SKILL.md`, then identify a selected plan or project and output:
+For standalone QA, ask Codex to read `skills/test-design/SKILL.md`, then identify a selected plan or project and output:
 
 > Design QA for this project. Inspect its relevant contracts, assertions and CI configuration; save `docs/qa/qa-plan.md` with verification work and a preparation handoff. Do not execute tests.
 
@@ -64,35 +66,33 @@ For this program's selected local acceptance method, locate Skill Creator in the
 
 ```sh
 python3 -B <skill-creator-directory>/scripts/quick_validate.py <plugin-root>/skills/incremental-plan
-python3 -B <skill-creator-directory>/scripts/quick_validate.py <plugin-root>/skills/qa-design
+python3 -B <skill-creator-directory>/scripts/quick_validate.py <plugin-root>/skills/test-design
 ```
 
 Also inspect parsed manifest/frontmatter identity and metadata, component/resource containment, shipped links/anchors, whitespace and delivered-file privacy/dependencies. Inspect the actual runtime selection, not repository layout alone: exclude VCS, local planning/evaluation records and bytecode. Reuse applicable evidence and independently review actual changes. These are host development checks, not runtime dependencies or a new permanent runner. Follow host shell conventions; do not silently install validator dependencies.
 
-The legacy Plugin Creator `scripts/validate_plugin.py` was not available in the inspected current official Creator package. It remains unexecuted for this program; local checks are not claimed equivalent to that helper or an official whole-package/distribution pass. If a supported official validation route becomes available, inspect its actual scope before using it. Static checks establish structure, not planning/model behavior or installed usability. The [saved program](docs/incremental-plans/qa-integration/plan.md#selected-existing-native-installation-route-and-i2-entry--2026-10-17) records the user's concrete local-method decision and retained evidence limits.
+The legacy Plugin Creator `scripts/validate_plugin.py` was not available in the inspected current official Creator package. It remains unexecuted for this program; local checks are not claimed equivalent to that helper or an official whole-package/distribution pass. If a supported official validation route becomes available, inspect its actual scope before using it. Static checks establish structure, not planning/model behavior or installed usability. The [saved program](docs/incremental-and-test-plans/qa-integration/plan.md#selected-existing-native-installation-route-and-i2-entry--2026-10-17) records the user's concrete local-method decision and retained evidence limits.
 
 [Behavioral scenarios](tests/scenarios.md) define source conversion, review and handoff exercises, with simulated decision cases labeled separately. Run fresh agents against synthetic inputs and inspect their actual actions and outputs. Store local run evidence outside the repository. The scenario document includes persisted preparation/result returns, dirty predecessor checks, interrupted writes and whole-chain reconciliation. Scenario definitions alone are not passing results; the development continuation record links observed coverage and remaining limits.
 
 ## Installation status and design
 
-The combined package was locally reinstalled on 2026-10-17 with Codex CLI `0.162.1` through the supported native installer. All eight installed runtime files match the reviewed source selection; both skills are enabled and were freshly discovered with `forceReload: true`, with zero discovery errors. Private development plans and VCS were excluded. These observations establish installed-file parity and metadata discovery, not current-candidate model invocation or desktop behavior. The earlier I1-only installation and its evidence limits remain in the [I1 result](docs/incremental-plans/qa-integration/i1-result.md#current-evidence-reconciliation--2026-10-17). Install only an inspected clean runtime selection through supported native plugin facilities; verify the selected marketplace source and actual delivered inventory, since same-name catalogs can select an unintended source. Do not edit installed caches directly. Target installation, qualified invocation, automatic selection and desktop use are distinct evidence.
+The previous `incremental-and-qa-plan-plugin` package was locally reinstalled on 2026-10-17 with Codex CLI `0.162.1` through the supported native installer. Its eight runtime files matched that reviewed source selection; its two skills were enabled and freshly discovered with `forceReload: true`, with zero discovery errors. Private development plans and VCS were excluded. These historical observations do not establish installation of the new identity. The earlier I1-only installation and its evidence limits remain in the [I1 result](docs/incremental-and-test-plans/qa-integration/i1-result.md#current-evidence-reconciliation--2026-10-17). Install only an inspected clean runtime selection through supported native plugin facilities; verify the selected marketplace source and actual delivered inventory, since same-name catalogs can select an unintended source. Do not edit installed caches directly. Target installation, qualified invocation, automatic selection and desktop use are distinct evidence.
 
 The original `incremental-plan-plugin` planning capability was installed and its native CLI acceptance verified on 2026-10-13 with Codex CLI `0.162.1` on macOS arm64: fresh loading, explicit qualified invocation, automatic discovery and an implementation-only negative case passed. Behavioral cases used synthetic inputs with memory disabled and verified filesystem restrictions. These dated results concern the original package, not native activation of the renamed combined source. Desktop UI activation and universal routing reliability remain unverified.
 
 Those historical activation results do not validate the evidence-storage/retention amendment. Its later observed E01–E08 source evaluations are recorded in the I1 result, including partial/untested conditions; source-level observations remain distinct from installed usability, actual executor capture, real failed-environment recovery and uncontrolled filesystem races.
 
-They also do not validate the evidence-quality guidance. Actual later Q01–Q04 source observations are recorded in the I1 result; definitions and static checks alone are not behavioral passes or new native-activation evidence. The [saved program](docs/incremental-plans/qa-integration/plan.md) records actual I2 standalone and I3 combined source observations, their exact candidate applicability, independent reviews and limits. Final renamed-source observations and validation must retain those distinctions; old standalone/native results do not establish QA-on integration or installed usability.
+They also do not validate the evidence-quality guidance. Actual later Q01–Q04 source observations are recorded in the I1 result; definitions and static checks alone are not behavioral passes or new native-activation evidence. The [saved program](docs/incremental-and-test-plans/qa-integration/plan.md) records actual I2 standalone and I3 combined source observations, their exact candidate applicability, independent reviews and limits. Final renamed-source observations and validation must retain those distinctions; old standalone/native results do not establish QA-on integration or installed usability.
 
-The installed qualified names are `$incremental-and-qa-plan-plugin:incremental-plan` and `$incremental-and-qa-plan-plugin:qa-design`. Installation and fresh metadata discovery are verified; the following examples describe intended use. Qualified model invocation, automatic selection and desktop activation remain unverified for the current candidate:
+The installed qualified names are `$incremental-and-test-plans:incremental-plan` and `$incremental-and-test-plans:test-design`. Local migration on 2026-10-17 used native installation and removal: all eight installed runtime files match the reviewed source, both skills are enabled and freshly discovered with `forceReload: true`, and the old installed identity and catalog entry are retired. Discovery returned zero errors. These observations establish file parity and metadata discovery; qualified model invocation, automatic selection and desktop activation remain unverified. The following examples describe intended use:
 
-> $incremental-and-qa-plan-plugin:incremental-plan Turn `docs/search-plan.md` into coherent increments under `docs/incremental-plans/search/`.
+> $incremental-and-test-plans:incremental-plan Turn `docs/search-plan.md` into coherent increments under `docs/incremental-and-test-plans/search/`.
 
-> $incremental-and-qa-plan-plugin:incremental-plan Turn `docs/search-plan.md` into coherent increments under `docs/incremental-plans/search/`. Exclude supplementary QA design.
+> $incremental-and-test-plans:incremental-plan Turn `docs/search-plan.md` into coherent increments under `docs/incremental-and-test-plans/search/`. Exclude supplementary QA design.
 
-> $incremental-and-qa-plan-plugin:qa-design Design QA from this project and save `docs/qa/qa-plan.md`; do not execute tests.
+> $incremental-and-test-plans:test-design Design QA from this project and save `docs/qa/qa-plan.md`; do not execute tests.
 
-The first example includes QA by default. Implementation-only requests remain ordinary development work. This source rename supplies no compatibility alias, repository/directory/remote rename or installation/cache/configuration change.
+The first example includes QA by default. Implementation-only requests remain ordinary development work. Updating source names alone does not migrate an installed plugin; use a separately authorized native installation and retire the old installed identity to avoid duplicate entrypoints.
 
-The [completion and native evidence record](docs/superpowers/plans/2026-10-13-continuation-gate-2.md#native-acceptance-and-plan-completion--2026-10-13) reconciles Tasks 1–4, retained independent reviews, tested identity, recovery and coverage limits. The existing implementation-plugin remains installed and enabled; it is not replaced or migrated. Another host requires its own supported installation route and authorization.
-
-The [reviewed design](docs/superpowers/specs/2026-10-11-incremental-plan-plugin-design.md), [implementation plan](docs/superpowers/plans/2026-10-11-incremental-plan-plugin.md) and [continuation scope and evidence](docs/superpowers/plans/2026-10-13-continuation-gate-2.md) record development authority and evidence. They are not runtime dependencies of the skill.
+The [retained development records](docs/incremental-and-test-plans/README.md) preserve original requirements, decisions, reviews and evidence under their historical package and skill names. Earlier Superpowers design and implementation records are no longer present in this checkout. Development records are not runtime dependencies. Another host requires its own supported installation route and authorization; this rename does not replace or migrate the separate implementation-plugin.
