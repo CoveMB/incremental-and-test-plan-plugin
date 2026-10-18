@@ -39,6 +39,16 @@ Preserve additional source/repository gates, specialist evidence and separate pe
 
 For visual/accessibility, security/privacy, migrations and provider behavior, carry applicable expert, human and runtime obligations. Static checks prove none of those by themselves. Never invent a target-specific command or replace its authoritative gate with a generic check.
 
+## Execution discipline carried by a handoff
+
+At the start of an authorized increment or QA work item, and after an interruption, the executor reads the current concrete brief and its controlling requirements, exclusions and applicable decisions. Re-establish the selected candidate, prerequisites and permitted next action from actual records; do not reconstruct them from conversation memory or a completion label. Apply the existing evidence-applicability rules to reuse completed work and valid proof, reopening only affected evidence. Missing concrete preparation still belongs before Gate 2.
+
+Within the authorized scope, proceed through the prepared steps and interpret observed results under the verification guide. Record material execution deviations, their rationale and consequences in the existing progress, decision or return-evidence fields, distinguishing attempted work from verified results. Routine implementation choices consistent with the approved contract do not need another approval; new material design, requirement, scope or authority decisions still require the user before affected work. An executor's note supplies no approval or broader permission.
+
+Carry the applicable duties into the portable handoff in plain language, including the evidence needed to resume or return a result. Reuse existing artifacts; this guidance requires no execution plugin, special task-heading format, new ledger or scripts. Existing review, gate, verification, retention and separate-action rules continue to govern.
+
+Selected practices were adapted from Superpowers; see [source attribution and license](../../../references/third-party-notices.md#superpowers). This reference supplies no workflow invocation requirement.
+
 ## Preparation return and scope growth
 
 When actual preparation reveals changed future cards or an oversized/unsafe boundary, the executor stops before Gate 2 and returns: the detailed-plan candidate and baseline; affected cards/interfaces/acceptance; evidence and rationale; proposed alternatives or unresolved material questions; and a copy-ready request to reconcile with the planner. The user brings it back manually; no task creation or messaging.
