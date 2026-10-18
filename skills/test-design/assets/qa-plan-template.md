@@ -5,7 +5,7 @@
 ## Source, scope and current evidence
 
 - Selected plan/project/both and locators; outcomes, exclusions and source IDs where available.
-- Implementation naming: reproduce the shared [semantic-naming constraint](../../incremental-plan/references/gates-and-reviews.md#semantic-naming) in plain language for proposed code/test/CI surfaces and descriptions; retain tracking/provenance and legitimate domain names, preserve source/history/compatibility and surface name conflicts or migration decisions.
+- Implementation naming: reproduce the shared [semantic-naming contract](../../incremental-plan/references/gates-and-reviews.md#semantic-naming) in plain language for every authored/generated surface, including code, all documentation, examples and other text; retain specific tracking/provenance references and legitimate domain names, preserve source/history/compatibility and surface name conflicts or migration decisions. Select concrete names before Gate 2 and check actual changed artifacts during architecture review.
 - Inspected baseline/candidate/root/revision and relevant dirty work; plan-only paths/commands explicitly provisional.
 - Actual contracts, assertions, fixtures, tooling/CI and available evidence inspected. Distinguish declared checks, observed results and untested conditions; identify applicability/limits.
 - Consequential missing requirements, known source/code mismatches and responsible decision/evidence owners. Do not resolve business ambiguity from current code.
@@ -63,7 +63,7 @@
 
 <Write for an external executor who need not have this plugin. Identify selected root/source/QA candidate and comparison; request reinspection of actual branch/status, relevant code/contracts, accepted prerequisite correspondence and concurrent work before editing.>
 
-<Carry the shared semantic-naming constraint as self-contained executor instructions, including files/symbols/scripts/configuration/tests/descriptions/comments/product docs, allowed tracking/provenance/domain names and source/compatibility decision boundaries. Check proposed and changed names during preparation and architecture review; a package link alone is insufficient.>
+<Carry the shared semantic-naming contract as self-contained executor instructions for every authored/generated surface, including code, all documentation, examples and other text; retain specific tracking/provenance references, legitimate domain names and source/history/compatibility decision boundaries. Select concrete responsibility-based names before Gate 2 and inspect actual changed artifacts during architecture review. Do not exempt entire documents/directories; a package link alone is insufficient.>
 
 <Prepare exact work/files/interfaces, independent expected results and proposed supported checks, failure/recovery limits and future effects. Resolve material decisions before affected implementation. Preserve source/history/human annotations/unrelated dirty work. Gate 2 approves the concrete plan; Gate 3 approves the verified result, unless a direct applicable scoped bypass removes that pause. Bypasses retain preparation, checks, independent reviews, evidence and safeguards.>
 
