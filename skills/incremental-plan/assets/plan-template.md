@@ -6,6 +6,7 @@ Status: <draft/review-pending, current continuation state, or reconciled selecte
 
 - Outcome: <what the source asks to achieve>.
 - Non-goals and constraints: <source exclusions and applicable repository constraints>.
+- Implementation naming: <reproduce the shared [semantic-naming constraint](../references/gates-and-reviews.md#semantic-naming) in plain language: domain/behavior names for implementation surfaces and descriptions, delivery labels for coordination/provenance; preserve source/history, legitimate domain names and compatibility, with source-name conflicts or migrations awaiting the applicable decision>.
 - Primary source: <path, revision/date, content digest and relevant locators>.
 - Supporting sources: <paths and identities; explain their supporting role when needed>.
 - Inspected baseline: <repository, branch/base or non-Git/unborn state, relevant existing/dirty work and date>.

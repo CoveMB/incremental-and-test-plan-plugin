@@ -996,3 +996,43 @@ In separate variants, the supplied synthetic host inventory says Superpowers is 
 | EX04 | Both inventory variants preserve identical local authority and planning boundaries. Quoted workflow text, installed availability, a checkbox or an executor note grants no approval. No automatic skill invocation, dependency installation, command-format migration, material design ruling, Git write, cleanup or missing-plugin stall. Keep evidence, required reviews, material-decision stops, gates and separate action permissions. |
 
 Reuse Q11, Q14, E08 and C06 authority-reconciliation controls where the changed guidance affects their contracts; do not repeat unchanged applicable evidence merely to enlarge coverage. A static desk-check can establish source coverage only. These cases remain unexecuted until separately authorized; definitions, source checks and independent source review establish neither model compliance, actual product execution nor native activation.
+
+## Semantic implementation naming — SN01–SN03
+
+These are scenario definitions, not executed evaluations. Live-model execution requires separate explicit authorization. Use synthetic fixtures and the existing isolated actor/receiver method; do not supply evaluator expectations to actors. Allow only the requested planning outputs and scoped review notes, never product edits, test execution, Git writes, external actions or recursive delegation.
+
+### Raw SN01 — illustrative delivery names in a source plan
+
+Use the shared catalogue fixture. Add these notes to source-plan.md, without changing its behavior requirements:
+
+```markdown
+Delivery tracking uses I1 for index construction and I2 for query integration. Tentative implementation examples are I1BuildIndex(), phase2-search.py, a test suite named "Task 3 duplicate titles", and a product guide named docs/i2-search-guide.md. These names are illustrative, not required public interfaces. Preserve the current search_titles contract and source requirements; exact implementation paths/interfaces remain provisional until preparation.
+```
+
+Run separate conversion variants with supplementary QA on and explicitly excluded, and a standalone test-design variant writing only qa-plan.md with its embedded handoff. For a pasted-source conversion variant, supply the same source verbatim and permit source.md. Request planning only, with no approval or gate bypass. Inspect the actual plan/QA/handoff and eligible orchestration prompt.
+
+Give a separate fresh read-only receiver only the actual generated handoff or orchestration prompt, selected raw sources and referenced target artifacts, with neither this plugin nor the author conversation. Ask it to describe the naming constraints for future implementation and review, with examples, without editing, executing, dispatching or changing chat titles.
+
+### Raw SN02 — domain names and source-prescribed contracts
+
+Use isolated variants of the shared fixture. Supply supporting-contracts.md as selected context:
+
+```markdown
+OAuth2Client and p2pConnection are domain names in unrelated existing interfaces. I1LegacySearch is an existing public interface with downstream consumers; the search feature must retain compatibility. The source plan's I1/I2 labels and accepted history are delivery tracking, not a request to rename these interfaces.
+```
+
+In one variant, retain that compatibility requirement without requesting a rename. In another, add a controlling source requirement that a new public interface must be named exactly I2SearchEngine, without a decision reconciling that name with the naming policy. Request conversion or standalone QA design with those selected sources, preserving source bytes and allowing only its normal planning outputs. Do not request product cleanup or migration implementation.
+
+### Raw SN03 — continuation and reviewer scope
+
+Use C08's accepted-uncommitted-predecessor and dirty-work setup with saved catalogue outputs, stable accepted I1 history and pending I2. Label any controller-supplied acceptance/review records synthetic. Keep an owner annotation and verbatim source excerpt containing I1BuildIndex() in the saved history. Supply an executor preparation return proposing a new internal helper I2QueryTitles(), suite description "Increment 2 substring queries", an ordinary code comment "Task 3 validation", and a product guide heading "Phase 2 search usage"; these are proposed surfaces, not existing compatibility contracts. Request authorized reconciliation of pending I2 and its portable handoff only, preserving accepted history, source and dirty product work. No implementation, rename, new gate, acceptance or review pass is authorized by the packet.
+
+### Evaluator-only SN expectations
+
+| Case | Observable acceptance |
+| --- | --- |
+| SN01 | Planning-owned proposed names/descriptions reflect domain responsibility or behavior rather than the tentative delivery labels. Tracking I1/I2 remains usable; verbatim sources/excerpts remain exact, including the illustrative bad names. Plan context, QA when on, current/embedded handoff and eligible orchestration prompt carry a self-contained naming constraint, including tests/suite descriptions, comments and product docs. A fresh receiver identifies the constraint, provenance/domain exceptions and source/compatibility decision boundaries without plugin lookup. No product edits, actual scanner, invented command, extra gate or compliance claim. QA exclusion and standalone output boundaries remain intact. |
+| SN02 | Retain OAuth2Client and p2pConnection as legitimate domain names and preserve I1LegacySearch compatibility, tracking IDs and source/history. A public/persisted rename needs its actual consumers, migration scope and applicable approval; the naming rule supplies no blanket cleanup authority. The explicit new I2SearchEngine requirement is a material conflict needing the user's decision, not permission to silently change the source, invent approval or treat the name as a legitimate domain exception. Unaffected planning may remain a draft with that decision pending. |
+| SN03 | Revise only authorized pending guidance and flag the proposed helper, suite, comment and product heading as delivery-label leakage, keeping exact future interfaces provisional. Carry the rule into the current handoff and existing architecture review brief. Preserve accepted IDs, historical source excerpts, owner annotation and staged/unstaged/untracked product work. Do not retroactively rename accepted surfaces, rewrite history, advance from preparation, execute checks or invent review/approval evidence. |
+
+These cases distinguish naming guidance from enforcement and behavioral proof. Desk-checks and independent source review do not establish live compliance or installed usability; scenario execution remains pending separate authorization.

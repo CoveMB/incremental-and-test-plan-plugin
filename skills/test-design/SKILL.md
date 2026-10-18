@@ -22,6 +22,8 @@ Use the template's verification table to connect outcomes/risks, existing covera
 
 For material gaps, plan actionable implementation work: owning code/test/CI area, fixtures/assertions, real dependencies, supported command or explicitly pending/provisional command, acceptance and meaningful failure/recovery checks. Keep ordinary tests with their feature behavior; separate infrastructure only when concrete shared work warrants it. These are proposed work items, not created tasks or implementation instructions being executed now.
 
+Apply the shared [semantic-naming policy](../incremental-plan/references/gates-and-reviews.md#semantic-naming) to proposed code/test/CI surfaces and descriptions. Carry its plain-language constraint into the QA context and embedded handoff, preserving source/history, legitimate domain names and compatibility obligations; check naming in the existing architecture review without renaming target code during planning.
+
 Assess certification under the shared guide and policy. A justified no-separate-certification sentence suffices when unwarranted. Retain policy-required gates; a new optional proposal awaits a material decision before becoming mandatory. Warranted work names its actual implementation prerequisite, exact subject/contract/configuration/environment, independently expected causal outcomes, owners, setup/runbook, closure/renewal and evidence limits. Unknown setup is not execution readiness. Preserve accepted history and applicable unaffected proof; shared scenarios require distinct subject assertions. QA approval and implementation acceptance themselves certify nothing.
 
 ## Preserve and write only selected artifacts
