@@ -28,3 +28,5 @@ htmlcov/
 /.worktrees/
 /.evaluation-runs/
 /.skill-eval-artifacts/
+
+docs/superpowers/
