@@ -49,7 +49,7 @@ Map material requirements, exclusions, constraints and source gates, including a
 
 | Increment | Factual status | Candidate / evidence | Approval or explicit bypass | Blocker / next action |
 | --- | --- | --- | --- | --- |
-| <ID> | <proposed or blocked; drafting is not execution> | <baseline and exact candidate; applicable checks/reports or named gaps; retain historical references> | <actual decision/reference or named bypass scope/conditions; historical acceptance is distinct from current applicability> | <specific remaining condition> |
+| <ID> | <proposed or blocked; drafting is not execution> | <baseline and exact candidate; applicable checks/reports or named gaps; retain historical references> | <verified original decision reference, current scope, affected gates/actions, conditions and later amendments; historical acceptance is distinct from current applicability> | <actual remaining condition after authority/evidence reconciliation> |
 
 Record actual independent evidence; author checks supply none. Default each scope to pending until its report applies to this coordinated plan/QA/handoff candidate. One set of three scopes covers the artifact set; keep readiness and embedded/current handoffs aligned. Distinguish substantive reviewed content from later administrative status notes.
 
@@ -61,7 +61,7 @@ Record actual independent evidence; author checks supply none. Default each scop
 
 ## Decisions and remaining obligations
 
-Record dated material user decisions, source amendments and scoped gate exceptions with their actual reference, scope and conditions. Keep unknowns unresolved and historical accepted IDs/candidates intact. Explain affected readiness separately from historical acceptance; link still-applicable evidence instead of replacing it.
+Apply the [authority reconciliation rule](../references/gates-and-reviews.md#owners-and-authority) before deriving current progress, gate dispositions and the next action. Record dated material user decisions, source amendments and scoped gate/action permissions with their original reference, scope, conditions and later amendments. Preserve superseded “no bypass” or “preparation only” statements as dated history; align current cards, this table and authorized QA/handoff outputs with surviving authority. Keep unknowns unresolved and historical accepted IDs/candidates intact. Explain affected readiness separately from historical acceptance; link still-applicable evidence instead of replacing it. Recording authority alone does not establish an implementation result or invalidate unchanged reviews.
 
 For material revisions, map replaced pending IDs to replacement cards and update coverage/dependencies/parts together. Identify changed obligations, approved rationale and affected review scope. Wording-only changes need no invented whole-plan review. Record whether the current return is preparation for the same increment or a result whose shipped impact has been reconciled.
 
