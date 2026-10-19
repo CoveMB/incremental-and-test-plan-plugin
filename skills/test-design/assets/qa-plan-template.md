@@ -1,11 +1,11 @@
 # QA plan — <selected scope>
 
-<!-- Adapt to the actual target. Remove editing instructions/placeholders from the delivered document. Omit unwarranted sections, except source/evidence, readiness, terminal retention review and embedded handoff. Use ordinary Markdown, not a new state/schema system. -->
+<!-- Adapt to the actual target. Remove editing instructions/placeholders from the delivered document. Omit unwarranted sections, except source/evidence, readiness, terminal retention review and embedded handoff. Group shared context and use internal references for explanatory detail under the skill's proportionality guidance; retain a copy-ready embedded handoff with all applicable portable duties. Use ordinary Markdown, not a new state/schema system. -->
 
 ## Source, scope and current evidence
 
 - Selected plan/project/both and locators; outcomes, exclusions and source IDs where available.
-- Implementation naming: reproduce the shared [semantic-naming contract](../../incremental-plan/references/gates-and-reviews.md#semantic-naming) in plain language for every authored/generated surface, including code, all documentation, examples and other text; retain specific tracking/provenance references and legitimate domain names, preserve source/history/compatibility and surface name conflicts or migration decisions. Select concrete names before Gate 2 and check actual changed artifacts during architecture review.
+- Proposed authored/generated names describe domain responsibility or observable behavior. Record source-required names, provenance/history exceptions and compatibility or migration decisions; carry the complete applicable [semantic-naming contract](../../incremental-plan/references/gates-and-reviews.md#semantic-naming) in the embedded handoff.
 - Inspected baseline/candidate/root/revision and relevant dirty work; plan-only paths/commands explicitly provisional.
 - Actual contracts, assertions, fixtures, tooling/CI and available evidence inspected. Distinguish declared checks, observed results and untested conditions; identify applicability/limits.
 - Consequential missing requirements, known source/code mismatches and responsible decision/evidence owners. Do not resolve business ambiguity from current code.

@@ -12,7 +12,7 @@ Keep this assessment in existing acceptance/recovery fields. A spelling-only edi
 
 ## Independent expectations and test sensitivity
 
-Ground important expected results in approved requirements, trusted examples or a justified reference independent of the implementation under test. Name the basis and the material wrong behavior a check should detect. For example, when separate records with equal titles must survive a search, asserting their ordered IDs distinguishes preservation from a deduplicating implementation; checking only distinct titles does not.
+Ground important expected results in approved requirements, trusted examples or a justified reference independent of the implementation under test. Name the basis and the material wrong behavior a check should detect. When requirements interact, choose a small discriminating example for their combination; isolated examples can share a blind spot. For example, if search must preserve duplicate records and global input order, interleave equal titles with a different matching title and assert literal ordered IDs and any source-required original-object identity. Where empty-query behavior and index reuse are also required, check both empty and nonempty queries matching those groups against the same reused index. Counts or contiguous duplicates alone cannot distinguish correct order from grouping by title.
 
 Inspect actual assertions and relevant failure paths. A green summary or an expected value recomputed by the implementation's own algorithm can hide a shared wrong assumption. Legacy parity can establish preservation, but cannot establish correctness of an intentionally changed rule. Independent reviewers must challenge these assumptions too; separate actors can still repeat the same mistake.
 
