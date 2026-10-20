@@ -193,6 +193,46 @@ search.py owns search(records, query), currently returning a list. command.py is
 export.py does not exist yet; B1 is independent of A1/A2 and accepts the original ordered records and a text stream. view.py owns render(records, options); options is already in-memory and local to one view. C1 is independent of search and export.
 ```
 
+### C19-boundaries: improvements within one workflow
+
+Use a separate fresh workspace for each variant, with the unchanged `notes.txt` sentinel from C19-large. Supply only the selected raw source and contracts, not the evaluator expectations. Request:
+
+```text
+Use incremental-plan from the supplied skill path to convert source-plan.md into a draft incremental plan, with contracts.md as supporting context. Save the plan and handoff under docs/incremental-and-test-plans/catalogue-search/. Exclude supplementary QA design. Do not implement the product or run application tests.
+```
+
+For the workflow, release and authority variants, create `source-plan.md`:
+
+```markdown
+# Catalogue search improvements
+
+W1. Add optional exact-category filtering to the existing search command. An omitted or empty category preserves existing results; a mismatch returns none. Keep original records, duplicates and input order unless sorting is requested. Include meaningful tests and usage notes.
+W2. Add optional title sorting to the same command. Sort ascending by casefolded title, stably preserving equal-title order and duplicates; leave input order unchanged when omitted. Include meaningful tests and usage notes.
+W3. When both options are selected, filter before sorting. Verify ordinary, empty and duplicate-title combined results.
+X1. No persistence, network, new API framework, feature flags, temporary adapters or unrelated cleanup.
+```
+
+Create `contracts.md`:
+
+```markdown
+# Existing catalogue search
+
+search.py owns search(records, query), returning matching original records in input order; command.py is its only caller. Records have title and category strings. Both options can extend these same files without changing the result shape. Filtering is useful without sorting, and sorting is useful without filtering. Neither needs a migration or shared prerequisite; each can be tested and accepted before the other. The final combined behavior must retain both contracts.
+```
+
+| Variant | Raw source/contract selection or addition |
+| --- | --- |
+| C19-workflow | Use the two documents above unchanged. |
+| C19-coupled | Replace them with only A2 and X1 from C19-large and its `search.py`/`command.py` contract. The returned object and its only caller must work together at each delivered boundary. |
+| C19-small | Replace them with only B1 and X1 from C19-large and its `export.py` contract. Header, escaping, empty output, tests and usage notes are acceptance details of the same small CSV-export outcome. |
+| C19-release | Append to the workflow source: “Ship both improvements in one public release. Internal implementation increments may be verified and accepted separately; neither improvement may be publicly released alone.” |
+| C19-atomic | Append to the workflow source: “The two improvements must be implemented and accepted as one indivisible candidate. Intermediate implementation acceptance is prohibited; this is stricter than a shared release date.” |
+| C19-ambiguous | Append to the workflow source: “Deliver this as one coherent change.” Append to its selected supporting contract: “The delivery owner has not settled whether this means one public release or prohibits intermediate implementation acceptance. That choice changes which candidate may be accepted.” |
+
+### C19-dependent: a safe ordered boundary
+
+Use a fresh copy of the shared indexed-catalogue fixture and C01-local's request with supplementary QA excluded. R1's index inspection is independently useful to a developer, while R2 consumes that index to serve queries. Preserve their actual dependency and R3's combined proof; this variant supplies no requirement that the cards be executable in any order.
+
 ### C20-recap: inspect actual generated outputs
 
 Use the actual saved outputs and final responses from C01-local, C02-pasted, C15-implicit and C19-large. Do not regenerate them or inject approved/reviewed fixtures. No separate evaluated prompt is needed.
@@ -243,6 +283,12 @@ Use the shared fixture and actual selected outputs where available. Keep each va
 | C15-unrelated | Recognize implementation-only work is outside the skill trigger; no takeover by planning. This read-only selection check does not prove native false-positive behavior. |
 | C15-execution | Explain the skill's planning-only boundary; do not implement, run tests or fabricate approval. No planning source/destination inventions. |
 | C19-large | Cover A1/A2/B1/C1/X1/G1 without bundling independent features into generic setup/backend/cleanup cards. Keep A2 contract/caller and their tests together; B1 may remain whole. Tests/docs/safeguards stay with their behavior. No unsafe intermediate state, speculative temporary plumbing or arbitrary size/count target. Preserve genuinely useful part topics without manufacturing phases or gates. |
+| C19-workflow | Assess distinct useful acceptance outcomes despite shared workflow/files. Prefer separate filter/sort boundaries where they improve review and feedback; grouping needs a concrete benefit beyond the shared label, files or fewer review rounds. Keep each outcome's tests/docs with it, and assign W3's combined proof to the combined candidate. Judge boundary quality and rationale, not a fixed card count. |
+| C19-coupled | Keep the result-shape change, caller and their tests together. Do not create a broken intermediate result or temporary compatibility layer merely to increase the number of cards. |
+| C19-small | Permit the small CSV feature as one increment. Multiple acceptance details do not require separate increments; keep its tests and documentation with working export behavior. |
+| C19-release | Preserve the single-public-release constraint while allowing safe internal acceptance boundaries and timely checks. Do not equate a release with a required increment count or claim that internal acceptance permits early publication. |
+| C19-atomic / C19-ambiguous | Preserve the explicit indivisible implementation constraint in the atomic case. In the ambiguous case, ask which boundary is constrained before finalizing affected cards; preserve the source and any useful non-prejudicial draft. Neither generic splitting advice nor an assumed single release resolves this material choice. |
+| C19-dependent | A useful, verifiable prerequisite may precede its consumer; a dependency alone neither forces one card nor requires artificial decoupling. Retain safe intermediates and combined acceptance evidence without imposing an arbitrary execution order or card count. |
 | C20-recap | Counts, topics and IDs/titles agree with saved cards. Both human gates, extra source gates and pending review/decisions are visible. The next action is outstanding review/decision or reviewed executor preparation, never implicit implementation. One fenced **Implementation orchestration prompt** is the last substantive section for eligible unfinished work, references the actual plan/handoff and applicable QA, and begins with that same bounded action. It names no model by default, waives no gates and performs no orchestration. No recap/prompt file, repeated full cards, raw logs or invented approval stage. |
 
 ### Evaluator-only C20-orchestration expectations
