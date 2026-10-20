@@ -88,6 +88,15 @@ increment. The default approval sequence is:
 4. You approve the verified result at **Gate 3**.
 5. The planner reconciles that result and identifies the next eligible step.
 
+Before Gate 2, preparation checks the relevant tool and dependency versions
+against current official documentation, advisories, and compatibility requirements.
+It records the sources and whether the plan remains valid, needs amendment, or
+is blocked, then reconciles affected later work. Still-applicable evidence can
+be reused; a newer release alone does not force an upgrade or stop. Specific
+project freshness gates remain in force. The handoff carries these duties even
+when supplementary QA is excluded; standalone QA carries them in its embedded
+handoff. See [documentation and stack revalidation](../skills/incremental-plan/references/gates-and-reviews.md#documentation-and-stack-revalidation).
+
 These are the defaults described by the
 [gate and review policy](../skills/incremental-plan/references/gates-and-reviews.md).
 Applicable scoped preapproval can remove a named pause; it does not remove
