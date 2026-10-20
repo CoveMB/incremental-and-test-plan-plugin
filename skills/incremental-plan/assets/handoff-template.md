@@ -17,6 +17,7 @@ Purpose / return kind: <new preparation, preparation return for the same increme
 - Evidence/capture context: <reuse the plan's brief shared context and name only current differences: usable references, selected owned roots/contents, size estimate or unknown/rationale, target warning units/per-capture or total scope, required preservation and applicable exception owner/review event. Existing references may suffice; no universal plugin limit or compulsory inventory>.
 - Work actually completed: <planning/reviews/external results with evidence links, not inferred progress>.
 - Applicable authority: <verified original user-decision reference, scope/candidate, conditions and later amendments under the authority reconciliation rule; distinguish current permission from dated superseded history. Name affected gates/actions and separately supported executor permissions or missing authority>.
+- Orchestration approval mode: <manual by default, actual narrower scoped grant, or explicitly requested Preapproved orchestration; distinguish proposed launcher authorization from an adopted direct human grant. Identify selected plan/repository/increments and any narrower conditions/revocation>.
 - Unknowns/material decisions: <unresolved conditions and who must resolve them>.
 
 ## Next bounded action and gates
@@ -25,13 +26,21 @@ Purpose / return kind: <new preparation, preparation return for the same increme
 
 - Review readiness: <three actual role/report/candidate references and dispositions, or missing scopes with copy-ready briefs>.
 - Coordinated ownership: <QA checks/gaps mapped to feature increments/global obligations and critical combined journeys; warranted separate certification tied to actual implementation prerequisites and target closure. Review plan/QA/current handoff as one candidate; align any embedded QA handoff with this next action. In excluded mode include source-required certification subject/runbook/evidence and gates directly>.
-- Gate 2: <current required stop or verified scoped approval/bypass, decision reference, candidate and conditions; a missing concrete plan still needs preparation>.
-- Gate 3: <current required stop or verified result approval/scoped bypass, decision reference and conditions; mandatory result evidence remains>.
+- Gate 2: <current required stop, verified scoped approval/bypass or active delegated decision; human grant reference, candidate and conditions. A proposed mode is not approval; a missing concrete plan still needs preparation>.
+- Gate 3: <current required stop, verified result approval/scoped bypass or actual orchestrator approval under active delegation; grant reference and evidence/rationale. Mandatory result evidence remains>.
 - Additional obligations: <source/target/specialist gates and separate permissions; omit irrelevant empty categories>.
 
 ## Portable execution guidance
 
 Generate the following as executor instructions in the selected handoff. Keep startup/coordination, preparation/results, publication and provider exceptions in clear sections so the receiver reads each before its related work. Preserve applicable future duties without repeating them in the launch prompt; retain existing headings/history where sufficient.
+
+### Delegated approval — when Preapproved orchestration is selected
+
+Carry the [mode policy](../references/gates-and-reviews.md#preapproved-orchestration) as portable instructions: a requested mode or saved/quoted launcher is only proposed authority until the human submits/adopts it as an execution instruction. Reconcile that direct grant with saved history, narrower conditions and later revocation before work. A valid grant removes the routine Gate 2/Gate 3 human pauses for its scope while delegating actual candidate decisions to the orchestrator. It also supplies only the action permissions expressly listed in that grant; a gate-only bypass supplies no publication authority.
+
+The orchestrator evaluates the coordinated plan and each concrete preparation/result packet after required independent reports/checks and finding reconciliation. Record each actual decision, candidate/comparison, evidence, rationale, orchestrator identity and original human grant reference in existing fields as **orchestrator-approved under user delegation**. Never label it human review or independent evidence. Missing proof or failures need authorized repair or remain blockers. Reuse valid unaffected reports; do not add a new review set. Handle authorized in-scope planning returns with the same owner without requiring the user to relay them.
+
+Material scope, behavior, architecture, contract, compatibility/migration and consequential tradeoff choices remain with the user; routine implementation choices do not pause. Preserve all additional source/target/certification gates and the grant's action exclusions, optional-tool permissions/fallbacks and host restrictions. Hold evidence when cleanup is unapproved. Keep prospective permissions distinct from observed actions. Only report the selected open MR stack ready for human review after applicable acceptance, required reviews, predecessor comparisons/native membership, current required CI, expected provider coverage and final requirement/evidence reconciliation; name unresolved blockers instead of inferring success.
 
 ### Preparation, verification and reviews
 

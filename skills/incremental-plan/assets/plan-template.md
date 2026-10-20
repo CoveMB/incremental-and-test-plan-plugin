@@ -12,6 +12,7 @@ Status: <draft/review-pending, current continuation state, or reconciled selecte
 - Inspected baseline: <repository, branch/base or non-Git/unborn state, relevant existing/dirty work and date>.
 - QA mode and correspondence: <on by default for new conversion, or actual explicit supplementary exclusion; selected QA path and source/candidate identity when on. Reuse current selected QA rather than duplicate it; retain historical QA on exclusion and distinguish mandatory obligations from non-governing supplementary proposals>.
 - Assumptions and unresolved decisions: <material unknowns; do not resolve them by invention>.
+- Orchestration approval mode: <manual by default, or explicitly requested Preapproved orchestration for the selected plan/repository/increments; distinguish proposed export from an adopted human grant and preserve any narrower conditions. Mode selection is not plan/result approval>.
 - Shared evidence/capture context: <briefly state reusable durable references or no new capture expected; when relevant, selected owned roots/contents, expected size or unknown with rationale, target warning units/scope and retention exceptions/consumers. Reuse this context across cards; omit irrelevant inventories>.
 
 ## Parts and increments
@@ -48,9 +49,9 @@ Map material requirements, exclusions, constraints and source gates, including a
 
 ## Progress and review readiness
 
-| Increment | Factual status | Candidate / evidence | Approval or explicit bypass | Blocker / next action |
+| Increment | Factual status | Candidate / evidence | Approval, delegation or explicit bypass | Blocker / next action |
 | --- | --- | --- | --- | --- |
-| <ID> | <proposed or blocked; drafting is not execution> | <baseline and exact candidate; applicable checks/reports or named gaps; retain historical references> | <verified original decision reference, current scope, affected gates/actions, conditions and later amendments; historical acceptance is distinct from current applicability> | <actual remaining condition after authority/evidence reconciliation> |
+| <ID> | <proposed or blocked; drafting is not execution> | <baseline and exact candidate; applicable checks/reports or named gaps; retain historical references> | <verified original human grant/decision reference, scope, gates/actions, conditions and amendments; for an actual delegated approval identify the orchestrator, candidate and evidence/rationale, never human review of an unseen result. Historical acceptance is distinct from current applicability> | <actual remaining condition after authority/evidence reconciliation> |
 
 Record actual independent evidence; author checks supply none. Default each scope to pending until its report applies to this coordinated plan/QA/handoff candidate. One set of three scopes covers the artifact set; keep readiness and embedded/current handoffs aligned. Distinguish substantive reviewed content from later administrative status notes.
 
