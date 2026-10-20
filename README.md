@@ -1,112 +1,105 @@
 # Incremental and Test Plans
 
-A Codex-only instruction package named `incremental-and-test-plans`, version `0.1.0`, for reviewable development increments and standalone test and QA planning.
+Turn an existing development plan into reviewable increments, or work out what a
+project needs to verify before its results can be trusted.
 
-This replaces the source identity `incremental-and-qa-plan-plugin` and renames its `qa-design` skill to `test-design`. The `incremental-plan` skill is unchanged. Existing `qa-plan.md` artifacts, QA/certification responsibilities and user-selected planning locations remain supported. New default destinations use `docs/incremental-and-test-plans/<descriptive-slug>/`; existing plans do not require migration. The repository directory and remote are unchanged, and no old-name invocation alias is provided.
+This Codex plugin provides two planning skills. They produce Markdown plans and
+handoffs for later implementation. They do not change product code, run tests,
+or create pull requests.
 
-## Current scope
+## Choose a skill
 
-The **`incremental-plan`** skill converts a **selected existing plan** into coherent increments, or revises, continues and reconciles an existing incremental plan. It requires both an existing plan and incremental-planning intent. The source may be a local Markdown plan or a pasted plan, with optional supporting documents. New conversion includes supplementary QA design by default: a coordinated `plan.md`, `handoff.md` and `qa-plan.md`, or a selected current QA document reused at its existing authorized location. QA checks and gaps map to feature increments/global obligations; tests stay with their behavior. The response includes a concise part/increment recap, QA mode and outstanding gates.
+| Your task | Skill | What you get |
+| --- | --- | --- |
+| Break an existing plan into coherent increments | `incremental-plan` | An incremental plan, a current handoff, and QA design by default |
+| Revise a saved incremental plan or continue it from implementation evidence | `incremental-plan` | Updated planning documents and the next eligible action |
+| Find coverage gaps and plan verification for a project, a plan, or both | `test-design` | One QA plan with verification work and an embedded handoff |
 
-For creation and authorized revision/continuation with unfinished increments, the recap ends with an optional-to-use **Implementation orchestration prompt** for a separate orchestrator. This short launcher identifies the actual plan/handoff/QA references and current bounded next action, including pending reviews or decisions. It keeps essential ownership, sequencing, gate and permission instructions visible. The existing portable handoff carries detailed procedures for naming, preparation/reviews, resumption/waits, authorized publication/current CI, conditional provider retries and final evidence retention. The executor reads those sections before the corresponding work; no installed plugin or author conversation is required. Generation checks actual coverage across the prompt and referenced artifacts, without copying the full procedure into the prompt. Missing or conflicting handoff instructions become a bounded reconciliation first action; prompt-only requests never silently edit saved artifacts.
+If you only have goals or a specification, create an implementation plan through
+your usual planning workflow first. Requests to write code, implement tests, or
+run checks belong to an execution workflow.
 
-One orchestrator owns cross-increment progression and final reconciliation; each increment retains one implementation owner chat through preparation, implementation, checks, independent review coordination, fixes and authorized PR/CI work. Writers and shared-checkout/stack mutations stay sequential. Configured model defaults, required independent review scopes, gates and separate action permissions remain unchanged. Current required CI and expected provider reviews must settle before dependent preparation/dispatch; the [review policy](skills/incremental-plan/references/gates-and-reviews.md#provider-review-before-dependent-preparation) retains the detailed conditions. The [portable handoff](skills/incremental-plan/assets/handoff-template.md#starting-resuming-and-coordinating) owns title/update, ownership and native-wait instructions. Existing progress fields retain actual references and next actions; no controller, scheduler or additional ledger is introduced. Shorter output does not establish token savings or executor compliance without separate evaluation.
+## Get started
 
-Generating the prompt performs no execution or Git/task operations and saves no extra artifact. Request “Omit the implementation orchestration prompt.” to exclude it. Completed implementation scope, standalone QA and unrelated routes receive no start prompt; actual closure obligations remain visible. Existing plans need no format migration, and accepted history and human annotations remain protected during authorized continuation.
+Use the plugin in a Codex workspace that can read your selected source and write
+to your chosen documentation directory.
 
-Request **“Use Preapproved orchestration for this plan; prepare the prompt to deliver an open MR stack, with material design decisions left to me.”** to opt in. Manual approval remains the default. The exported prompt explicitly delegates concrete-plan and verified-result decisions at Gates 2 and 3 and authorizes scoped planning reconciliation, owner/reviewer coordination, implementation, tests, ordinary in-scope repairs, commits/pushes and MR creation/updates in the selected repository. The grant becomes active when you send/adopt that prompt as an execution instruction; generating it or reading a quoted copy grants no execution authority. Existing narrower permissions and later revocations remain effective.
+If your configured marketplace provides this package, open **Plugins** in the
+desktop app or `/plugins` in Codex CLI, select **Incremental and Test Plans**, and
+check its source before installing. Start a new chat or CLI session afterward.
+See [OpenAI's plugin guide](https://learn.chatgpt.com/docs/plugins) for the current
+installation flow. A repository clone alone does not install the plugin.
 
-The orchestrator records its own approvals after the required independent reviews and checks, then continues without routine confirmation. Material design/scope/compatibility decisions remain yours. The intended result is an open MR stack with correct dependencies, current required CI, settled expected provider reviews and a reconciled evidence summary. Missing proof or capabilities can still block completion. This mode grants no merge, deployment, destructive cleanup, installation, new paid-service, permission-change, provider-request/reply or additional private-data-transfer authority; specialist/human gates and host permissions remain. Optional tools use existing permitted fallbacks. See the [canonical mode policy](skills/incremental-plan/references/gates-and-reviews.md#preapproved-orchestration). Standalone QA and gate-only bypasses retain their existing scope.
+To try a checkout without installing it, ask Codex to read
+`skills/incremental-plan/SKILL.md` or `skills/test-design/SKILL.md` from that
+checkout and follow it for your request. Give the full checkout path when your
+target project is elsewhere. This exercises the source instructions; it does
+not test installed discovery.
 
-For a first implementation plan from goals, requirements or a specification, use the host's ordinary planning workflow, such as Superpowers `writing-plans` when available. Superpowers is optional, not a package dependency. Merely having a document or asking to edit prose or execute an existing plan does not trigger incremental planning. An explicit invocation missing either entry condition explains the boundary and requests the missing plan/intent or routes the clear request to its ordinary workflow before creating artifacts.
+### Convert an existing plan
 
-The separate **`test-design`** entrypoint designs a QA/test strategy and actionable verification implementation plan from a selected plan, project or both. It inspects relevant contracts, actual assertions/fixtures, configured checks/CI and existing evidence without running them. Its one-document `qa-plan.md` contains proportionate verification, coverage gaps, implementation work, warranted certification preparation, readiness and an embedded copy-ready handoff. Commands/paths stay provisional when the target has not been inspected. Unknown business rules need material answers; current code and coverage percentages do not supply them.
+With the plugin installed, send:
 
-Certification is conditional: preserve target policy, otherwise propose only warranted work and obtain a material decision before introducing a mandatory gate. Concrete preparation needs matching implementation prerequisites, independent causal outcomes, usable setup/runbook and owners, bounded resources, cleanup/recovery evidence and actual closure authority. Planning does not certify or execute those actions. Detailed QA/certification design lives in the QA document; the incremental plan owns coherent sequencing and actual prerequisites. Standalone QA remains useful without incremental conversion.
+```text
+$incremental-and-test-plans:incremental-plan
+Turn docs/search-plan.md into coherent increments.
+Save the planning documents under docs/incremental-and-test-plans/search/.
+```
 
-Request “exclude supplementary QA design” to omit the extra design/document. Meaningful feature tests, required combined evidence, source-required certification/runbook, independent review and gates still apply, recorded directly in plan/handoff where needed. Changing mode preserves existing QA/history and human annotations; retained mandatory obligations remain governing. QA text cannot silently change product requirements or introduce mandatory gates. Continuation reconciles the recorded choice and renews only affected source/candidate/environment evidence.
+Replace the example paths with your source plan and an unused output directory.
+The default result is:
 
-Each increment advances one identifiable feature through a coherent piece, with its meaningful tests and required documentation or safeguards. Keep coupled contracts and callers together. An entire small feature may be one increment. File counts, line counts and target increment counts do not determine the boundaries.
+| File | Purpose |
+| --- | --- |
+| `plan.md` | Increment boundaries, dependencies, acceptance criteria, and progress |
+| `handoff.md` | The current bounded next step and the instructions needed to carry it out |
+| `qa-plan.md` | Verification design, coverage gaps, and their owners |
 
-Plans, QA documents and portable execution guidance carry a shared [semantic-naming contract](skills/incremental-plan/references/gates-and-reviews.md#semantic-naming): every authored/generated surface uses names and descriptions reflecting domain responsibility or behavior, including code, all documentation, examples and other text. Delivery labels describe the work and remain in specific coordination/provenance references, without exempting whole documents/directories; source/history, legitimate domain/version names and existing compatibility contracts stay protected. Concrete names are selected before Gate 2 and actual changed artifacts checked during architecture review; instructions alone do not demonstrate compliance.
+The source stays unchanged. A selected existing QA document can be reused at its
+authorized location. Each increment keeps a coherent piece of a feature together
+with its tests and necessary documentation or safeguards. A small feature may
+need only one increment.
 
-New plans remain drafts until three distinct independent reports are reconciled against one coordinated plan/QA/handoff candidate. The skill can arrange authorized read-only review or provide manual review briefs; missing review never becomes a pass. Two documents do not require duplicate review sets. Reviewed plans normally yield preparation handoffs with both routine pauses. Applicable direct preapproval removes only its specified pause; concrete preparation, required reviews/checks and evidence remain. The executor performs implementation and verification externally. Continuation reconciles later applicable direct user decisions under the [authority policy](skills/incremental-plan/references/gates-and-reviews.md#owners-and-authority), carrying original references, scope, conditions and amendments into authorized plan/QA/handoff updates without routine reapproval. It reads actual executor results and current checkout evidence and preserves dated history, narrower permissions and revocations. Prompt-only requests do not silently update saved artifacts. A preparation return resumes the same increment at Gate 2 with its current approval/bypass disposition; an eligible verified result may lead to the next increment. Final reconciliation checks every owning increment and keeps approved deferrals and separate certification/release obligations visible.
+### Design QA on its own
 
-Each increment or standalone QA implementation work item requires three distinct independent reports before Gate 3: requirements/source fidelity, architecture/simplicity and verification. A source requesting fewer reviews does not reduce that minimum; explicit caps or prohibitions need an applicable scoped user amendment. Reuse valid reports and renew only affected scopes. The [review policy](skills/incremental-plan/references/gates-and-reviews.md#implementation-review-recommendations) owns these requirements. Regular independent reviews are the default route. A concrete rationale may justify an optional [Material Code Review](https://github.com/CoveMB/material-code-review-plugin) recommendation for later Git changes. It examines a bounded set of Git changes and validates material findings, with separate user approvals for findings and the repair plan. That plugin may be unavailable to other users; plans carry regular reviews with appropriate scopes as the fallback, preserving all required reviews.
+```text
+$incremental-and-test-plans:test-design
+Design QA for this project. Inspect its relevant contracts, assertions,
+and CI configuration. Save docs/qa/qa-plan.md with verification work
+and a preparation handoff. Do not execute tests.
+```
 
-The planner does not implement products, run application tests, write Git state, use provider credentials, install, publish, schedule or create/message execution tasks. Gate 2 approves a concrete execution plan; Gate 3 approves its verified result. Planning alone grants neither. Source/repository gates and explicit scoped user decisions remain visible.
+You can supply a plan, a project, or both. Standalone test design writes one QA
+document with its handoff inside it. If the project has not been inspected,
+proposed commands and paths remain provisional.
 
-Generated handoffs carry self-contained guidance for starting or resuming authorized work, comparing real shared producer/consumer contracts during concrete preparation, interpreting check results, recording execution deviations and self-reviewing the implemented result before independent reviews. Selected practices are [adapted from Superpowers](references/third-party-notices.md#superpowers), with local gates, reviews and evidence rules retained; Superpowers is not required to execute these handoffs.
+## What happens after planning
 
-[Verification guidance](references/verification-design.md) connects material failure consequences and recovery limits to proportionate checks within those existing gates. Reviews challenge independently expected outcomes, shared wrong assumptions and unjustified test weakening. Critical combined journeys have evidence owners; result/closure records distinguish demonstrated behavior, important untested conditions and separate release obligations. This guidance does not itself demonstrate model behavior or runtime outcomes.
+New plans remain drafts until three independent reviews have been reconciled:
+source fidelity, architecture and simplicity, and verification quality. When
+reviews cannot be arranged within the available permissions and tools, the
+output includes manual review briefs and identifies the missing reviews.
 
-Evidence guidance favors usable existing references and minimal selected captures. The external executor estimates selected contents before potentially large copying, applies target-project warning thresholds with their units/scope, and reports a bounded estimate or honest unknown/rationale where no threshold exists. There is no universal plugin byte limit. Exclusions are selective: names such as dependencies or caches do not make unique inputs, persistent data or required failed environments disposable. Instructions do not enforce limits or intercept copying; deterministic enforcement belongs to target artifact-producing tools.
+A reviewed plan normally hands off preparation to an executor. **Gate 2** is your
+approval of the concrete implementation plan; **Gate 3** is your approval of the
+verified result. Required reviews, evidence, and project-specific gates still
+apply when a routine approval pause has been explicitly preapproved.
 
-Every new plan schedules a final **Evidence retention and cleanup review** outside feature-increment counts. It records preservation and proposed dispositions separately from product acceptance and executor cleanup; no artifacts can yield no-cleanup-needed. Optional storage decisions do not block demonstrated scope, while missing mandatory proof and source-required cleanup remain obligations. The planner never deletes or compacts evidence, and acceptance supplies no cleanup permission. Concrete executor cleanup needs its own applicable explicit authority. Old plans continue without migration and receive the review when closure is requested.
+Incremental planning also returns a copy-ready **Implementation orchestration
+prompt** when implementation remains. You can use it in a separate execution
+chat. Generating the prompt starts no work; its first action reflects any
+outstanding reviews or decisions.
 
-## Try the checked-out source
-
-In a disposable workspace, ask Codex to read `skills/incremental-plan/SKILL.md` from this checkout, then provide a request such as:
-
-> Turn `docs/search-plan.md` into a draft incremental plan. Use `docs/search-contract.md` as supporting context. Save the plan and handoff under `docs/incremental-and-test-plans/search/`.
-
-For a pasted existing plan, identify exactly which text is the source, request incremental conversion and name its destination. The skill saves that plan verbatim as `source.md`; a raw change request or specification is not a pasted plan. Existing source files are preserved. Ambiguous primaries, occupied output paths and escaping symlinks require a decision before affected writes.
-
-For an existing plan, supply the saved plan/handoff and linked executor evidence:
-
-> Continue `docs/incremental-and-test-plans/search/plan.md` from the executor return. Reconcile current evidence and update its plan and handoff.
-
-Supply the selected current QA document when one exists. Default conversion creates QA in the plan destination; an unselected occupied QA path requires a decision before affected writes. To omit supplementary design:
-
-> Turn `docs/search-plan.md` into a draft incremental plan under `docs/incremental-and-test-plans/search/`. Exclude supplementary QA design.
-
-Before each affected write, the planner re-reads all selected plan/QA/handoff artifacts, preserves human work and reports partial or conflicting updates. These are ordinary document edits, with no atomicity or filesystem-race guarantee.
-
-For a refinement, identify the authorized scope change and ask to revise the pending cards; accepted IDs/history remain intact. For closure, ask to reconcile the selected scope against every increment's evidence. Missing records, stale checks and unresolved decisions yield a specific return request, not assumed completion. An accepted uncommitted predecessor can qualify when identifiable, present and permitted by the target repository.
-
-An implementation-only request should use the ordinary development workflow, without activating this planner. Loading a source file manually is a source-level exercise, not proof of installed skill discovery.
-
-For standalone QA, ask Codex to read `skills/test-design/SKILL.md`, then identify a selected plan or project and output:
-
-> Design QA for this project. Inspect its relevant contracts, assertions and CI configuration; save `docs/qa/qa-plan.md` with verification work and a preparation handoff. Do not execute tests.
-
-Standalone QA writes only the requested QA document, optional expressly requested exact pasted `source.md` and assigned review notes. It preserves selected existing QA history/human annotations and stops affected writes on collisions, escaping symlinks or conflicting edits. It creates no incremental plan or separate handoff file. Missing independent reports yield a draft with manual fresh-context review briefs, not an invented review pass. Requests to implement tests or run E2E are execution requests; explicitly invoking QA design for them explains its planning boundary.
+The [usage guide](docs/usage.md) covers continuation, QA options, reviews,
+preapproved orchestration, and common problems.
 
 ## Package and validation
 
-The runtime package contains ten files: `.codex-plugin/plugin.json`, two skills, a shared verification-design reference, one gate/review reference, [third-party notices](references/third-party-notices.md#superpowers) and four templates, including the [orchestration prompt template](skills/incremental-plan/assets/orchestration-prompt-template.md). It has no executable runtime, dependency installation, MCP server, hooks, or mandatory third-party skills. Independent review uses available authorized host facilities or supplied applicable reports, without a mandatory reviewer tool. [Ponytail](https://github.com/DietrichGebert/ponytail) is a coding-agent plugin focused on simpler solutions; its `ponytail-review` examines correctness, security, performance, test gaps and unnecessary complexity. At implementation-result reviews only, the [review policy](skills/incremental-plan/references/gates-and-reviews.md#simplicity-and-optional-ponytail) selects its bounded read-only review by default when usable and permitted, unless explicitly excluded. Where host rules allow, approval of a concrete implementation plan explicitly including that review supplies invocation permission; drafting or quoting a plan does not. Request “Exclude Ponytail review for this increment.” to retain the architecture-owned simplicity substitute. Unavailability, restrictions or failure also use that substitute when permitted; Ponytail-origin fixes still require distinct explicit repair authority. Ponytail remains optional, and the three independent review scopes remain required. A stricter target policy is surfaced for a decision. Local metadata uses the bundled scaffold's `Local developer` label, without asserting a public publisher identity or license.
+The package is `incremental-and-test-plans`, version `0.1.0`. It contains
+instructions, references, and templates, with no executable runtime, hooks, MCP
+server, or required third-party plugin.
 
-For this program's selected local acceptance method, locate Skill Creator in the active host inventory and validate each skill, substituting its actual directory:
-
-```sh
-python3 -B <skill-creator-directory>/scripts/quick_validate.py <plugin-root>/skills/incremental-plan
-python3 -B <skill-creator-directory>/scripts/quick_validate.py <plugin-root>/skills/test-design
-```
-
-Also inspect parsed manifest/frontmatter identity and metadata, component/resource containment, shipped links/anchors, whitespace and delivered-file privacy/dependencies. Inspect the actual runtime selection, not repository layout alone: exclude VCS, local planning/evaluation records and bytecode. Reuse applicable evidence and independently review actual changes. These are host development checks, not runtime dependencies or a new permanent runner. Follow host shell conventions; do not silently install validator dependencies.
-
-The legacy Plugin Creator `scripts/validate_plugin.py` was not available in the inspected current official Creator package. It remains unexecuted for this program; local checks are not claimed equivalent to that helper or an official whole-package/distribution pass. If a supported official validation route becomes available, inspect its actual scope before using it. Static checks establish structure, not planning/model behavior or installed usability. The [saved program](docs/incremental-and-test-plans/qa-integration/plan.md#selected-existing-native-installation-route-and-i2-entry--2026-10-17) records the user's concrete local-method decision and retained evidence limits.
-
-[Behavioral scenarios](tests/scenarios.md) define source conversion, review and handoff exercises, with simulated decision cases labeled separately. Run fresh agents against synthetic inputs and inspect their actual actions and outputs. Store local run evidence outside the repository. The scenario document includes persisted preparation/result returns, dirty predecessor checks, interrupted writes and whole-chain reconciliation. Scenario definitions alone are not passing results; the development continuation record links observed coverage and remaining limits.
-
-## Installation status and design
-
-The previous `incremental-and-qa-plan-plugin` package was locally reinstalled on 2026-10-17 with Codex CLI `0.162.1` through the supported native installer. Its eight runtime files matched that reviewed source selection; its two skills were enabled and freshly discovered with `forceReload: true`, with zero discovery errors. Private development plans and VCS were excluded. These historical observations do not establish installation of the new identity. The earlier I1-only installation and its evidence limits remain in the [I1 result](docs/incremental-and-test-plans/qa-integration/i1-result.md#current-evidence-reconciliation--2026-10-17). Install only an inspected clean runtime selection through supported native plugin facilities; verify the selected marketplace source and actual delivered inventory, since same-name catalogs can select an unintended source. Do not edit installed caches directly. Target installation, qualified invocation, automatic selection and desktop use are distinct evidence.
-
-The original `incremental-plan-plugin` planning capability was installed and its native CLI acceptance verified on 2026-10-13 with Codex CLI `0.162.1` on macOS arm64: fresh loading, explicit qualified invocation, automatic discovery and an implementation-only negative case passed. Behavioral cases used synthetic inputs with memory disabled and verified filesystem restrictions. These dated results concern the original package, not native activation of the renamed combined source. Desktop UI activation and universal routing reliability remain unverified.
-
-Those historical activation results do not validate the evidence-storage/retention amendment. Its later observed E01–E08 source evaluations are recorded in the I1 result, including partial/untested conditions; source-level observations remain distinct from installed usability, actual executor capture, real failed-environment recovery and uncontrolled filesystem races.
-
-They also do not validate the evidence-quality guidance. Actual later Q01–Q04 source observations are recorded in the I1 result; definitions and static checks alone are not behavioral passes or new native-activation evidence. The [saved program](docs/incremental-and-test-plans/qa-integration/plan.md) records actual I2 standalone and I3 combined source observations, their exact candidate applicability, independent reviews and limits. Final renamed-source observations and validation must retain those distinctions; old standalone/native results do not establish QA-on integration or installed usability.
-
-The installed qualified names are `$incremental-and-test-plans:incremental-plan` and `$incremental-and-test-plans:test-design`. Local migration on 2026-10-17 used native installation and removal: all eight installed runtime files match the reviewed source, both skills are enabled and freshly discovered with `forceReload: true`, and the old installed identity and catalog entry are retired. Discovery returned zero errors. These observations establish file parity and metadata discovery; qualified model invocation, automatic selection and desktop activation remain unverified. The following examples describe intended use:
-
-> $incremental-and-test-plans:incremental-plan Turn `docs/search-plan.md` into coherent increments under `docs/incremental-and-test-plans/search/`.
-
-> $incremental-and-test-plans:incremental-plan Turn `docs/search-plan.md` into coherent increments under `docs/incremental-and-test-plans/search/`. Exclude supplementary QA design.
-
-> $incremental-and-test-plans:test-design Design QA from this project and save `docs/qa/qa-plan.md`; do not execute tests.
-
-The first example includes QA by default. Implementation-only requests remain ordinary development work. Updating source names alone does not migrate an installed plugin; use a separately authorized native installation and retire the old installed identity to avoid duplicate entrypoints.
-
-The [retained development records](docs/incremental-and-test-plans/README.md) preserve original requirements, decisions, reviews and evidence under their historical package and skill names. Earlier Superpowers design and implementation records are no longer present in this checkout. Development records are not runtime dependencies. Another host requires its own supported installation route and authorization; this rename does not replace or migrate the separate implementation-plugin.
+For source ownership, package contents, and validation commands, read the
+[development guide](docs/development.md). Static checks establish package
+structure; they do not establish planning quality, installed usability, or
+execution outcomes.

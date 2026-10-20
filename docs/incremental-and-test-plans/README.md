@@ -1,10 +1,28 @@
-# Incremental and Test Plans — development records
+# Development records
 
-The current package is `incremental-and-test-plans`, with the `incremental-plan` and `test-design` skills. [Repository documentation](../../README.md) describes current behavior, installation evidence and supported checks. Existing `qa-plan.md` artifacts and QA/certification responsibilities retain their meaning.
+This directory preserves planning, review, and result records from development
+of Incremental and Test Plans. For current instructions, start with the
+[README](../../README.md), [usage guide](../usage.md), or
+[development guide](../development.md).
 
-This directory replaces `docs/incremental-plans/` and preserves all 21 existing documents in their original groups:
+## Find a record
 
-- [QA integration](qa-integration/plan.md), [handoff](qa-integration/handoff.md) and [I4 result](qa-integration/i4-result.md): implementation history for the former `incremental-and-qa-plan-plugin` package and `qa-design` skill, including exact source requests and dated evidence.
-- [Ponytail review default](ponytail-review-default/plan.md), [QA plan](ponytail-review-default/qa-plan.md), [handoff](ponytail-review-default/handoff.md) and [review](ponytail-review-default/review.md): the earlier proposal and its independent planning review. The current policy is owned by [gates-and-reviews.md](../../skills/incremental-plan/references/gates-and-reviews.md#simplicity-and-optional-ponytail).
+| Topic | Records |
+| --- | --- |
+| Combined incremental planning and QA | [Plan](qa-integration/plan.md), [handoff](qa-integration/handoff.md), and [I4 result](qa-integration/i4-result.md) |
+| Optional Ponytail review | [Plan](ponytail-review-default/plan.md), [QA plan](ponytail-review-default/qa-plan.md), [handoff](ponytail-review-default/handoff.md), and [review](ponytail-review-default/review.md) |
+| Orchestration efficiency | [Plan](orchestration-efficiency/plan.md) |
+| Planning and handoff quality | [Plan](quality-repairs/plan.md) and [implementation prompt](quality-repairs/implementation-prompt.md) |
+| Standalone test design | [Plan](test-design-strengthening/plan.md) and [plan review](test-design-strengthening/plan-review.md) |
+| Verification follow-up | [Plan](verification-follow-up/plan.md) |
 
-These records retain the identities, decisions, commands, candidate hashes and status applicable when written. They do not rename past observations, authorize new execution, or prove the renamed package's behavior or installation. Navigational links to moved files are updated; quoted requests and recorded command paths remain historical. Some records refer to removed Superpowers documents or local evidence outside this checkout; those references are not portable runtime dependencies or new evidence of availability.
+## Read historical evidence in context
+
+Names, commands, candidate hashes, approvals, and results describe the scope and
+conditions recorded at the time. Older package or skill names remain part of
+that history. These records do not override the current skill instructions,
+authorize new work, or establish current installation or behavior.
+
+Some records refer to local evidence or documents no longer present in this
+checkout. Such references remain historical; they are not portable package
+dependencies or proof that the evidence is still available.
