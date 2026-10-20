@@ -185,17 +185,23 @@ The required independent review scopes do not depend on a particular plugin.
 The planner may recommend Material Code Review when a concrete risk warrants
 its additional process, with regular independent reviews as the fallback.
 
-At implementation-result review, Ponytail review is selected by default only
-when available, usable, and permitted, unless you exclude it. Plan review does
-not select Ponytail by default. To exclude it for an increment, say:
+At implementation-result review, the architecture reviewer runs a bounded
+Ponytail pass whenever the skill is available and usable. It runs within the
+existing assignment, including an authorized combined final review; it adds
+no reviewer or round and needs no separate Ponytail opt-in. A normal reviewer
+limit does not suppress it. Plan review has no default Ponytail pass. To exclude
+it for an increment, say:
 
 ```text
 Exclude Ponytail review for this increment.
 ```
 
-When Ponytail cannot be used, the architecture reviewer performs the permitted
-simplicity substitute. A project that requires the named tool and forbids a
-substitute still needs that obligation resolved. Validated Ponytail findings
+When Ponytail is unavailable or explicitly excluded, the architecture reviewer
+performs the simplicity substitute and records why Ponytail did not run. An
+explicit host/project prohibition or missing separate action permission is a
+named conflict to resolve, not unavailability or a completed pass. A project
+that requires the named tool and forbids a substitute still needs that
+obligation resolved. Validated Ponytail findings
 follow the same owner repair duties as other reviews, subject to any explicit
 target or workflow consent requirement. See the
 [optional-review policy](../skills/incremental-plan/references/gates-and-reviews.md#simplicity-and-optional-ponytail)
