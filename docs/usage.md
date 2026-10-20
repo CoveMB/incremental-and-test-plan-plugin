@@ -36,6 +36,14 @@ coverage gaps are assigned to the feature increments that own them, or to a
 named obligation spanning the plan. Detailed verification design lives in the
 QA document; the incremental plan sets the implementation order.
 
+QA should identify materially different outcomes, such as cancellation or an
+unchanged result, and checks that would detect the relevant wrong behavior.
+Where a check's effectiveness is uncertain and consequential, plan a small
+known-bad control or equivalent evidence. Keep uncovered conditions explicit,
+and reconcile delivery claims and links after the final relevant update.
+These duties remain important when human code inspection is limited; they
+do not waive required reviews or establish release safety.
+
 | What you want | Add to your request |
 | --- | --- |
 | Use an existing QA plan | “Reuse docs/qa/search-qa.md as the current QA document.” |
@@ -75,6 +83,15 @@ For coordinated incremental planning, the plan, QA document, and handoff are
 reviewed together. They do not need separate copies of the same review round.
 Standalone QA uses those scopes for its one-document candidate. Missing reports
 stay pending; an author's self-review is not independent review.
+
+When research materially supports a requirement, design choice or acceptance
+criterion, the source and verification reviews also assess its support,
+applicability, limitations and relevant freshness. They distinguish findings
+from assumptions and user choices, and record actual source assessment or
+evidence gaps in the existing plan and handoff. Background links alone do not
+require an audit. This applies with supplementary QA excluded and to standalone
+QA; it adds no reviewer or approval stage. See
+[research-dependent decisions](../skills/incremental-plan/references/gates-and-reviews.md#research-dependent-decisions).
 
 Once the required reviews and decisions are resolved, the handoff normally asks
 an executor to inspect the actual project and prepare the first eligible
