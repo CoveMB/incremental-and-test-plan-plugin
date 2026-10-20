@@ -84,6 +84,15 @@ reviewed together. They do not need separate copies of the same review round.
 Standalone QA uses those scopes for its one-document candidate. Missing reports
 stay pending; an author's self-review is not independent review.
 
+Review includes fixing verified material issues within the authorized scope.
+Reviewers remain read-only; the planner fixes planning documents and the
+implementation owner fixes code or tests. After collecting the reports, the
+owner validates findings, makes the required corrections, and renews affected
+checks and reviews before continuing affected work. Logging an issue or TODO
+does not resolve it. Explicit report-only requests remain report-only; material
+design decisions and missing permissions stay blocked. See
+[review findings and required repairs](../skills/incremental-plan/references/gates-and-reviews.md#review-findings-and-required-repairs).
+
 When research materially supports a requirement, design choice or acceptance
 criterion, the source and verification reviews also assess its support,
 applicability, limitations and relevant freshness. They distinguish findings
@@ -186,8 +195,9 @@ Exclude Ponytail review for this increment.
 
 When Ponytail cannot be used, the architecture reviewer performs the permitted
 simplicity substitute. A project that requires the named tool and forbids a
-substitute still needs that obligation resolved. Findings from Ponytail require
-distinct explicit repair authorization before fixes. See the
+substitute still needs that obligation resolved. Validated Ponytail findings
+follow the same owner repair duties as other reviews, subject to any explicit
+target or workflow consent requirement. See the
 [optional-review policy](../skills/incremental-plan/references/gates-and-reviews.md#simplicity-and-optional-ponytail)
 for invocation conditions and fallback requirements.
 

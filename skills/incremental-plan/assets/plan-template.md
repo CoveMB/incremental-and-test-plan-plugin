@@ -55,6 +55,8 @@ Map material requirements, exclusions, constraints and source gates, including a
 
 Record actual independent evidence; author checks supply none. Default each scope to pending until its report applies to this coordinated plan/QA/handoff candidate. One set of three scopes covers the artifact set; keep readiness and embedded/current handoffs aligned. Distinguish substantive reviewed content from later administrative status notes.
 
+For each material finding, record the owner's fix and applicable checks/affected review evidence, evidence-backed rejection, or unresolved condition and blocked scope under [review findings and required repairs](../references/gates-and-reviews.md#review-findings-and-required-repairs). A documented issue or TODO alone does not clear readiness; any deferral needs its actual scoped user decision.
+
 For material research dependencies, give the requirements and verification reviewers the relevant underlying sources and their respective duties under the shared policy. Record actual assessment and unresolved owners in these existing reports; citations or planned source reads are not completed review.
 
 | Scope | Reviewer / report | Candidate inspected | Disposition / remaining evidence |

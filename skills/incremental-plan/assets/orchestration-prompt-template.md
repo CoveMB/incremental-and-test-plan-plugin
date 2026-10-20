@@ -43,6 +43,8 @@ Read the selected artifacts, controlling sources and applicable handoff procedur
 
 Keep one orchestrator for dependencies, progress and final reconciliation, and one fresh implementation owner chat per eligible increment. Reuse that owner for preparation, implementation, checks, required independent review coordination, repairs and authorized PR/CI work. Keep writers and shared-checkout/stack mutations sequential. Give children concise scoped packets and use configured model defaults unless I explicitly select otherwise.
 
+After each review stage, have the owner validate findings, fix verified material in-scope issues within existing authority, and renew affected checks/reviews before advancing. Unresolved required fixes block affected work; reporting them alone does not clear review.
+
 Follow the handoff's lifecycle, required independent review scopes and Gate 2/Gate 3 pauses unless a verified scoped decision bypasses that pause. Missing evidence or reviews remain pending. Before dependent preparation or dispatch, reconcile applicable result, approval, current CI and expected provider-review evidence. Git/publication and other external actions require their separate authority; leave authorized PRs open for my review.
 
 Use native coordination and bounded waits, follow the handoff's naming/resumption procedures, and keep actual owner/reviewer references, evidence, blockers and next actions in existing progress fields. Add no controller, ledger, scheduler or per-check tasks. Report concrete capability blockers. Finish with requirement/evidence reconciliation, retention obligations, PR links when present and any remaining gaps; do not infer completion from status labels.
