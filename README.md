@@ -1,44 +1,71 @@
 # Incremental and Test Plans
 
-Turn an existing development plan into reviewable increments, or work out what a
-project needs to verify before its results can be trusted.
+A Codex plugin for turning an existing development plan into coherent,
+reviewable increments and designing the tests and evidence those increments
+need. You can also plan QA for a project without creating an incremental plan.
 
-This Codex plugin provides two planning skills. They produce Markdown plans and
-handoffs for later implementation. They do not change product code, run tests,
-or create pull requests.
+The two skills write Markdown plans and handoffs for later implementation.
+They do not change product code, run tests, or create pull requests.
+
+[Get started](#get-started) · [Examples](#examples) · [Usage guide](docs/usage.md) ·
+[Help](docs/usage.md#when-something-needs-attention)
 
 ## Choose a skill
 
-| Your task | Skill | What you get |
+| Skill | Use it to | Output |
 | --- | --- | --- |
-| Break an existing plan into coherent increments | `incremental-plan` | An incremental plan, a current handoff, and QA design by default |
-| Revise a saved incremental plan or continue it from implementation evidence | `incremental-plan` | Updated planning documents and the next eligible action |
-| Find coverage gaps and plan verification for a project, a plan, or both | `test-design` | One QA plan with verification work and an embedded handoff |
+| `incremental-plan` | Convert an existing plan into increments, revise pending work, or reconcile implementation evidence and prepare the next handoff | `plan.md`, `handoff.md`, and QA design by default |
+| `test-design` | Identify coverage gaps and plan verification from a plan, a project, or both | One `qa-plan.md` with an embedded preparation handoff |
 
-If you only have goals or a specification, create an implementation plan through
-your usual planning workflow first. Requests to write code, implement tests, or
-run checks belong to an execution workflow.
+An increment keeps one coherent piece of a feature together with its meaningful
+tests, necessary documentation, and safeguards. A small feature may need only
+one increment.
+
+Incremental planning needs an existing plan. If you only have goals or a
+specification, create the implementation plan through your usual planning
+workflow first. Writing code, implementing tests, and running checks belong to
+an execution workflow.
 
 ## Get started
 
-Use the plugin in a Codex workspace that can read your selected source and write
-to your chosen documentation directory.
+Open the target project in Codex. It needs access to the selected source and
+permission to write the planning documents to your chosen destination.
 
-If your configured marketplace provides this package, open **Plugins** in the
-desktop app or `/plugins` in Codex CLI, select **Incremental and Test Plans**, and
-check its source before installing. Start a new chat or CLI session afterward.
+### Use an installed copy
+
+If a configured marketplace provides **Incremental and Test Plans**, open
+**Plugins** in the desktop app or `/plugins` in Codex CLI. Select the package,
+check its source, and install it. Start a new chat or CLI session afterward,
+then use the examples below.
+
 See [OpenAI's plugin guide](https://learn.chatgpt.com/docs/plugins) for the current
-installation flow. A repository clone alone does not install the plugin.
+installation flow. If the package is not available in your marketplace, you can
+try the checked-out source below. Cloning the repository alone does not install
+it.
 
-To try a checkout without installing it, ask Codex to read
-`skills/incremental-plan/SKILL.md` or `skills/test-design/SKILL.md` from that
-checkout and follow it for your request. Give the full checkout path when your
-target project is elsewhere. This exercises the source instructions; it does
-not test installed discovery.
+### Try this checkout
+
+Replace `<plugin-root>` with the absolute path to this checkout, and replace the
+example source and destination paths with paths in your target project. Use an
+unused output directory for a new plan. Then send this prompt to Codex:
+
+```text
+Read <plugin-root>/skills/incremental-plan/SKILL.md and follow it for this request:
+Turn docs/search-plan.md into coherent increments.
+Save the planning documents under docs/incremental-and-test-plans/search/.
+```
+
+For standalone QA, load `<plugin-root>/skills/test-design/SKILL.md` and use the
+QA request below without its installed-skill prefix. Keep the checkout's
+references and templates available. Loading source instructions does not verify
+installed discovery.
+
+## Examples
+
+These examples use the installed skills. Replace their paths with your own.
+When loading source directly, omit the `$incremental-and-test-plans:…` prefix.
 
 ### Convert an existing plan
-
-With the plugin installed, send:
 
 ```text
 $incremental-and-test-plans:incremental-plan
@@ -46,19 +73,18 @@ Turn docs/search-plan.md into coherent increments.
 Save the planning documents under docs/incremental-and-test-plans/search/.
 ```
 
-Replace the example paths with your source plan and an unused output directory.
-The default result is:
+The source stays unchanged. By default, the output directory contains:
 
-| File | Purpose |
+| File | What it contains |
 | --- | --- |
 | `plan.md` | Increment boundaries, dependencies, acceptance criteria, and progress |
-| `handoff.md` | The current bounded next step and the instructions needed to carry it out |
+| `handoff.md` | The next bounded action and the instructions needed to carry it out |
 | `qa-plan.md` | Verification design, coverage gaps, and their owners |
 
-The source stays unchanged. A selected existing QA document can be reused at its
-authorized location. Each increment keeps a coherent piece of a feature together
-with its tests and necessary documentation or safeguards. A small feature may
-need only one increment.
+To reuse an existing QA document, identify it and its authorized location in
+your request. To omit supplementary QA design, add “Exclude supplementary QA
+design.” Meaningful feature tests, required evidence and certification, reviews,
+and gates still apply. See [QA options](docs/usage.md#choose-how-qa-fits).
 
 ### Design QA on its own
 
@@ -69,29 +95,51 @@ and CI configuration. Save docs/qa/qa-plan.md with verification work
 and a preparation handoff. Do not execute tests.
 ```
 
-You can supply a plan, a project, or both. Standalone test design writes one QA
-document with its handoff inside it. If the project has not been inspected,
-proposed commands and paths remain provisional.
+Supply a plan, a project, or both. The handoff is embedded in the QA document;
+there is no separate incremental plan or handoff file. Proposed commands and
+paths remain provisional when the project has not been inspected.
 
-## What happens after planning
+### Continue after implementation
 
-New plans remain drafts until three independent reviews have been reconciled:
-source fidelity, architecture and simplicity, and verification quality. When
-reviews cannot be arranged within the available permissions and tools, the
-output includes manual review briefs and identifies the missing reviews.
+```text
+$incremental-and-test-plans:incremental-plan
+Continue docs/incremental-and-test-plans/search/plan.md from the executor return.
+Reconcile the linked evidence and update its plan, handoff, and current QA plan.
+```
+
+Provide the actual executor return and its evidence links. A preparation return
+resumes the same increment; a verified result can make dependent work eligible.
+See [continuation and revision](docs/usage.md#continue-or-revise-a-saved-plan)
+for the required evidence and approval conditions.
+
+## Review and implementation
+
+New plans remain drafts until three distinct independent reports are reconciled:
+source fidelity, architecture and simplicity, and verification quality. If the
+available permissions or tools cannot provide those reviews, the planner
+supplies manual review briefs and records what is still pending.
 
 A reviewed plan normally hands off preparation to an executor. **Gate 2** is your
 approval of the concrete implementation plan; **Gate 3** is your approval of the
-verified result. Required reviews, evidence, and project-specific gates still
-apply when a routine approval pause has been explicitly preapproved.
+verified result. Explicit scoped preapproval can remove a routine pause, while
+required preparation, reviews, evidence, and project-specific gates still apply.
 
-Incremental planning also returns a copy-ready **Implementation orchestration
-prompt** when implementation remains. You can use it in a separate execution
-chat. Generating the prompt starts no work; its first action reflects any
-outstanding reviews or decisions.
+When implementation remains, incremental planning also returns a copy-ready
+**Implementation orchestration prompt** unless you ask to omit it. You can send
+it to a separate execution chat. Generating the prompt starts no work, and its
+first action reflects any pending reviews or decisions.
 
-The [usage guide](docs/usage.md) covers continuation, QA options, reviews,
-preapproved orchestration, and common problems.
+The [review and handoff guide](docs/usage.md#review-the-plan-and-hand-it-off)
+explains the approval sequence, optional review tools, and preapproved
+orchestration.
+
+## Help and further reading
+
+- [Usage guide](docs/usage.md): sources, QA options, continuation, and closure.
+- [Troubleshooting](docs/usage.md#when-something-needs-attention): missing skills,
+  pending reviews, provisional commands, and blocked continuation.
+- [Development guide](docs/development.md): canonical sources, package contents,
+  and contributor checks.
 
 ## Package and validation
 
@@ -99,7 +147,6 @@ The package is `incremental-and-test-plans`, version `0.1.0`. It contains
 instructions, references, and templates, with no executable runtime, hooks, MCP
 server, or required third-party plugin.
 
-For source ownership, package contents, and validation commands, read the
-[development guide](docs/development.md). Static checks establish package
-structure; they do not establish planning quality, installed usability, or
-execution outcomes.
+[Validation instructions](docs/development.md#static-checks) cover source
+structure and consistency. Static checks do not establish planning quality,
+installed usability, or execution outcomes.
