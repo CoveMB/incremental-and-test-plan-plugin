@@ -230,8 +230,10 @@ stale proof produces a specific request for what is needed.
 
 For published increments, current required CI and expected provider review must
 settle before dependent preparation. An optional provider's mere availability
-creates no review obligation. The handoff carries any applicable waiting,
-retry, and separate-permission conditions.
+creates no review obligation. Available findings are checked and repaired during
+a review cooldown; exhausted allowance alone does not hold authorized commits
+or pushes. Actual billing, active-review and publication restrictions still
+apply. The handoff carries the review, waiting, retry and permission conditions.
 
 To revise scope, identify the authorized change and ask the planner to update
 the affected pending increments. Accepted IDs, decisions, and dated history stay
