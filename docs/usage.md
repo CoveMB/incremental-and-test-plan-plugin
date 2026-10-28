@@ -257,8 +257,10 @@ review sequence, or your applicable explicit finite limit, including zero. All
 reports are collected before one owner correction batch; interrupted attempts
 keep their count. The last permitted batch still receives its required checks
 and reviews. Exhaustion leaves the issue and affected gates pending for a scoped
-decision. Resolved findings followed by genuinely new authorized work can start
-a new sequence; moving unresolved work to another chat or stage cannot reset it.
+decision. A sequence closes only when its required affected checks and reviews
+establish that the findings are resolved. Genuinely new authorized preparation
+or review work after that closure may start a new sequence; moving unresolved
+work to another chat or stage cannot reset its count.
 The handoff carries the existing attempt note. Provider retries have separate
 bounds. See the [repair policy](../skills/incremental-plan/references/gates-and-reviews.md#bounded-correction-sequences).
 

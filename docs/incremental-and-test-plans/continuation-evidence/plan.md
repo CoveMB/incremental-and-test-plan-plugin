@@ -1,6 +1,6 @@
 # Lean implementation plan: evidence, repairs, lessons and optional discovery
 
-**Status:** Implemented and independently reviewed on 2026-10-28; see [implementation results and review evidence](implementation-review.md). The original reviewed proposal identity and administrative status delta are retained there. Earlier reviews apply only to their recorded candidates. The behavioral cases below remain definitions, not live evaluation results.
+**Status:** Implemented and independently reviewed on 2026-10-28; see [implementation results and review evidence](implementation-review.md). The original reviewed proposal identity and administrative status delta are retained there. Earlier reviews apply only to their recorded candidates. The behavioral cases below remain definitions, not live evaluation results. The unchecked A–D lists retain the reviewed proposal's requirements; they are not progress indicators. Completion evidence is recorded in the linked implementation review.
 
 **Goal:** Improve continuation and portable handoffs while keeping the plugin instruction-only, proportionate and usable.
 

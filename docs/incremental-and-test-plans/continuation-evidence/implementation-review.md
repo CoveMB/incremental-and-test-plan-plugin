@@ -36,3 +36,13 @@ Author desk checks covered supported versus unsupported claims, incorrect checks
 ## Remaining evidence limits
 
 No live-model evaluation, generated-output observation, native installation/activation, product runtime test or Recursive Mode compatibility exercise was performed. No provider review was requested. Scenario definitions, static validation and independent source reviews do not establish those properties. The reviewed change is ready for the separately authorized open MR; merge, installation and release acceptance remain separate.
+
+## CodeRabbit follow-up
+
+On 2026-10-28, the user authorized review, appropriate fixes, commit and push for findings on published commit `91715de489d7372fe5f24f3a83e83d9e7e23a389` in [PR #1](https://github.com/CoveMB/incremental-and-test-plan-plugin/pull/1). This documentation correction batch uses 1 of the default 3 batches; no earlier correction batch was used for this candidate.
+
+- [Proposal checkbox ambiguity](https://github.com/CoveMB/incremental-and-test-plan-plugin/pull/1#discussion_r4405710228): clarified that the unchecked A–D lists retain the reviewed requirements, while this record holds implementation evidence. The proposal body and checkbox lists are unchanged.
+- [Correction-sequence reset boundary](https://github.com/CoveMB/incremental-and-test-plan-plugin/pull/1#discussion_r4405710256): aligned usage guidance with the canonical policy. Required affected checks and reviews must establish resolution before genuinely new authorized preparation or review work can start another sequence.
+- The additional EX03 wording suggestion in the [review summary](https://github.com/CoveMB/incremental-and-test-plan-plugin/pull/1#pullrequestreview-5689228205) was rejected as non-material: the existing requirement to renew affected evidence after a correction is clear and semantically equivalent to the suggested wording. The scenario remains unchanged.
+
+The two corrected documents passed checks for all 20 relative links/anchors, unchanged proposal body and checkbox lists, and whitespace errors. Comparison with the canonical bounded-correction policy confirmed the usage correction. Package instructions, templates, metadata and scenario definitions are unchanged, so their prior static checks and independent review coverage remain applicable to those unchanged inputs. These follow-up documentation changes are outside the earlier frozen review fingerprint. Both supported findings are addressed in source; provider acceptance of the corrected head has not yet been observed.
