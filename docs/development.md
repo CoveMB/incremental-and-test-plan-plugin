@@ -43,7 +43,7 @@ export, and checks staged and extracted content independently from source bytes.
 It leaves failed/partial exports for inspection; cleanup requires its own authority.
 
 ```sh
-rtk proxy python3 -B - "$PWD" "/absolute/unused/export" <<'PY_EXPORT'
+python3 -B - "$PWD" "/absolute/unused/export" <<'PY_EXPORT'
 from pathlib import Path
 import os
 import shutil
@@ -144,9 +144,9 @@ Locate Skill Creator in the active host inventory and replace
 `<skill-creator-directory>` with its actual path before running the validators:
 
 ```sh
-rtk proxy python3 -B "<skill-creator-directory>/scripts/quick_validate.py" skills/incremental-plan
-rtk proxy python3 -B "<skill-creator-directory>/scripts/quick_validate.py" skills/test-design
-rtk proxy git --no-optional-locks -c diff.autoRefreshIndex=false diff --check
+python3 -B "<skill-creator-directory>/scripts/quick_validate.py" skills/incremental-plan
+python3 -B "<skill-creator-directory>/scripts/quick_validate.py" skills/test-design
+git --no-optional-locks -c diff.autoRefreshIndex=false diff --check
 ```
 
 Skill Creator is a development tool, not a runtime dependency. If its validator

@@ -112,8 +112,8 @@ identity and choose the verified source. From the shell, the equivalent install
 form is:
 
 ```sh
-rtk proxy codex plugin add incremental-and-test-plans --marketplace <configured-marketplace-name>
-rtk proxy codex plugin list --json
+codex plugin add incremental-and-test-plans --marketplace <configured-marketplace-name>
+codex plugin list --json
 ```
 
 Replace the marketplace placeholder with an actual configured source containing
@@ -157,8 +157,8 @@ Use the CLI's local-plugin installation route with the inspected **exported
 bundle**, not this development checkout:
 
 ```sh
-rtk proxy agy plugin install /absolute/path/to/exported-bundle
-rtk proxy agy plugin list --json
+agy plugin install /absolute/path/to/exported-bundle
+agy plugin list --json
 ```
 
 Replace the path before running. Inspect any existing same-name installation and

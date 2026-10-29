@@ -45,9 +45,12 @@ model route and count, effective isolation/capture probes and recovery. Do not
 commit private packets, personal paths, transcripts or local logs.
 
 Use the [twelve-file inspected export](../docs/development.md#package-contents),
-never the whole repository. Record SHA-256 for each selected file, and aggregate
-by hashing sorted lines `file-sha256`, two spaces, relative path, newline. Verify
-exact member paths and source-byte correspondence independently before and after
+never the whole repository. Compute SHA-256 from each selected file's raw bytes.
+Format each record as its 64-character lowercase hexadecimal digest, two ASCII
+spaces, and its bundle-relative POSIX path, followed by one LF newline. Sort records
+by relative path in ascending lexicographic order, concatenate them with no header
+or extra separators, and compute the aggregate SHA-256 from those UTF-8 bytes.
+Verify exact member paths and source-byte correspondence independently before and after
 native staging/import. Any controlled fault candidate gets a distinct identity;
 the immutable valid candidate remains intact throughout.
 
