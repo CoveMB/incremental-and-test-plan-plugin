@@ -207,6 +207,17 @@ target or workflow consent requirement. See the
 [optional-review policy](../skills/incremental-plan/references/gates-and-reviews.md#simplicity-and-optional-ponytail)
 for invocation conditions and fallback requirements.
 
+### Conditional Recursive Mode assessment
+
+Recursive Mode is assessed only if you request assessment/use or your selected
+plan requires assessment. Ordinary handoffs add no discovery or status note.
+When relevant, the handoff records useful local inventory evidence and asks the
+receiver to check its own exposure, the selected version's prerequisites and
+effects, compatibility and authority. Assessment grants no setup or invocation
+permission. Optional tooling that cannot fit leaves ordinary orchestration
+available; an explicit mandatory-tool/no-substitute obligation stays pending.
+Standalone QA adds no discovery task or launcher.
+
 ## Continue or revise a saved plan
 
 Bring back the current plan, handoff, selected QA document, and links to the
@@ -228,6 +239,12 @@ established. The planner reads existing results and current checkout evidence;
 it does not run the checks. Valid unaffected evidence is reused. Missing or
 stale proof produces a specific request for what is needed.
 
+Tie each returned claim to its requirement and owning increment or QA item,
+candidate/comparison, relevant inputs/environment, actual checks and independent
+reports. Attempted work, implementation, observed verification and acceptance
+remain distinct. A failed check remains a failure while its cause is investigated;
+an environment explanation or revised expectation needs evidence.
+
 For published increments, current required CI and expected provider review must
 settle before dependent preparation. An optional provider's mere availability
 creates no review obligation. Available findings are checked and repaired during
@@ -235,9 +252,26 @@ a review cooldown; exhausted allowance alone does not hold authorized commits
 or pushes. Actual billing, active-review and publication restrictions still
 apply. The handoff carries the review, waiting, retry and permission conditions.
 
+Corrections use a default limit of three substantive batches for one unresolved
+review sequence, or your applicable explicit finite limit, including zero. All
+reports are collected before one owner correction batch; interrupted attempts
+keep their count. The last permitted batch still receives its required checks
+and reviews. Exhaustion leaves the issue and affected gates pending for a scoped
+decision. A sequence closes only when its required affected checks and reviews
+establish that the findings are resolved. Genuinely new authorized preparation
+or review work after that closure may start a new sequence; moving unresolved
+work to another chat or stage cannot reset its count.
+The handoff carries the existing attempt note. Provider retries have separate
+bounds. See the [repair policy](../skills/incremental-plan/references/gates-and-reviews.md#bounded-correction-sequences).
+
 To revise scope, identify the authorized change and ask the planner to update
 the affected pending increments. Accepted IDs, decisions, and dated history stay
 intact. Existing plans can continue in their current location and format.
+
+A useful lesson belongs beside the later work it affects, with its supporting
+evidence and reuse conditions. Facts, hypotheses and decisions remain distinct.
+Recheck only conditions material to its proposed reuse; the observation does
+not prove later work passed. No useful supported lesson means no extra entry.
 
 ## Close the selected scope
 
