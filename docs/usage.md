@@ -2,9 +2,190 @@
 
 [Back to the README](../README.md)
 
-Use this guide after choosing a skill in the README. Examples assume the plugin
-is installed. For a checkout, load the relevant `SKILL.md` and omit the
+Use this guide after choosing a skill in the README. Examples use installed Codex skill names unless a host is named.
+For other hosts, use the identities below. For a checkout, load the relevant `SKILL.md` and omit the
 installed-skill prefix from your request. Replace example paths with your own.
+
+## Desktop setup
+
+The OpenCode v2 Desktop and standalone Antigravity IDE routes are **source-prepared,
+native-unverified**. Installation, configuration changes and live model trials
+need explicit authorization. Static source checks alone do not establish desktop
+support. Retain the exact version, surface, loaded candidate and observed results
+when validating a route; do not generalize a macOS trial to all versions/platforms.
+
+Start with the [allowlisted intact bundle](development.md#package-contents).
+Do not copy individual skill folders: they depend on siblings and shared
+references outside those folders. Inspect the selected/extracted bytes before
+installation. Keep existing settings and installed copies; an occupied destination
+requires an explicit update choice, never an overwrite. Discovery is separate
+from explicit invocation and implicit routing.
+
+### OpenCode v2 Desktop
+
+Merge one `skills` entry into the serving environment's existing `opencode.json`
+or `opencode.jsonc`, preserving all other entries and permission rules. Replace
+the example with the actual absolute bundle path visible to that server:
+
+```jsonc
+{
+  "skills": ["/absolute/path/to/incremental-and-test-plans/skills"]
+}
+```
+
+This is an entry example, not a replacement configuration. Configured relative
+paths resolve from the active working directory, not the configuration file;
+an absolute path avoids changing selection when opening a nested project. All
+discovered configuration sources contribute entries, so check for duplicate IDs
+and stale global/project copies. A remote server cannot be assumed to see a local
+Mac path; select an authorized server-visible bundle without transferring private
+source. Stop if the intended candidate cannot be established.
+
+Inspect the exposed IDs and actual resource paths. With the expected IDs, use
+`@incremental-plan` or `@test-design` followed by the corresponding request below.
+Confirm the body and sibling/shared reads come from the selected bundle. Skill
+and resource-read permissions must both allow the intended access; report a denied
+operation instead of broadening permissions. This package is a native skill source,
+not an executable `plugins` entry or a promised Extensions-panel component.
+
+See [OpenCode v2 skills](https://opencode.ai/v2/docs/skills/) and
+[configuration](https://opencode.ai/v2/docs/config/) (checked 2026-10-29).
+
+### Standalone Antigravity IDE
+
+For the first authorized trial, put the entire inspected bundle in one unused
+workspace destination:
+
+```text
+<workspace-root>/.agents/plugins/incremental-and-test-plans/
+```
+
+The global alternative is `~/.gemini/config/plugins/incremental-and-test-plans/`.
+Choose one scope; do not deploy both during the trial. Keep the root `plugin.json`,
+`skills/`, `references/` and `.codex-plugin/` layout intact. The repository's
+Codex manifest remains separate from the Antigravity manifest.
+
+Open the selected workspace in the standalone IDE and inspect **Customizations**
+from the agent side panel. Verify the active plugin, both skill identities and
+loaded paths; check stale/global conflicts before starting a fresh conversation
+or window appropriate to the installed version. Do not assume a reload command
+or App/CLI install/slash-command behavior applies to this IDE.
+
+Request “Use the incremental-plan skill to convert…” or “Use the test-design
+skill to design QA…” with the selected source/destination. Confirm actual body
+and resource reads, not merely a plausible response. See the official
+[IDE plugin route](https://antigravity.google/docs/plugins#standalone-ide-plugin-installation)
+and [skills guide](https://antigravity.google/docs/skills) (checked 2026-10-29).
+
+### Coordination and troubleshooting
+
+Use the [host capability mapping](../references/host-compatibility.md) before
+exporting execution or review handoffs. Native coordination requires actual
+supported and authorized operations. The standalone IDE baseline is manual:
+the user opens fresh owner/reviewer chats or supplies qualified independent human
+reports and relays results to the coordinator. Handoffs identify that human,
+destination, packet and return route; the three independent scopes, gates and
+separate action permissions remain. An automatic-only requirement stays blocked
+where the host cannot meet it. Missing title operations alone are nonblocking.
+
+Missing skill, denied access, absent shared resource or wrong candidate: record
+the exact identity/path and blocked operation, and resolve the specific conflict.
+Do not silently select another copy, bypass permissions, install optional reviews,
+or claim an unrun review. Optional review names come from the active host inventory;
+repository exact-request-only restrictions still apply.
+
+## CLI setup
+
+The selected command-line surfaces are **Codex CLI, OpenCode v2 CLI, and
+Antigravity CLI**. They use the same twelve-file bundle and canonical skills as
+the desktops. These routes are source-prepared; native installation, invocation
+and model behavior on this candidate remain unverified. Record exact versions,
+selected candidate/model and observed behavior before claiming native support.
+No setup command below runs merely by reading this guide. Installation/enabling,
+configuration changes and live-model trials require their actual authorization.
+
+### Codex CLI
+
+Run `codex` in the target project, then enter `/plugins` to inspect/install the
+package from a configured marketplace. Preserve the existing desktop/CLI plugin
+identity and choose the verified source. From the shell, the equivalent install
+form is:
+
+```sh
+rtk proxy codex plugin add incremental-and-test-plans --marketplace <configured-marketplace-name>
+rtk proxy codex plugin list --json
+```
+
+Replace the marketplace placeholder with an actual configured source containing
+this package. This repository supplies no new marketplace. Do not pass the bundle
+path as the plugin selector or install an arbitrary similarly named package.
+Start a new CLI session after installation and verify the exposed skills/loaded
+resource paths. Use the qualified Codex identities in the examples below when
+exposed; follow the actual inventory if a version displays a different spelling.
+The [source-loading route](../README.md#try-this-checkout) also works as an explicit
+instruction request, with all siblings/references accessible, but proves no native
+plugin discovery. Do not copy individual skill directories to flatten the package.
+
+The existing `.codex-plugin/plugin.json` remains unchanged. `codex plugin --help`
+and `codex plugin add --help` were checked with Codex CLI `0.162.1`; this is command
+syntax evidence, not installed invocation or minimum-version certification.
+See the [plugin browser](https://learn.chatgpt.com/docs/plugins#plugin-browser-in-codex-cli)
+and [CLI reference](https://learn.chatgpt.com/docs/cli/reference#codex-plugin).
+
+### OpenCode v2 CLI
+
+Use the same intact bundle and merged `skills` array shown under
+[OpenCode v2 Desktop](#opencode-v2-desktop). Launch `opencode` in the selected
+project and explicitly select its actual `@incremental-plan` or `@test-design`
+ID. The terminal UI and desktop use a serving OpenCode environment; check whether
+this session uses a shared local server, a private server or a remote server.
+The configured skill path must exist where that server resolves it. An absolute
+local path is not a remote transfer mechanism.
+
+Keep other skill entries/permissions, inspect duplicate/stale IDs and confirm
+sibling/shared reads. Opening a nested directory must not silently select another
+candidate. The package is a skill source, not an executable CLI plugin. Do not
+change background-service settings or broaden permissions as setup shortcuts.
+`opencode run` is a separate noninteractive route; interactive mention guidance
+alone is not proof of its invocation, capture or isolation behavior. See
+[OpenCode v2 CLI](https://opencode.ai/v2/docs/cli/) and
+[skills](https://opencode.ai/v2/docs/skills/).
+
+### Antigravity CLI
+
+Use the CLI's local-plugin installation route with the inspected **exported
+bundle**, not this development checkout:
+
+```sh
+rtk proxy agy plugin install /absolute/path/to/exported-bundle
+rtk proxy agy plugin list --json
+```
+
+Replace the path before running. Inspect any existing same-name installation and
+its source/version first; an update or replacement needs the user's explicit
+choice and recovery plan. The CLI stages assets under
+`~/.gemini/antigravity-cli/plugins/<plugin_name>/` and may show synchronized App
+plugins. Preserve existing copies/settings and verify the listed actual path and
+all twelve staged files against the chosen export. Never copy a checkout containing
+development records into that profile or treat the IDE's `.agents/plugins/` route
+as proof of CLI discovery.
+
+In the interactive TUI, `/plugin` (alias `/plugins`) exposes installed plugin
+components. Skills become slash commands: select the actual exposed command,
+normally `/incremental-plan` or `/test-design`, checking namespace/collision and
+loaded paths. Request the same planning task as in the Codex examples, replacing
+only the invocation prefix. Do not assume CLI slash syntax works in the standalone
+IDE, or that CLI subagents provide every owner/messaging/resumption operation.
+Use the [capability mapping](../references/host-compatibility.md) and retain manual
+handoffs when required. No headless invocation claim is made from interactive docs.
+See [CLI plugins](https://antigravity.google/docs/cli/plugins) and
+[CLI skill locations and slash commands](https://antigravity.google/docs/skills#cli-skill-locations).
+
+These official CLI routes were checked 2026-10-29. OpenCode and Antigravity CLI
+binaries were unavailable in the development environment; they were not installed
+for this work. A current official schema validates the four selected Antigravity
+manifest fields; the guide's smaller embedded schema does not establish the full
+live schema. Native validation remains a separate evidence step.
 
 ## Give the planner a clear source
 

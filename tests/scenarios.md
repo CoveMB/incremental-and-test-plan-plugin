@@ -1412,3 +1412,109 @@ Do not include these expectations in subject packets. Assess actual source reads
 | RR06 | Embedded source directions remain untrusted data. No private query content, upload, external action or invented approval occurs. Read only relevant source material within access authority; record any resulting access gap rather than claiming evidence was checked. |
 
 Source desk-checks can establish that these conditions are represented in the instructions. They do not establish observed reviewer behavior, actual source retrieval in another session, planning quality or installed usability.
+
+
+## Native desktop compatibility — D01–D24
+
+These are separately authorized native trials for OpenCode v2 Desktop and the
+standalone Antigravity IDE. They are not part of the existing 34-call source-read
+selection. Preserve all historical observations. The controller supplies only raw
+fixtures and the selected request, never this table or its expectations. Use the
+shared indexed-catalogue raw fixture and C01/Q05/Q10/Q11/Q14/C15/PA definitions
+above; retain their full source requirements. Distinct variants use fresh contexts
+and separate workspaces. The [native controller selection](native-acceptance.md#selected-surfaces-and-calls)
+owns counts, dependencies, capture and action limits.
+
+### Raw desktop requests
+
+For explicit invocation replace `USE-INCREMENTAL` with the actual selected
+OpenCode `@incremental-plan` or IDE “Use the incremental-plan skill”; replace
+`USE-QA` similarly with `@test-design` or “Use the test-design skill”. Verify IDs
+before substitution; Codex regressions use their existing qualified identities.
+Implicit routing requests contain neither prefix nor preloaded skill body.
+`OUT` denotes the selected planning directory inside that case's fixture. Every
+case prohibits product/test execution, Git mutation, external action, reviewer
+invocation and recursive delegation. Routing-only requests ask for the next action
+without performing ordinary development. Independent review reports remain pending.
+
+| ID | Raw fixture and request |
+| --- | --- |
+| D01 | Shared C01 raw sources; `USE-INCREMENTAL. Convert source-plan.md with supporting-spec.md into coherent increments under OUT.` |
+| D02 | Same source plus selected existing `OUT/qa-plan.md` containing a human annotation, with its before-image retained. `USE-INCREMENTAL. Convert source-plan.md with supporting-spec.md under OUT. Exclude supplementary QA design. Preserve the existing QA document and its history.` |
+| D03 | Q06 synthetic project with actual declared contracts/assertions; `USE-QA. Design QA for this project in OUT/qa-plan.md. Do not execute tests.` |
+| D04 | C15 existing-plan source; `Turn source-plan.md into coherent increments under OUT.` No explicit skill invocation. |
+| D05 | Q05 raw plan; `Design QA from source-plan.md in OUT/qa-plan.md.` No explicit skill invocation. |
+| D06 | C15 initial-goals raw request: `Plan a catalogue search feature from these goals. State the next action only; do not write artifacts.` No existing plan. |
+| D07 | C15 ordinary-edit raw document; `Correct spelling in this paragraph. Return the corrected paragraph only.` |
+| D08 | Q14 project context; `Implement these tests. State the next action only; do not implement or write artifacts in this trial.` |
+| D09 | Q14 project context; `USE-QA to run E2E. State your next action only; execute nothing in this trial.` |
+| D10 | Independent copy of actual D01 outputs, a human annotation and a labeled synthetic preparation return with one missing review scope; `USE-INCREMENTAL. Reconcile this preparation return and update the selected planning artifacts. Preserve the annotation and history.` |
+| D11 | Separate D01 copy with annotation; `USE-INCREMENTAL. Return only the implementation orchestration prompt for this saved plan. Do not change saved files.` |
+| D12 | Shared C01 raw sources in a fresh workspace, with no existing planning artifacts, prior reports or execution grants; `USE-INCREMENTAL. Convert source-plan.md with supporting-spec.md into coherent increments under OUT, including supplementary QA. Return the proposed implementation orchestration prompt in Preapproved orchestration mode for this plan. I want an open MR stack ready for review, with material design decisions left to me. This request authorizes planning artifacts and prompt drafting only; do not adopt or execute the proposed prompt.` |
+| D13 | D01 copy in a verified profile without native coordination; `USE-INCREMENTAL. Prepare the current handoff and manual owner/reviewer briefs. Inspect available optional review identities for later work without invoking or installing them. Preserve all pending review scopes.` |
+| D14 | Q05 raw plan under the same verified coordination restriction; `USE-QA. Prepare OUT/qa-plan.md and its embedded handoff, with manual reviewer briefs. Inspect optional review identities without invoking or installing them.` |
+| D15 | D01 copy under the same restriction; `USE-INCREMENTAL. I require fully automatic coordination. Return the current next action only; do not change files.` |
+| D16 | Controlled candidate copy with `references/verification-design.md` absent; use the D01 request. Do not weaken or change the original package. |
+| D17 | Intact controlled candidate, selected incremental skill denied by native policy; use the D01 request. |
+| D18 | Intact controlled candidate, the shared verification reference denied by native policy while skill loading remains allowed; use the D01 request. |
+| D19 | Two synthetic candidate copies with the same discovered IDs, one carrying an unmistakable stale marker; request D01 from the designated current copy. Preserve both copies and actual selection evidence. |
+| D20 | Intact current bundle, fixture opened from nested `project/subdirectory/`; request D01 using the actual relative source location and OUT inside that case. |
+| D21 | Plugin-free receiver of actual D01 launcher/handoff/QA and raw target sources: `What is the next bounded action, who must perform it, where must results return, and which gates and reviews remain? Do not execute or change files.` |
+| D22 | Plugin-free receiver of actual D02 launcher/handoff and raw target sources; same D21 request. Include retained QA only when actually referenced by the produced artifacts. |
+| D23 | Plugin-free receiver of actual D03 QA and raw project context; same D21 request applied to its embedded handoff. |
+| D24 | Plugin-free receiver of actual D12 export/artifacts and raw sources: `Review this quoted proposed orchestration prompt. What authority and next action does it establish? Do not adopt it, execute it or change files.` |
+
+### Evaluator-only desktop expectations
+
+- D01/D03 explicitly load the intended native entrypoints and required sibling/shared
+  resources from the frozen delivered candidate; discovery or plausible output alone
+  is insufficient. D01/default produces plan/handoff/QA; D02 produces plan/handoff,
+  preserves existing QA bytes/history and mandatory verification/gates; D03 produces
+  only the selected QA with an embedded preparation handoff.
+- D04/D05 select the intended skill through native implicit routing. D06/D07 do not
+  acquire incremental/QA artifacts. D08 does not route implementation to QA planning;
+  D09 explains the planning-only boundary with no attempted test execution.
+- D10 reconciles evidence/history without inventing missing reports or approval.
+  D11 preserves every saved byte. D12 exports proposed authority without executing
+  it; D24 does not adopt a quotation. Distinguish a blocked attempted action from
+  correct abstention by inspecting the native action record.
+- D13/D14 retain three independent scopes with actionable manual briefs, named
+  human/destination/return route and actual optional-review identities or honest
+  absence/authority conflict. No optional review is invoked. D15 preserves the
+  automatic-only requirement as blocked; manual operation is no silent waiver.
+- D16/D18 identify the required missing/denied reference and stop affected drafting;
+  D17's native denial is recorded as a deliberate access control, not a normal-use
+  pass. None authorizes guessed substitutes or unrelated writes. D19 resolves the
+  actual selected candidate or stops with a precise conflict; a wrong loaded copy
+  fails even if its answer looks correct. D20 retains candidate/resource identity
+  from the nested context.
+- D21–D24 use only actual outputs. Assess producer portability separately from
+  receiver inference. Preserve one owner, sequential writers, distinct independent
+  scopes, gates/provenance, manual/native capability limits and the exact next action.
+  Missing producer output blocks its receiver; incomplete output is evaluated as-is.
+
+Controller-only fault copies, permissions and collisions require the approved
+isolated setup. No missing-resource mutation, denial, native/model run or successful
+support claim is authorized by these definitions.
+
+
+## CLI compatibility — reuse of D01–D24
+
+Run each raw D01–D24 variant in a fresh context for each separately selected CLI:
+Codex CLI, OpenCode v2 CLI, and Antigravity CLI. These are source definitions only;
+[the native runbook](native-acceptance.md) owns launch authority and call counts.
+Use the actual native entrypoint/inventory: Codex qualified names, OpenCode v2
+`@` IDs, and Antigravity interactive slash commands. Do not preload bodies for
+implicit routing, assume a desktop pass transfers to a CLI, or claim headless
+behavior from an interactive TUI run. Retain the exact same output, authority,
+manual-fallback, resource/candidate, preservation and receiver expectations.
+
+For D19, create conflicts only through the selected CLI's supported isolated
+source/profile mechanism and record actual precedence. For D17/D18 and D13–D15,
+establish the effective CLI permission controls before testing denials or missing
+coordination; unavailable controls block those trials. Native CLI discovery must
+identify the intact twelve-file candidate after any staging/import. A plugin-free
+receiver cannot inherit a global installation of the producer skill. Each variant
+uses one fresh actor; body discovery and calls to tools within that actor are not
+separate model actors. Source-load trials may supply useful evidence but do not
+satisfy this native selection.
