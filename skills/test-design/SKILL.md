@@ -9,6 +9,8 @@ Produce one useful, evidence-aware `qa-plan.md` with implementation work and an 
 
 Use [verification design](../../references/verification-design.md) for check/certification decisions, [gate and review policy](../incremental-plan/references/gates-and-reviews.md) for lifecycle, authority, reviews and retention, and [the QA template](assets/qa-plan-template.md) for output structure. Load them before drafting the relevant work. They are shipped resources, not external dependencies. Standalone requests retain the output boundary below. When composed by [incremental-plan](../incremental-plan/SKILL.md#coordinate-qa-and-incremental-planning), use the integrated return below; that entrypoint owns combined permission, QA mode and sequencing.
 
+Resolve required resources, invocation identities and coordination through [host compatibility](../../references/host-compatibility.md). Export the actual native or manual next action in the embedded handoff; preserve the single-document boundary and all review/authority duties.
+
 ## Establish scope and inspect evidence
 
 1. Identify the selected plan/project/both, intended outcomes, exclusions, requested destination and any selected existing QA document. Read applicable target instructions. Distinguish trusted source requirements from project observations, imported decisions and uncertain assumptions. Ask only material questions whose answers affect correctness, safety, scope or ownership; draft unaffected work while they remain pending. Never derive missing business rules from current code. A known source/code conflict is a mismatch, not an invitation to invent a new requirement.

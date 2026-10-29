@@ -1,0 +1,6 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "incremental-and-test-plans",
+  "version": "0.1.0",
+  "description": "Create and continue coherent incremental plans with test design by default, or design standalone test and QA plans, with independent review and evidence-based handoffs."
+}
