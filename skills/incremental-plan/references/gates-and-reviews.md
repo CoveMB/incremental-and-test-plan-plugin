@@ -6,6 +6,28 @@ Use [verification design](../../../references/verification-design.md) for conseq
 
 Use [host compatibility](../../../references/host-compatibility.md) to resolve actual invocation identities, required resource access and native/manual transport. This policy remains the authority owner: transport neither waives a review/gate nor supplies permission. Export an actionable manual route when needed; an explicit fully automatic requirement remains blocked if unsupported.
 
+**Contents**
+
+- [QA and coordinated-candidate applicability](#qa-and-coordinated-candidate-applicability)
+- [Owners and authority](#owners-and-authority)
+  - [Preapproved orchestration](#preapproved-orchestration)
+- [Lifecycle carried by a handoff](#lifecycle-carried-by-a-handoff)
+- [Documentation and stack revalidation](#documentation-and-stack-revalidation)
+- [Provider review before dependent preparation](#provider-review-before-dependent-preparation)
+- [Execution discipline carried by a handoff](#execution-discipline-carried-by-a-handoff)
+- [Semantic naming](#semantic-naming)
+- [Preparation return and scope growth](#preparation-return-and-scope-growth)
+- [Evidence applicability, predecessors and completion](#evidence-applicability-predecessors-and-completion)
+  - [Useful observations for later work](#useful-observations-for-later-work)
+- [Evidence capture and retention](#evidence-capture-and-retention)
+  - [Evidence retention and cleanup review](#evidence-retention-and-cleanup-review)
+- [Research-dependent decisions](#research-dependent-decisions)
+- [Review findings and required repairs](#review-findings-and-required-repairs)
+  - [Bounded correction sequences](#bounded-correction-sequences)
+- [Three independent review briefs](#three-independent-review-briefs)
+- [Implementation review recommendations](#implementation-review-recommendations)
+- [Simplicity and optional Ponytail](#simplicity-and-optional-ponytail)
+
 ## QA and coordinated-candidate applicability
 
 The same authority, lifecycle, independent scopes, evidence and retention policy applies to a standalone QA plan. Its candidate is the selected `qa-plan.md` with an embedded preparation handoff, optional expressly requested exact pasted source and assigned review notes. It does not require incremental conversion or authorize incremental `plan.md`/`handoff.md` outputs. Read its actual selected project/plan, proposed implementation work and warranted certification obligations. The [incremental coordinator](../SKILL.md#coordinate-qa-and-incremental-planning) owns combined artifact permission and default/exclusion semantics. Review its plan/QA/handoff together as one substantive candidate through these three scopes, including source-to-QA-to-increment ownership and consistent readiness; do not duplicate review sets. This policy itself grants no output or execution permission.

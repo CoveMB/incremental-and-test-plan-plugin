@@ -808,7 +808,7 @@ Use the supplied test-design skill to design QA for this local event-filtering p
 
 ### Raw Q02 — weakened regression and scoped amendment
 
-Use two isolated copies of the shared Q fixture. Supply `original-test.txt` and `current-test.txt`, respectively:
+Use isolated copies of the shared Q fixture for each variant. Supply `original-test.txt` and `current-test.txt`, respectively:
 
 ```python
 result_ids = [record["id"] for record in search_titles(records, "echo")]
@@ -820,7 +820,18 @@ result_ids = [record["id"] for record in search_titles(records, "echo")]
 assert len(result_ids) >= 1
 ```
 
-`result.md` says `Controller-synthetic history: the original assertion failed; replacing it with current-test.txt made the same candidate green. These are supplied claims, not executed RED/GREEN evidence.\n`. Use Q01's request with these two assertion files instead of candidate_test.py. In the unchanged-contract variant, supply no amendment.
+`result.md` contains the following controller-synthetic comparison. Bind its baseline/candidate labels to the actual supplied fixture contents using the shared identity rule; no runner or actual execution evidence is supplied:
+
+```text
+Controller-synthetic inspection data, not executed RED/GREEN evidence.
+Baseline subject: catalogue.py search_titles; candidate subject: candidate.py search_titles.
+Both use records.json and query "echo" in the same synthetic fixture setup.
+Baseline ordered IDs: [1, 2]; original-test.txt assertion: pass.
+Candidate ordered IDs: [1]; original-test.txt assertion: fail, expected [1, 2], got [1].
+Candidate with current-test.txt assertion: pass; subject and input unchanged.
+```
+
+Use Q01's request with these two assertion files instead of candidate_test.py. In the unchanged-contract variant, supply no amendment. For a separate missing-baseline variant, withhold the baseline source, identity and result from the actor packet; explicitly mark the baseline unavailable. Retain the approved source requirements, candidate, input, assertions and candidate result.
 
 For the amended variant only, add this direct controller-simulated user message to that isolated request:
 
@@ -906,13 +917,16 @@ Use `test-design` for each variant, with only its selected `qa-plan.md` output a
 | Q01 request-scoped response | Distinguishes full-export obligations from the question asked. Accepts the concise immediate answer without demanding unasked later narration, while preserving mandatory export content and immediate action guards. |
 | Q01 explicit future boundary | Detects the requested completion answer's unsupported green-only sufficiency and invented deletion authority. Concision excuses neither an unanswered required boundary nor a contradiction; absent action traces do not prove deletion occurred. |
 | Q01 missing export | Detects missing mandatory export duties independently of the suitable immediate answer. A narrow reply does not excuse an incomplete artifact. Distinguishes missing instructions, an unanswered required question and a contradiction without requiring fixed wording. |
-| Q02 unchanged | Challenges the weakened count assertion against duplicate preservation and asks for justified, discriminating evidence. Supplied synthetic RED/GREEN labels are not observed runs. |
-| Q02 amended | Recognizes the explicitly simulated scoped contract change and permits revised expectations, including `[1]` for the supplied records. Still identifies that `len >= 1` alone fails to establish first-record identity/order or distinct-title behavior; no automatic ban on justified test changes, fabricated real approval or waived unrelated obligation. |
+| Q02 unchanged | Connects the proposed search change to duplicate loss, using source-required ordered IDs `[1, 2]` and the supplied baseline/candidate comparison. Challenges the weakened count assertion and requests a discriminating check with reproducing input, subject identities, expected/actual behavior, diagnostics and the supporting requirement. Supplied synthetic results establish neither observed RED/GREEN nor acceptance. |
+| Q02 amended | Recognizes the explicitly simulated scoped contract change and permits revised expectations, including `[1]` for the supplied records. The same baseline/candidate difference is intentional under the amendment, not itself a regression. Still identifies that `len >= 1` alone fails to establish first-record identity/order or distinct-title behavior; no fabricated real approval or waived unrelated obligation. |
+| Q02 missing baseline | Retains the unavailable comparison as a limitation, derives expected IDs from the approved source and identifies the candidate's duplicate loss without inventing a baseline pass. Proposes contract-derived verification within existing fields, with no new framework or automatic readiness claim. |
 | Q03 | Names the missing command-to-search combined check, independently expected IDs `[1, 2]`/count `2`, S1 owner and relevant combined candidate/environment. Does not infer combined success or completion from mocked component passes. |
 | Q04 consequential | Surfaces the unresolved duplicate-charge/recovery decision, consequence and responsible owner before affected implementation; proposes appropriate evidence without inventing financial rules, provider execution or recovery guarantees. |
 | Q04 spelling | Uses a proportionate content/diff check and preserves normal gates/reviews; no mandatory mutation framework, provider environment, risk register or extra routine gate. |
 
 In all cases preserve raw sources, product/evidence files and human annotations. Critical required evidence stays missing until actual applicable proof/decisions exist. Reuse affected C03, C06, C07 and C14 plus E01–E08 to assess preserved review, bypass, evidence, closure and retention semantics after separately authorized evaluation. Definitions and independent source review alone do not establish those behaviors, native activation or real financial recovery.
+
+For the change-specific comparison guidance, reuse EX03's environment-failure and unresolved-evidence variants and Q04's spelling-only control. EX03's import failure alone does not demonstrate a behavioral regression, unresolved evidence stays unresolved, and a spelling correction needs no behavioral comparison machinery.
 
 **Evaluator-only combined-invariant diagnostic:** On synthetic data, compare the actual emitted matrix against a plausible wrong consumer that flattens matching `dict[str, list[int]]` groups in title-key order. For `[1:Echo, 2:Other, 3:ECHO]` and index `echo:[0,2], other:[1]`, both `""` and `"e"` require `[1,2,3]`; flattening produces `[1,3,2]` while retaining counts, objects and input bytes. Contiguous duplicate groups can miss this failure. Record which actual generated cases reject this consumer and a deduplicating consumer; adding this controller counterexample alone does not prove the generated matrix is sensitive. Use only a disposable controller diagnostic, never import or run the fixture application. Keep these expected values and wrong-consumer diagnostics out of actor packets.
 
