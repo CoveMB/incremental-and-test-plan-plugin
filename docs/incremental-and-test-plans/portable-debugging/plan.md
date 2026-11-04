@@ -1,0 +1,77 @@
+# Portable debugging and optional Superpowers implementation plan
+
+Status: implementation complete, independently reviewed and statically verified for MR delivery. Behavioral/native acceptance remains untested.
+
+## Goal and scope
+
+Give implementation handoffs a self-contained debugging procedure for reported bugs, unexpected failures and unexplained behavior. Prefer the receiving host's compatible, accessible and permitted Superpowers `systematic-debugging` skill; otherwise continue with the portable procedure without an installation request or a hold solely for the optional tool. Planning exports the instructions and performs no product debugging.
+
+Deliver one coherent instruction-package change on the latest main. Baseline: clean `main` at `d0d34c6fe1ab9bd1477ab899bb7db443adfb1c5c`, equal to freshly fetched `origin/main` on 2026-11-04; branch `portable-debugging`. This includes the TDD implementation. Recheck branch/status and relevant remote freshness before publication; preserve unrelated work and do not silently combine new upstream changes.
+
+Preserve package identity/version, two entrypoints, discovery metadata, the twelve-file runtime package, existing gates/reviews and separate action permissions. Add no runtime, new skill, dependency, plugin-selection framework, diagnostic script, ledger or correction counter. The selected work is debugging integration, not a general Superpowers adoption or a redesign of behavioral evaluations.
+
+## Source and selected design
+
+The user's requested behavior is optional Superpowers with a usable portable fallback, following the TDD precedent. The current verification guide already owns mismatch interpretation and TDD; the gate policy owns optional-tool routing, authority and correction limits; host compatibility owns invocation identity. Retain these owners.
+
+The upstream [systematic-debugging skill](https://github.com/obra/superpowers/blob/main/skills/systematic-debugging/SKILL.md) and [root-cause tracing](https://github.com/obra/superpowers/blob/main/skills/systematic-debugging/root-cause-tracing.md) were retrieved on 2026-11-04. The local 7.0.1 source was inspected as reference material, not activated. Its investigation/hypothesis sequence is useful; mandatory transitive skill calls, indiscriminate instrumentation, fixed retry/architecture conclusions and broader effects must not override local policy. Record the exact adaptation source and preserve earlier provenance and the MIT notice. Upstream main links are mutable, not immutable source identities or promises about future receiver versions.
+
+A mandatory integration would break portability. Copying the whole workflow would introduce unnecessary orchestration and conflicting safeguards. A shared portable baseline plus bounded optional selection supplies the same obligations in either environment without duplicating the TDD procedure.
+
+## Required behavior
+
+- Trigger on a reported bug, unexpected failure or unexplained mismatch during authorized execution. Expected TDD RED for the intended missing behavior is not itself a debugging incident; setup/unrelated failures are not that expected RED. Scale investigation to uncertainty and consequence; avoid restarting diagnosis when sufficient applicable evidence already exists.
+- Preserve expected/observed behavior, requirement, candidate/environment, failure diagnostics and the smallest useful reproduction. Investigate relevant changes, working examples and producer/consumer boundaries; distinguish implementation, contract/check and environment causes, including mixed or unresolved causes.
+- State an evidence-supported hypothesis and use the smallest discriminating experiment before layering speculative fixes. If reproduction is intermittent or unavailable, retain that limitation and gather bounded evidence rather than inventing a cause. Diagnostic actions remain within authority; use minimal synthetic/redacted evidence and no secret dumps or unauthorized external/production actions.
+- Correct the owning source within authorized scope, applying existing TDD and alternate-verification rules. Verify the original behavior and relevant regressions; record actual hypothesis/experiment/result, correction and remaining limits in existing fields. No fabricated historical RED, weakened assertions or destructive restart. Required unresolved failures remain pending.
+- Reuse existing correction limits and records. Switching tools, resuming or moving between diagnosis and repair does not reset an unresolved sequence. Expected TDD and evidence-only diagnosis do not acquire a new counter. Repeated failed fixes require new evidence or an evidence-grounded hypothesis; when fixes share an unverified premise, test that premise before relying on it again. Repeated failures do not prove architecture is wrong or authorize redesign.
+- At the debugging trigger, the receiver checks its own active inventory, verified identity, selected version, needed resource access, prerequisites/effects and fit. Prefer only the compatible, permitted debugging skill. Planner inventory or a related installed skill proves neither exposure nor invocation.
+- Missing, disabled, inaccessible, excluded, unknown or incompatible optional tooling selects the portable route with the honest reason. No installation/enabling request, extra permission request or dependency hold solely to obtain it. A tool exclusion does not prohibit ordinary debugging. An explicit mandatory named-tool/no-substitute requirement remains a separate user conflict.
+- Resolve debugging and TDD availability independently. Any linked skill or helper remains subject to applicability, access, safety and authority; missing optional supporting capabilities use the existing portable obligations, or the whole portable debugging route if needed. Do not import a transitive workflow, scripts, Git effects or a different retry policy. Optional failure after partial work requires factual reconciliation and safe continuation without replay.
+- Fallback never bypasses a denied diagnostic action, protected workflow, missing permission, mandatory evidence or material-decision stop. Continue only permitted independent work; preserve real blockers and distinguish them from optional-tool availability.
+- Export sufficient instructions for a fresh receiver without access to either plugin in incremental QA-on, QA-excluded and standalone QA handoffs. Keep the launcher short and conditional. Apply prospectively to unfinished work on authorized continuation; preserve accepted history and prompt-only write boundaries.
+
+## Implementation steps
+
+1. Add the portable debugging procedure beside mismatch interpretation in `references/verification-design.md`, referring to existing TDD, evidence and correction owners. Add the optional debugging selection policy and lifecycle pointer in `skills/incremental-plan/references/gates-and-reviews.md`; keep the TDD route separately scoped. Extend `references/host-compatibility.md` with verified receiver-specific debugging identity.
+2. Export the trigger, baseline, route and return-evidence duties in `skills/incremental-plan/assets/handoff-template.md` and `skills/test-design/assets/qa-plan-template.md`. Add a conditional read trigger to `skills/incremental-plan/assets/orchestration-prompt-template.md`. Reuse existing acceptance/preparation/evidence fields; change the plan template or entrypoint bodies only if an evidenced routing gap requires it. Preserve frontmatter and invocation policy.
+3. Explain both routes in `README.md` and `docs/usage.md`. Update `references/third-party-notices.md` with accurate source identity, scope and preserved license. No installed/cache edits or manifest changes.
+4. Extend `tests/scenarios.md` using synthetic raw inputs separated from evaluator expectations, covering selection, investigation, recovery and handoff portability. Link the new definitions from `tests/live-evaluation.md` without adding them to previously selected/authorized call counts. Do not run live-model or native-host evaluations under this request.
+
+## Verification and review
+
+Before implementation, obtain three distinct fresh-context read-only plan reports: requirements/source fidelity, architecture/simplicity/compatibility and verification quality. Review the same frozen plan against the user requirement and current sources. Collect every report, reconcile findings, make warranted corrections and renew only affected scopes before implementing.
+
+After implementation, perform the existing owner self-review, then obtain three distinct independent read-only result reports on the frozen actual candidate. Correct verified material findings and renew affected checks/reviews. Perform the user's requested final owner review after all reports before committing/publishing. Neither reviewer output nor static checks establish behavioral/native acceptance.
+
+Use the documented checks in `docs/development.md#static-checks`: both Skill Creator validators if accessible, parsed manifests/frontmatter, resource and anchor closure, metadata/catalog comparison and whitespace. Report unavailable validators as missing, without installation or substitute-equivalence claims. Run focused checks while editing and the full relevant deterministic checks once on the settled candidate. Inspect the documented allowlisted export's staged/archive/extracted contents, including independent allowlist and byte correspondence, private/local material and undeclared dependencies. Keep temporary verification evidence outside tracked source; no tests matching prose.
+
+Desk-check these cases and provide corresponding scenario definitions:
+
+| Case | Required result |
+| --- | --- |
+| Compatible debugging skill and receiver/planner inventory mismatch | Receiver selects verified debugging identity only; planning invokes nothing |
+| Missing, disabled, inaccessible, excluded, unknown or incompatible skill/resources | Honest portable fallback, no optional-tool hold or setup |
+| Debugging without optional TDD, and TDD without debugging | Independent routes with unchanged portable obligations |
+| Expected TDD RED versus unexpected setup/behavior failure | Ordinary RED continues TDD; unexpected failure triggers appropriate investigation |
+| Incorrect check, implementation defect, environment or uncertain/intermittent cause | Evidence distinguishes causes or retains uncertainty; no invented success |
+| Failed hypotheses or shared unverified premise | Discriminating experiment before more fixes; no new counter or automatic architecture verdict |
+| Sensitive diagnostics, denied action or mandatory named-tool conflict | Minimal permitted evidence; retain real permission/requirement blockers |
+| Partial tool failure and resumed correction | Preserve work, actual evidence and counts; no replay or historical fabrication |
+| All three handoff modes, prompt-only and authorized continuation | Portable receiver instructions, correct output/write boundaries and preserved history |
+
+## Completion and recovery
+
+Completion requires reconciled plan/result reviews, resolved material findings, relevant deterministic/package checks and final owner review, then one open MR against the verified latest main. The user explicitly authorized implementation here or in another chat, reviews, corrections and MR creation; use this chat. Commit/push only this bounded candidate to the verified existing remote. Do not merge, install, deploy, send review replies or claim live acceptance.
+
+If main changes materially before publication, reconcile it with this candidate while preserving all work and renew affected proof. If a material design choice or missing permission blocks progress, return the exact question and affected work. Recovery uses bounded forward corrections; never reset/discard/stash/delete existing work to simplify the task.
+
+## Review and implementation record
+
+- Three distinct fresh-context read-only plan reports covered requirements/source fidelity, architecture/simplicity/compatibility and verification quality on 2026-11-04. All inspected the same candidate SHA-256 `59b45b2e2ae6efc1ea5b666d2a6aba0c08e124fc0a97dc1e50537365357e794a` and reported no material improvements recommended. The owner reconciled their evidence against the sources; no plan corrections were required.
+- Implementation adds the portable baseline, conditional optional route, host identity mapping, both handoff exports, launcher read trigger, user documentation, adaptation provenance and DB01–DB04 definitions. Existing entrypoint and plan-template routing already reaches these owners; no changes there are needed.
+- Static verification passed on 2026-11-04: both documented Skill Creator validators (exit 0); parsed manifests/frontmatter with exactly two entrypoints and unchanged metadata/description lengths (351 and 290 characters); documented twelve-file staged/archive/extracted export; 130 runtime resource/anchor links and 54 documentation/scenario links; extracted content/privacy inspection; whitespace (exit 0). Three synthetic package controls rejected a missing resource, a forbidden member matching in folder/archive, and changed extracted bytes. The full check driver exited 0. Evidence is retained outside tracked source. These are source/package checks, not behavioral/native results.
+- Initial owner self-review checked the complete change against requirements, canonical ownership, optional fallback, TDD interaction, permissions/privacy, correction continuity, output modes, package closure and scope before independent result review.
+- Three distinct fresh-context read-only implementation reports covered requirements/source fidelity, architecture/simplicity/compatibility and verification quality/package evidence on the same frozen candidate. All reported no material improvements recommended and verified correspondence against the baseline and recorded identities; no material implementation corrections were required. The verification reviewer disclosed an initial read of the plan's historical review/owner summary, but assessed raw source, diff, logs and control artifacts independently. No prior implementation-review reports were supplied. The owner accepted the report as independent source/evidence review with that disclosed input limitation, not as behavioral evidence.
+- Final owner review followed all independent reports. The complete tracked diff and all seventeen recorded source/document identities remained unchanged through review; the twelve tested runtime files still corresponded to the inspected export. Requirements, consumers, failure/permission boundaries, work preservation, naming, documentation, package/privacy closure and evidence limits were reconciled. No material improvements recommended. This completion entry is administrative and changes no tested runtime/scenario content.
+- Publication scope: commit and push only this reviewed change, then create one open MR against the verified existing repository's main. Main was fetched again before delivery and remained at the baseline above. No merge, installation, live-model evaluation or native acceptance is included.
