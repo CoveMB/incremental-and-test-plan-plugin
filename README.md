@@ -1,13 +1,13 @@
 # Incremental and Test Plans
 
-A Codex plugin for turning an existing development plan into coherent,
+A planning skill package for turning an existing development plan into coherent,
 reviewable increments and designing the tests and evidence those increments
 need. You can also plan QA for a project without creating an incremental plan.
 
 The two skills write Markdown plans and handoffs for later implementation.
 They do not change product code, run tests, or create pull requests.
 
-[Get started](#get-started) · [Examples](#examples) · [Usage guide](docs/usage.md) ·
+[Get started](#get-started-codex) · [Examples](#examples) · [Usage guide](docs/usage.md) ·
 [Help](docs/usage.md#when-something-needs-attention)
 
 ## Choose a skill
@@ -26,7 +26,21 @@ specification, create the implementation plan through your usual planning
 workflow first. Writing code, implementing tests, and running checks belong to
 an execution workflow.
 
-## Get started
+## Choose a host
+
+| Host | Route and evidence |
+| --- | --- |
+| Codex desktop and CLI | Existing plugin/source route preserved; [CLI setup](docs/usage.md#codex-cli) includes terminal commands. Native use of this changed candidate remains unverified. |
+| OpenCode v2 Desktop and CLI | Register the intact bundle's `skills/` directory in the serving environment. Source-prepared; native use unverified. |
+| Standalone Antigravity IDE | Load the intact plugin bundle at workspace scope initially. Source-prepared; native use unverified. |
+| Antigravity CLI | Install the intact local bundle through its CLI plugin manager. Source-prepared; native use unverified. |
+
+See [Desktop setup](docs/usage.md#desktop-setup) for candidate checks, invocation
+and manual coordination; [CLI setup](docs/usage.md#cli-setup) covers all three
+selected CLIs. These additions do not establish native support for all releases,
+other operating systems, headless automation, or Antigravity App.
+
+## Get started (Codex)
 
 Open the target project in Codex. It needs access to the selected source and
 permission to write the planning documents to your chosen destination.
@@ -62,7 +76,7 @@ installed discovery.
 
 ## Examples
 
-These examples use the installed skills. Replace their paths with your own.
+These examples use the installed Codex skills. Replace their paths with your own.
 When loading source directly, omit the `$incremental-and-test-plans:…` prefix.
 
 ### Convert an existing plan
