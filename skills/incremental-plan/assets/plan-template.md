@@ -35,6 +35,8 @@ Map material requirements, exclusions, constraints and source gates, including a
 
 ### <Stable ID — short title>
 
+<!-- In the acceptance/verification field, select the applicable TDD or alternate verification method from the shared verification guide and planned evidence. Actual optional-skill selection belongs to executor preparation; retain sufficient local instructions in the handoff regardless of that route. -->
+
 - **Outcome and scope:** <single feature, this piece's contribution and one acceptance story>.
 - **Exclusions:** <what is outside this card>.
 - **Prerequisites / predecessor:** <dependencies, existing work needed and whether acceptance is evidenced or still pending>.

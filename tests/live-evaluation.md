@@ -6,6 +6,8 @@ This is a controller-only runbook for the behavior changes after the historical 
 
 The selected changes concern preapproved authority, the short launcher and portable handoff, QA case selection/sensitivity/final evidence, conditional research assessment, documentation/stack revalidation and provider-review decisions. Preserve historical results against their original candidates. In particular, a historical **20/20 protected-paragraph** comparison does not grade the current [launcher/handoff contract](../skills/incremental-plan/assets/orchestration-prompt-template.md#portable-coverage-check).
 
+The later [portable TDD and optional Superpowers cases](scenarios.md#portable-tdd-and-optional-superpowers--td01td04) are a separate unexecuted selection. They add no calls to the Batch A/B counts below. Select their exact variants and output modes explicitly before any authorized run; source-level receiver decisions do not establish native skill invocation.
+
 Preparation is complete when the scenario variants, selection, rubric, candidate identities, control evidence and independent preparation review are available. Entry to live evaluation additionally requires:
 
 1. Direct authorization identifying the chosen batch or cases, model route and any capture canary. Use the configured model default unless the user selects otherwise; record the actual resolved identity or its honest absence. No paid integration, private-source transfer or external workflow permission is inferred.

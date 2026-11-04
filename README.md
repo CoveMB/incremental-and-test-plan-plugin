@@ -147,6 +147,13 @@ The [review and handoff guide](docs/usage.md#review-the-plan-and-hand-it-off)
 explains the approval sequence, optional review tools, and preapproved
 orchestration.
 
+Implementation handoffs default to test-first development for testable behavior
+changes, with proportionate alternatives for other work. They prefer a compatible,
+permitted Superpowers TDD skill when the executor can use it. **Superpowers is
+optional:** every handoff carries the local procedure, so its absence does not
+block implementation or weaken required verification. See [TDD and optional
+Superpowers](docs/usage.md#tdd-and-optional-superpowers).
+
 ## Help and further reading
 
 - [Usage guide](docs/usage.md): sources, QA options, continuation, and closure.
