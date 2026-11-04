@@ -15,7 +15,7 @@
 
 ## Verification design
 
-<!-- Useful rows only. Combine columns when clearer. Apply the shared case-selection challenge: distinguish material branches/transitions and interacting outcomes, explain significant omissions and assign remaining gaps. Expected results need an independent source basis; coverage/quality metrics do not substitute for outcomes. Include warranted check-sensitivity controls and final-deliverable reconciliation timing in existing columns. -->
+<!-- Useful rows only. Combine columns when clearer. Apply the shared case-selection challenge: distinguish material branches/transitions and interacting outcomes, explain significant omissions and assign remaining gaps. Expected results need an independent source basis; coverage/quality metrics do not substitute for outcomes. For material changes, apply the shared [change-specific regression guidance](../../../references/verification-design.md#independent-expectations-and-test-sensitivity) in these same fields. Include warranted check-sensitivity controls and final-deliverable reconciliation timing in existing columns. -->
 
 | Outcome/journey and material failure | Existing coverage and gap | Proposed check, independent expected result/basis and wrong behavior detected | Candidate, environment/data/isolation | Owner, timing/dependencies and required result evidence |
 | --- | --- | --- | --- | --- |
