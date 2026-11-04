@@ -29,6 +29,8 @@ interactive slash-command documentation alone does not establish them.
 
 For optional review methods, resolve the intended skill by identity and purpose in the active inventory. Codex may expose `ponytail:ponytail-review` or `material-code-review:material-code-review`; another host may expose a different namespace or ID. Record and use only its verified invocation form. An `@` prefix is not universal syntax. This mapping adds no invocation authority: preserve the gate policy's availability, direct exclusion, exact-request-only conflicts, mandatory-tool and substitute rules. Never substitute a broader audit or persistent implementation mode for a bounded review.
 
+For optional Superpowers TDD, resolve the `test-driven-development` skill by identity and purpose in the receiving host's active inventory. Codex may expose `superpowers:test-driven-development`; use only the actual verified identity and accessible version, not a guessed universal prefix or the planner's installation path. Read the selected skill for fit under the [optional TDD policy](../skills/incremental-plan/references/gates-and-reviews.md#optional-superpowers-tdd). Missing, disabled, inaccessible or unknown exposure leaves the self-contained procedure usable; discovery alone proves neither invocation nor TDD compliance. Do not install or reconfigure a host to satisfy this optional route.
+
 ## Coordination transport
 
 Choose one transport from observed capabilities and actual authority, separately from approval mode:

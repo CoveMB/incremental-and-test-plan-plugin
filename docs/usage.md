@@ -360,6 +360,32 @@ Host restrictions still apply. Missing mandatory evidence remains a blocker.
 The [preapproved orchestration policy](../skills/incremental-plan/references/gates-and-reviews.md#preapproved-orchestration)
 defines the full scope.
 
+### TDD and optional Superpowers
+
+For testable new or changed behavior and bug fixes, implementation handoffs default
+to TDD: observe a meaningful failing test, implement the smallest coherent passing
+change, then refactor with checks green. Tests stay with their feature increment.
+Refactoring that preserves behavior starts with adequate passing coverage;
+documentation, metadata, exploration and visual work use appropriate alternatives
+where test-first is unsuitable. Record the reason and evidence for material
+exceptions, preserving stricter project requirements.
+
+The executor prefers the Superpowers TDD skill when its own host exposes a
+compatible, accessible and permitted version. This selects that skill, not the
+whole Superpowers execution workflow. If it is unavailable, excluded or unsuitable,
+the executor follows the same self-contained procedure in the handoff and records
+why. No installation or extra approval is needed just to satisfy this optional
+choice. To use the local procedure, say: `Do not use Superpowers for this work.`
+That excludes the tool, not TDD itself.
+
+Existing work and accepted history are preserved; missing historical test-first
+evidence is disclosed rather than recreated by deleting code. Missing Superpowers
+does not block ordinary implementation. Failed required tests, missing evidence
+or an explicit source requirement for a named tool with no substitute still need
+resolution. Planning invokes no implementation skill and provides no execution
+permission. See the [TDD baseline](../references/verification-design.md#test-driven-implementation)
+and [optional selection policy](../skills/incremental-plan/references/gates-and-reviews.md#optional-superpowers-tdd).
+
 ### Optional review tools
 
 The required independent review scopes do not depend on a particular plugin.
