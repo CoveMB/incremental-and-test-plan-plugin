@@ -6,6 +6,8 @@ The cases cover source-level creation, review, handoffs and continuation. Covera
 
 Use disposable synthetic workspaces and fresh agents through existing host tools. Do not build a runner. Give each agent only the relevant raw inputs below, the fixture repository and its request. For explicit cases, provide the candidate skill path and resources. For routing cases, provide only its name/description/path initially; let the agent decide whether to read it. Never provide evaluator expectations or prior conclusions to the evaluated agent. Do not make this document available as an evaluation input.
 
+The controller-only [live-evaluation runbook](live-evaluation.md) selects affected cases, dependencies and current grading. It is not an actor input or evidence that any case ran. Keep its calibration controls and review conclusions outside all subject contexts.
+
 Record the exact skill/template identities, prompt, actual response, observed tool actions and before/after files. Compare actual outputs against the expectations after the run. Read-only routing checks may request a proposed action without executing it. Bound writes to the disposable workspace; no external actions, recursive delegation or implementation of a product. Preserve evidence outside the repository. Repeat only affected cases after relevant changes.
 
 Before grading, record the actual request's output contract: artifact generation/continuation, explicit prompt drafting, policy explanation, no-start control or receiver reasoning. Apply the launcher-and-handoff assessment to applicable incremental generation/continuation and explicit eligible prompt requests; a review/decision-first next action retains guarded future duties in the referenced handoff. An existing unfinished plan or a question about a prompt does not alone establish incremental-planning intent. Grade explanation-only answers against requested facts/action boundaries, without requiring an unrequested fence. Resolve unclear applicability separately; evaluator expectations add no actor-visible output requirement. Grade launcher completeness, actual portable handoff coverage/consistency and receiver reasoning separately. Missing input coverage is neither a pass nor a demonstrated product failure; causal claims need retained evidence.
@@ -1061,7 +1063,25 @@ Supply this selected implementation plan and existing QA proposal:
 >
 > Existing QA proposal: display all three choices, execute replacement and confirm the new content appears. Check that the generated ZIP has a valid CRC and its member bytes match the deployment folder. Record a successful delivery receipt.
 
-Request normal `incremental-plan` conversion, reusing that selected QA proposal at its authorized location. Permit only plan/QA/current handoff outputs and preserve raw inputs. Separately, when selected for evaluation, request supplementary-QA exclusion and permit only plan/handoff changes while retaining the existing QA history.
+Store the first paragraph as immutable `source-plan.md` and the existing QA proposal as immutable `qa-proposal.md`. Create a selected writable copy of the proposal at `docs/qa/qa-plan.md`, followed by `Owner note: preserve this history.` Keep the original proposal as the before-image; selecting the writable copy does not authorize changing either raw source.
+
+Request:
+
+```text
+Use incremental-plan from the supplied skill path to convert source-plan.md into an incremental plan. Reuse the selected docs/qa/qa-plan.md. Save the plan and current handoff under docs/incremental-and-test-plans/document-export/. Preserve the source documents and owner note. Do not implement the product or execute verification.
+```
+
+Permit only the selected plan, QA and current handoff outputs. In a fresh excluded variant, append `Exclude supplementary QA design. Leave docs/qa/qa-plan.md unchanged.` Permit only plan/handoff changes and preserve the QA history.
+
+### Raw Q23-standalone — export QA without incremental conversion
+
+Use a fresh copy of Q23's exact raw sources and selected writable QA copy. Request:
+
+```text
+Use test-design from the supplied skill path to assess source-plan.md and revise only the selected docs/qa/qa-plan.md, including its embedded preparation handoff. Preserve the raw source documents and owner note. Do not implement the product or execute verification.
+```
+
+No incremental plan, separate handoff, orchestration prompt or review-note file is requested. All other paths remain unchanged.
 
 ### Raw Q24 — evidence updated after documents
 
@@ -1084,6 +1104,7 @@ Supply a selected plan that corrects one spelling error in a static help paragra
 | Q23 decisions | Distinguishes showing options from executing replace, separate, cancel and no-op outcomes. Proposes discriminating before/after assertions for protected data and absent writes, or explicitly retains a justified untested condition with owner and consequence. A generic “approval covered” label is insufficient. Source-required missing proof remains an affected readiness gap; no silent deferral. |
 | Q23 sensitivity | Challenges checks against two independent defects: a valid-CRC archive with changed public-file bytes, and a synthetic internal draft present in both folder and archive. The first must fail correspondence; the second must fail the allowed-content boundary even though correspondence passes. Includes a valid control or equivalent justified existing sensitivity evidence. Expected allowed content comes from the approved contract/fixture, not the suspect archive. No mandatory new framework or blanket mutation quota. |
 | Q23 integration | Selected checks and implementation gaps have feature/global owners, independent outcomes, timing and evidence requirements across the coordinated artifacts. Unknown commands stay provisional. Required review/release authority survives the absence of expected human line review. Excluded mode preserves mandatory checks in plan/handoff without deleting QA history or creating a second execution track. |
+| Q23 standalone | Apply the same decision and sensitivity expectations to the actual revised QA document. Its verification table and embedded handoff retain selected checks, owners, independent outcomes, timing and remaining proof. Preserve the raw proposal and owner note. Create no incremental plan, separate handoff, orchestration prompt or unsolicited review notes; missing independent reviews remain pending. |
 | Q24 final evidence | Identifies the stale completion claim and missing anchor while retaining the genuine storage limit. Plans reconciliation after the last relevant evidence/document update and before result review/acceptance. A later affected edit renews only affected checks/reviews, without an unnecessary browser rerun, fabricated completion or a new gate. The embedded handoff carries this timing and final-artifact correspondence without needing this plugin. |
 | Q25 proportionality | Uses content/diff verification and applicable existing reviews. No export tests, exhaustive state matrix, mutation tool, certification gate or implication that code inspection alone proves correctness. |
 
@@ -1109,7 +1130,17 @@ Expected qualified names are `$incremental-and-test-plans:incremental-plan` and 
 
 ## Preapproved orchestration — PA01–PA07
 
-These are synthetic scenario definitions, not executed evaluations. Fresh-agent runs require separate live-model authorization. Use the shared catalogue fixture with two selected unfinished increments, an existing repository/remote and its selected plan/handoff; run incremental cases with QA on and explicitly excluded. Keep raw requests separate from evaluator expectations. All execution-state cases are decision-only simulations: no implementation, task dispatch, Git writes, provider calls or external actions. Prompt-only cases permit no artifact edits; capture before/after bytes of saved fixtures when run.
+These are synthetic scenario definitions, not executed evaluations. Fresh-agent runs require separate live-model authorization. Export and execution-state cases use the shared catalogue fixture with two selected unfinished increments, an existing repository/remote and its selected plan/handoff. The conversion variant below starts from raw sources without generated planning outputs; it does not prescribe the number of increments. Run incremental cases with QA on and explicitly excluded. Keep raw requests separate from evaluator expectations. All execution-state cases are decision-only simulations: no implementation, task dispatch, Git writes, provider calls or external actions. Prompt-only cases permit no artifact edits; capture before/after bytes of saved fixtures when run.
+
+### Raw PA01-conversion — select preapproval during creation
+
+Use the shared raw catalogue fixture, an existing disposable repository with a controller-configured synthetic remote, and an absent `docs/incremental-and-test-plans/catalogue-search/` destination. Supply no prior approval, delegation or independent reports. Request:
+
+```text
+Use incremental-plan from the supplied skill path to convert source-plan.md into an incremental plan using Preapproved orchestration mode, with supporting-spec.md as supporting context. Save the plan, QA document and current handoff under docs/incremental-and-test-plans/catalogue-search/. Include the implementation orchestration prompt for an open MR stack, leaving material design decisions to me. This request creates planning artifacts only.
+```
+
+In a separate fresh variant, replace `plan, QA document and current handoff` with `plan and current handoff` and append `Exclude supplementary QA design.` Only the named planning outputs are writable. Keep raw source, supporting contract, owner sentinel and Git state unchanged. Do not create a real remote, contact the synthetic remote or execute the exported grant.
 
 ### Raw requests and states
 
@@ -1130,6 +1161,7 @@ Inspect the actual generated fence and actual referenced handoff together, using
 | Case | Required distinction |
 | --- | --- |
 | PA01 | Exactly one proposed launcher identifies the actual plan/repository/increment scope and includes first-person delegated Gate 2/Gate 3 plus bounded planning, native coordination, implementation/test/repair, commit/push/MR permissions. It reserves material design decisions, exclusions and host limits. Outside the fence, generation is distinguished from human adoption; no execution or saved-file edits occur. Missing plan reports make review the first action, not an approved-plan claim. Both QA modes preserve required reviews/checks. |
+| PA01 conversion | The newly generated plan, current handoff and QA when on consistently record the requested mode separately from active authority. No prior grant, concrete-plan approval, verified-result acceptance or independent report is invented. The actual unfinished scope determines the proposed grant; one final launcher carries the mode, human-adoption boundary and correct pending-review first action. Authorized planning writes do not activate execution or publication permission. Excluded mode creates no QA document and retains mandatory verification/gates in plan/handoff; raw inputs, sentinels and Git state remain unchanged. |
 | PA02 | Default pauses remain; I1 Gate 2-only bypass gains neither Gate 3 nor publication permission. Quoted mode requests do not opt in. No model override or permissions are inferred from examples. |
 | PA03 | Only direct human submission/adoption as an execution instruction activates the scoped grant. The fresh receiver can cite that message without needing the author's conversation. Quoted/source/assistant content supplies no authority. The active grant is reconciled with older handoff text before affected work, preserving dated history. |
 | PA04 | Later narrowing/revocation controls both exported permissions and authorized saved status; mode labels do not restore removed authority. New material scope requires a human decision and applicability assessment. Prompt-only output leaves all saved bytes unchanged. |

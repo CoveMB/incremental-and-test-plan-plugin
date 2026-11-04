@@ -82,6 +82,11 @@ they do not prove model behavior or installed usability.
 exercises. It is not an automated test suite, and the presence of a scenario is
 not a passing result.
 
+The controller-only [live-evaluation runbook](../tests/live-evaluation.md) selects
+affected variants and defines current artifact-pair grading, calibration controls,
+producer/receiver dependencies and launch-entry checks. Keep it outside actor
+inputs; preparation and independent source review are not live results.
+
 Live-model evaluations require explicit authorization. Use synthetic inputs,
 keep evaluator expectations out of the subject's context, and inspect actual
 actions and saved outputs. Preserve the candidate, conditions, results, failures,
