@@ -21,6 +21,8 @@ The local adaptation carries exact-brief start/resumption, meaningful execution-
 
 These are locally maintained adaptations with existing gates, review obligations, evidence retention and separate action permissions retained. Attribution imposes no Superpowers runtime dependency, scripts or installation requirement, and does not relicense unrelated original repository material. The [optional TDD policy](../skills/incremental-plan/references/gates-and-reviews.md#optional-superpowers-tdd) prefers only a compatible, permitted exposed TDD skill and retains the self-contained fallback. Future adaptations require deliberate source comparison and scoped review; there is no automatic upstream synchronization.
 
+The [systematic debugging guidance](https://github.com/obra/superpowers/blob/main/skills/systematic-debugging/SKILL.md) additionally informed the [portable debugging baseline](verification-design.md#portable-debugging). The inspected source was package **7.0.1**, on **2026-11-04**, with `skills/systematic-debugging/SKILL.md` SHA-256 `51c6435d98c83c42c96ba7c35725a0b2c376cd487fb1a4e6bd0ddbe7e33ef202`. The local adaptation retains evidence, boundary tracing and hypothesis testing while preserving local privacy, authority, TDD and correction rules. The [optional debugging policy](../skills/incremental-plan/references/gates-and-reviews.md#optional-superpowers-debugging) selects the receiver's compatible, permitted debugging skill independently of TDD and retains a complete portable fallback. Source identity is not a receiver-version requirement, and neither adaptation imports transitive workflows or dependencies.
+
 ### Upstream MIT license
 
 ```text

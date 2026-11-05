@@ -31,6 +31,8 @@ For optional review methods, resolve the intended skill by identity and purpose 
 
 For optional Superpowers TDD, resolve the `test-driven-development` skill by identity and purpose in the receiving host's active inventory. Codex may expose `superpowers:test-driven-development`; use only the actual verified identity and accessible version, not a guessed universal prefix or the planner's installation path. Read the selected skill for fit under the [optional TDD policy](../skills/incremental-plan/references/gates-and-reviews.md#optional-superpowers-tdd). Missing, disabled, inaccessible or unknown exposure leaves the self-contained procedure usable; discovery alone proves neither invocation nor TDD compliance. Do not install or reconfigure a host to satisfy this optional route.
 
+For optional Superpowers debugging, resolve `systematic-debugging` by identity and purpose in the receiver's active inventory when a debugging trigger occurs. Codex may expose `superpowers:systematic-debugging`; use only the actual verified identity, accessible version and required resources. Apply the [optional debugging policy](../skills/incremental-plan/references/gates-and-reviews.md#optional-superpowers-debugging), independently of TDD availability. The portable procedure remains usable without the optional skill or its supporting capabilities; preserve access restrictions and real authority/evidence blockers. Discovery alone establishes neither invocation nor debugging quality, and supplies no installation or reconfiguration permission.
+
 ## Coordination transport
 
 Choose one transport from observed capabilities and actual authority, separately from approval mode:

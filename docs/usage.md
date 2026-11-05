@@ -386,6 +386,33 @@ resolution. Planning invokes no implementation skill and provides no execution
 permission. See the [TDD baseline](../references/verification-design.md#test-driven-implementation)
 and [optional selection policy](../skills/incremental-plan/references/gates-and-reviews.md#optional-superpowers-tdd).
 
+### Debugging and optional Superpowers
+
+For a reported bug, unexpected failure or unexplained mismatch, the executor
+preserves the failure evidence, investigates the affected boundary and tests an
+evidence-supported explanation before correcting it. An expected failing TDD test
+for the intended missing behavior does not itself start a separate investigation.
+Intermittent failures and uncertain causes stay explicit; diagnostics must respect
+privacy and existing permissions.
+
+The executor prefers a compatible, accessible and permitted Superpowers
+`systematic-debugging` skill when its own host exposes it. If unavailable,
+excluded, incompatible or missing needed resources, it follows the complete
+portable procedure in the handoff and records why. No installation or extra
+approval is needed solely to obtain the optional skill. Debugging and TDD skills
+are selected independently; neither requires the other plugin skill to be present.
+The handoff supplies both portable procedures. `Do not use Superpowers for this
+work.` selects those local procedures without excluding debugging or TDD.
+
+Tool selection grants no additional workflow, diagnostic, Git or external-action
+permissions. After a partial failure or interruption, preserve actual work,
+evidence and correction counts. Missing optional tools do not block ordinary
+authorized work; denied diagnostics, failed required checks, missing evidence,
+material decisions and explicit mandatory-tool/no-substitute conflicts still need
+resolution. Planning supplies instructions, not product execution. See the
+[debugging baseline](../references/verification-design.md#portable-debugging) and
+[optional debugging policy](../skills/incremental-plan/references/gates-and-reviews.md#optional-superpowers-debugging).
+
 ### Optional review tools
 
 The required independent review scopes do not depend on a particular plugin.

@@ -16,6 +16,7 @@ Use [host compatibility](../../../references/host-compatibility.md) to resolve a
 - [Provider review before dependent preparation](#provider-review-before-dependent-preparation)
 - [Execution discipline carried by a handoff](#execution-discipline-carried-by-a-handoff)
   - [Optional Superpowers TDD](#optional-superpowers-tdd)
+  - [Optional Superpowers debugging](#optional-superpowers-debugging)
 - [Semantic naming](#semantic-naming)
 - [Preparation return and scope growth](#preparation-return-and-scope-growth)
 - [Evidence applicability, predecessors and completion](#evidence-applicability-predecessors-and-completion)
@@ -109,7 +110,7 @@ At the start of an authorized increment or QA work item, and after an interrupti
 
 During concrete preparation before Gate 2, where planned work consumes or changes a real shared contract, identify the producer and consumer and compare the accepted/current producer interface with consumer expectations: actual names, data shapes and material behavior. Record source/candidate correspondence and proposed checks in existing context, acceptance or evidence fields. Matching labels or an acceptance status alone supply no proof; missing evidence or mismatches leave affected readiness unresolved under the existing reconciliation and material-decision rules. Exact future interfaces remain provisional during initial incremental conversion. Do not invent shared contracts, require an interface block on every card or add a ledger or gate.
 
-Within the authorized scope, proceed through the prepared steps and interpret observed results under the verification guide. Record material execution deviations, their rationale and consequences in the existing progress, decision or return-evidence fields, distinguishing attempted work from verified results. Routine implementation choices consistent with the approved contract do not need another approval; new material design, requirement, scope or authority decisions still require the user before affected work. An executor's note supplies no approval or broader permission.
+Within the authorized scope, proceed through the prepared steps and interpret observed results under the verification guide. For a reported bug, unexpected failure or unexplained mismatch, apply [portable debugging](../../../references/verification-design.md#portable-debugging) and the [optional debugging route](#optional-superpowers-debugging) before correction; ordinary intended TDD RED does not trigger a separate investigation. Record material execution deviations, their rationale and consequences in the existing progress, decision or return-evidence fields, distinguishing attempted work from verified results. Routine implementation choices consistent with the approved contract do not need another approval; new material design, requirement, scope or authority decisions still require the user before affected work. An executor's note supplies no approval or broader permission.
 
 After implementation and verification, before dispatching independent result reviews, the executor performs a focused self-review of the complete identified candidate against approved requirements and exclusions. Check completeness, material edge cases, meaningful tests, semantic naming across artifacts, documentation and unnecessary work. Make only material in-scope corrections under existing repair and action authority, renew affected checks, and return unresolved concerns and deviations in existing evidence fields. Self-review supplies no independent-review credit, acceptance, gate waiver or new repair authority. For later repairs, collect all in-flight reports before authorized changes and self-review the repaired candidate before dispatching renewed affected reviews; preserve the frozen-candidate sequencing below.
 
@@ -117,7 +118,7 @@ As part of that check, reconcile the actual deliverable identities, completion c
 
 Carry the applicable duties into the portable handoff in plain language, including the evidence needed to resume or return a result. Reuse existing artifacts; this guidance requires no execution plugin, special task-heading format, new ledger or scripts. Existing review, gate, verification, retention and separate-action rules continue to govern.
 
-Selected practices were adapted from Superpowers; see [source attribution and license](../../../references/third-party-notices.md#superpowers). Attribution alone supplies no invocation requirement; optional TDD selection follows the policy below.
+Selected practices were adapted from Superpowers; see [source attribution and license](../../../references/third-party-notices.md#superpowers). Attribution alone supplies no invocation requirement; optional TDD and debugging selection follow their respective policies below.
 
 ### Optional Superpowers TDD
 
@@ -128,6 +129,16 @@ If the optional skill is absent, disabled, inaccessible, explicitly excluded, of
 Select only the TDD skill, without adopting Superpowers orchestration or adding workflow, Git, external-action or destructive permissions. Incompatible directions to delete/restart existing work, waive reviews or resolve material decisions autonomously do not override the controlling requirements. Use the local procedure if the selected skill cannot fit. If optional tooling fails after partial work, reconcile the actual changes and evidence before safe continuation; do not replay completed work or hide failed required checks. Missing mandatory tests, evidence, decisions or permissions retain their existing holds independently of tool availability.
 
 Export the applicable baseline, alternate-verification conditions, route selection and evidence duties in plain language into both incremental and embedded QA handoffs; receivers must not need either plugin. Keep the launcher a pointer to those duties. Authorized continuation applies them prospectively to unfinished work while preserving accepted history and applicable proof; prompt-only requests use the existing missing-handoff/reconciliation route and do not rewrite saved artifacts or invent historical RED evidence.
+
+### Optional Superpowers debugging
+
+When [portable debugging](../../../references/verification-design.md#portable-debugging) is triggered during authorized execution, check the receiver's own active inventory for `systematic-debugging` under its [verified host identity](../../../references/host-compatibility.md#invocation-identities). Read the accessible version and needed resources; check prerequisites, effects, compatibility and actual authority. Prefer the skill when exposed, accessible, compatible and permitted. Planning exports these duties without invoking it; planner inventory or a related skill does not establish receiver availability.
+
+If missing, disabled, inaccessible, excluded, unknown or incompatible, use the portable procedure and record the honest reason in existing evidence fields. Do not install, enable, request extra permission or hold ordinary work solely to obtain this optional aid. Tool exclusion does not exclude ordinary debugging. A controlling named-tool/no-substitute requirement remains a separate conflict for the user. Fallback never bypasses a denied diagnostic action, protected workflow, missing permission, mandatory evidence or material decision; retain that blocker and continue only permitted independent work.
+
+Select debugging and TDD independently under their respective policies. Linked skills, helpers and diagnostics also require appropriate access, fit and authority; use the existing portable obligations, or the full portable debugging route, when optional supporting capabilities cannot be used. Do not adopt transitive orchestration, scripts, Git/external effects, destructive restarts or a different correction policy merely by selecting this skill. After partial tool failure, reconcile actual work and evidence before safe continuation without replay. Preserve correction counts and required unresolved failures; repeated failures alone establish neither an architectural cause nor redesign authority.
+
+Export the trigger, portable procedure, route selection and return evidence in both incremental and embedded QA handoffs, including QA-excluded mode. A receiver must not need either plugin. Keep the launcher a conditional pointer. Apply prospectively to unfinished work on authorized continuation, preserving accepted history, applicable proof and prompt-only write boundaries; missing handoff duties use the existing reconciliation route.
 
 ## Semantic naming
 

@@ -8,6 +8,8 @@ The selected changes concern preapproved authority, the short launcher and porta
 
 The later [portable TDD and optional Superpowers cases](scenarios.md#portable-tdd-and-optional-superpowers--td01td04) are a separate unexecuted selection. They add no calls to the Batch A/B counts below. Select their exact variants and output modes explicitly before any authorized run; source-level receiver decisions do not establish native skill invocation.
 
+The [portable debugging and optional Superpowers cases](scenarios.md#portable-debugging-and-optional-superpowers--db01db04) are also a separate unexecuted selection, including independent TDD/debugging availability, unexpected-failure triggers and permission-preserving fallback. They add no calls to the Batch A/B counts. Select exact variants/modes before any authorized run; source decisions cannot establish native invocation or successful debugging.
+
 Preparation is complete when the scenario variants, selection, rubric, candidate identities, control evidence and independent preparation review are available. Entry to live evaluation additionally requires:
 
 1. Direct authorization identifying the chosen batch or cases, model route and any capture canary. Use the configured model default unless the user selects otherwise; record the actual resolved identity or its honest absence. No paid integration, private-source transfer or external workflow permission is inferred.

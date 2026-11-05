@@ -154,6 +154,12 @@ optional:** every handoff carries the local procedure, so its absence does not
 block implementation or weaken required verification. See [TDD and optional
 Superpowers](docs/usage.md#tdd-and-optional-superpowers).
 
+For bugs and unexpected failures, handoffs also carry a [portable debugging
+procedure](docs/usage.md#debugging-and-optional-superpowers). The executor prefers
+a compatible, permitted Superpowers debugging skill when available and otherwise
+continues with that procedure. Debugging and TDD availability are independent;
+missing optional tools never erase real permission or verification blockers.
+
 ## Help and further reading
 
 - [Usage guide](docs/usage.md): sources, QA options, continuation, and closure.
