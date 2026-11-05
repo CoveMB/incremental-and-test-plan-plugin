@@ -293,7 +293,15 @@ increment. The default approval sequence is:
 3. The executor implements and verifies the authorized work, then reconciles
    three independent implementation reviews covering the same scopes above.
 4. You approve the verified result at **Gate 3**.
-5. The planner reconciles that result and identifies the next eligible step.
+5. When Git applies and commits are authorized, the executor checkpoints the
+   accepted increment and records its revision, or reuses an existing matching
+   commit. Pushes and MRs require their own applicable authorization.
+6. The planner reconciles that result and identifies the next eligible step.
+
+The checkpoint preserves non-Git and permitted uncommitted workflows; it does
+not require exactly one commit or authorize history rewriting. See the
+[increment commit checkpoint](../skills/incremental-plan/references/gates-and-reviews.md#increment-commit-checkpoint)
+for candidate correspondence and exceptions.
 
 Before Gate 2, preparation checks the relevant tool and dependency versions
 against current official documentation, advisories, and compatibility requirements.
