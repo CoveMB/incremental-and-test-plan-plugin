@@ -113,6 +113,11 @@ Supply a plan, a project, or both. The handoff is embedded in the QA document;
 there is no separate incremental plan or handoff file. Proposed commands and
 paths remain provisional when the project has not been inspected.
 
+QA cases connect concrete inputs and actions to independently justified expected
+outcomes and the wrong behavior they should detect. Where warranted, they also
+plan evidence that the intended tests actually run, preserve relevant distinctions
+and remain reliable together. See [QA options](docs/usage.md#choose-how-qa-fits).
+
 ### Continue after implementation
 
 ```text
