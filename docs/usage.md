@@ -217,13 +217,28 @@ coverage gaps are assigned to the feature increments that own them, or to a
 named obligation spanning the plan. Detailed verification design lives in the
 QA document; the incremental plan sets the implementation order.
 
-QA should identify materially different outcomes, such as cancellation or an
-unchanged result, and checks that would detect the relevant wrong behavior.
-Where a check's effectiveness is uncertain and consequential, plan a small
-known-bad control or equivalent evidence. Keep uncovered conditions explicit,
-and reconcile delivery claims and links after the final relevant update.
-These duties remain important when human code inspection is limited; they
-do not waive required reviews or establish release safety.
+QA first derives material expectations from requirements, accepted examples and
+amendments, then inspects code and existing tests. Each material case or group
+makes its input/setup, action, expected outcome or relation, source and detectable
+wrong behavior clear. Expectations inferred only from existing behavior are
+labelled characterization; they cannot decide an unspecified or changed rule.
+
+Where the checking path is new, changed, unproven or material, the plan asks for
+evidence that the intended cases run against the right candidate, assertions
+complete, comparisons preserve required distinctions and failures reach the
+accepting workflow. Ground setup in actual tools and fixtures, restore shared
+state and run affected tests together during authorized execution. Investigate
+repeat/order issues when justified; a green retry alone does not explain a failure.
+Required visual and accessibility outcomes remain, without default assertions
+on incidental styling. Useful fakes and legitimate normalization remain valid
+within their evidence limits.
+
+For consequential uncertainty about a check, plan a small valid/faulty control or
+equivalent evidence. Preserve diagnostic failures while assessing corrections
+against the contract. Keep uncovered conditions explicit and reconcile delivery
+claims and links after the final relevant update. The [verification guide](../references/verification-design.md)
+owns these decisions; they add no tool, test-count or repetition requirement,
+waive no required review, and do not establish release safety.
 
 | What you want | Add to your request |
 | --- | --- |

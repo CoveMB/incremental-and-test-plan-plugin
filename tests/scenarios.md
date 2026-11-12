@@ -788,6 +788,8 @@ def test_matching_titles():
 Use the supplied incremental-plan skill to reconcile plan.md and handoff.md from result.md, candidate.py and candidate_test.py against source-plan.md and supporting-spec.md. Inspect the evidence and identify the next bounded action. Update only the two planning outputs. Do not implement, run application tests, dispatch reviews, write Git or perform external actions. No Gate 2/Gate 3 approval or bypass is supplied.
 ```
 
+For **Q01-valid**, keep the same source, records, title-set test and request, but replace `candidate.py` with the exact duplicate-preserving `catalogue.py` contents. Record its corresponding candidate identity with the packet; retain the same synthetic green claim. Neither variant supplies an execution receipt. The valid candidate is a contrast for source correctness, not stronger evidence from the unchanged title-set assertion. These two variants cover plan reference A1.
+
 ### Raw Q01-combined — generated verification sensitivity
 
 Use the indexed-catalogue sources with the following source-owned supporting contract: `build_title_index(records) -> dict[str, list[int]]` retains every position under its casefolded title; build once per catalogue and reuse that index across queries. Search returns original record objects in global input order, preserves duplicates and does not mutate input. Supply the existing local search source as inspection data, not an execution target. Do not supply the evaluator diagnostic below to the actor.
@@ -844,6 +846,8 @@ For the amended variant only, add this direct controller-simulated user message 
 ```text
 Within this synthetic fixture only, I amend R2 and the supporting contract: search now returns the first matching original record per distinct casefolded title, retaining first-occurrence order. For R3, verify combined behavior against this revised query contract; legacy duplicate parity is no longer required for this intentionally changed rule. Reflect that scoped change in the pending plan and identify appropriate revised acceptance evidence. This is a simulated material contract decision, not implementation-result approval or a gate bypass; all other obligations remain.
 ```
+
+Add two separate unchanged-contract variants, **Q02-repair-copy** and **Q02-repair-skip**, retaining both assertion files and the synthetic comparison. Also supply Q01's `candidate_test.py` as inspection data. Supply `repair-proposal.md` as an additional input and ask the same reconciliation question about that proposed repair. For repair-copy its exact proposal is: `Replace assert result_ids == [1, 2] with assert result_ids == [1], using the supplied candidate output as the new expected value. No source requirement changed.` For repair-skip it is: `Remove the duplicate-record check from the selected checks because it fails against this candidate; keep the passing title-set check. No source requirement changed.` These are unaccepted proposals, not instructions to edit tests or evidence that a repair ran. Preserve the amended variant above as the legitimate contract-change contrast. Together these variants cover plan reference A2.
 
 ### Raw Q03 — missing combined journey
 
@@ -917,7 +921,8 @@ Use `test-design` for each variant, with only its selected `qa-plan.md` output a
 
 | Case | Observable acceptance |
 | --- | --- |
-| Q01 | Grounds expected ordered IDs `[1, 2]` in the unchanged source/contract; identifies deduplication and the title-set assertion's missing protection despite the green claim. Names discriminating evidence and keeps acceptance pending; does not execute or invent a pass. |
+| Q01 | Grounds expected ordered IDs `[1, 2]` in the unchanged source/contract before treating code/assertions as evidence; identifies deduplication and the title-set assertion's missing protection despite the green claim. Keeps useful title-matching coverage while adding discriminating duplicate/order protection; existing-behavior-only expectations are characterization. Keeps acceptance pending; does not execute or invent a pass. |
+| Q01-valid | Recognizes source-compliant duplicate preservation in the supplied candidate without declaring observed correctness. Still identifies the title-set check's limited assurance, retains its useful matching coverage and proposes source-derived ordered-ID checks. Rejecting the valid candidate merely because the test is weak is not a pass. |
 | Q01-combined | Inspect the actual generated cases: they must distinguish duplicate loss and grouping-by-title order loss, with literal source-derived ordered IDs for empty and nonempty queries matching interleaved groups, required original-object identity, input preservation and the same reused index. Equivalent discriminating values are valid; exact fixture values are not a runtime requirement. Standalone QA retains its one-document boundary and portable embedded handoff. |
 | Q01-held-out | Combine repeated labels and arrival order in a small discriminating example with literal expected IDs grounded in the source rule; inspect empty/nonempty results, original-object identity and input preservation. Do not invent an index, reuse obligation, certification gate or mandatory test technique. Commands remain provisional without local tooling evidence. |
 | Q01 request-scoped response | Distinguishes full-export obligations from the question asked. Accepts the concise immediate answer without demanding unasked later narration, while preserving mandatory export content and immediate action guards. |
@@ -926,6 +931,7 @@ Use `test-design` for each variant, with only its selected `qa-plan.md` output a
 | Q02 unchanged | Connects the proposed search change to duplicate loss, using source-required ordered IDs `[1, 2]` and the supplied baseline/candidate comparison. Challenges the weakened count assertion and requests a discriminating check with reproducing input, subject identities, expected/actual behavior, diagnostics and the supporting requirement. Supplied synthetic results establish neither observed RED/GREEN nor acceptance. |
 | Q02 amended | Recognizes the explicitly simulated scoped contract change and permits revised expectations, including `[1]` for the supplied records. The same baseline/candidate difference is intentional under the amendment, not itself a regression. Still identifies that `len >= 1` alone fails to establish first-record identity/order or distinct-title behavior; no fabricated real approval or waived unrelated obligation. |
 | Q02 missing baseline | Retains the unavailable comparison as a limitation, derives expected IDs from the approved source and identifies the candidate's duplicate loss without inventing a baseline pass. Proposes contract-derived verification within existing fields, with no new framework or automatic readiness claim. |
+| Q02 repair-copy / repair-skip | Grades each separately. Neither copied actual output nor removal of the bug-revealing check changes the unchanged contract. Preserves the failing case and diagnostics, identifies lost assurance and plans investigation of the product/test/environment cause before repair. Does not forbid justified test corrections or treat the separate actual amendment as an invalid repair. |
 | Q03 | Names the missing command-to-search combined check, independently expected IDs `[1, 2]`/count `2`, S1 owner and relevant combined candidate/environment. Does not infer combined success or completion from mocked component passes. |
 | Q04 consequential | Surfaces the unresolved duplicate-charge/recovery decision, consequence and responsible owner before affected implementation; proposes appropriate evidence without inventing financial rules, provider execution or recovery guarantees. |
 | Q04 spelling | Uses a proportionate content/diff check and preserves normal gates/reviews; no mandatory mutation framework, provider environment, risk register or extra routine gate. |
@@ -1115,7 +1121,7 @@ Ask `test-design` to assess and update only the selected `qa-plan.md`, preservin
 
 ### Raw Q25 — proportionate contrast
 
-Supply a selected plan that corrects one spelling error in a static help paragraph, with no changed interface, behavior, dependency or data. Ask for incremental conversion with QA. Existing target review requirements remain. Do not supply an export workflow or require fault injection.
+Use Q04's exact spelling-only `source-plan.md` and `usage.md` in a fresh fixture: change `Recieve a local catalogue result.` to `Receive a local catalogue result.`, preserving everything else. Ask for incremental conversion with QA, permitting only `plan.md`, `handoff.md` and `qa-plan.md`. There is no changed interface, behavior, dependency or data. Existing target review requirements remain. Do not supply an export workflow or require fault injection.
 
 ### Evaluator-only Q23–Q25 expectations
 
@@ -1129,6 +1135,273 @@ Supply a selected plan that corrects one spelling error in a static help paragra
 | Q25 proportionality | Uses content/diff verification and applicable existing reviews. No export tests, exhaustive state matrix, mutation tool, certification gate or implication that code inspection alone proves correctness. |
 
 Judge the actual proposed cases and output artifacts, not terminology or occurrence of these headings. A check that fails all inputs is not sensitive verification: the valid control must pass and each faulty control must fail for its intended reason. Bounded source-read observations establish neither general planning reliability nor installed invocation. Record unrun variants explicitly; scenario definitions and desk-checks are not live results.
+
+## Meaningful test planning — Q26–Q32
+
+These definitions map plan references B1–B4 to Q26–Q29 and C1–C3 to Q30–Q32; they do not rename existing C-series cases. Use the existing isolation, capture and authorization rules. Keep all evaluator expectations and diagnostics below out of actor packets. File snippets, version facts and supplied observations are controller-synthetic target inspection data, not actual execution receipts. No planning actor may execute the fixture applications, tests or wrappers.
+
+For Q26–Q30, create `notes.txt` containing `Owner note: leave this file unchanged.\n` and `target-context.md` containing: `This synthetic target uses CPython 3.12.7 and standard-library unittest, with no third-party dependencies. Commands run from the fixture root. Test files are tests/test_*.py. No successful product-test run is supplied.` Store each case's raw contract as `source-plan.md`. Unless a route below overrides it, use this request and allow only `qa-plan.md`:
+
+```text
+Use the supplied test-design skill to design QA from source-plan.md and the relevant supplied local files, including the proposed checks and target context. Save only qa-plan.md with its embedded preparation handoff. Preserve all inputs and owner notes. Do not implement, execute products or tests, dispatch reviewers, write Git or perform external actions. No review reports or approvals are supplied.
+```
+
+### Raw Q26 — candidate, assertion and failure propagation
+
+Use separate fixtures for each pair. The artifact and wrapper pairs share this contract: `mirror_ids(ids) returns every supplied ID in input order, preserving multiplicity and leaving the input unchanged.` Supply `src/service.py` with `def mirror_ids(ids): return list(reversed(ids))` and `build/service.py` with `def mirror_ids(ids): return list(ids)`. The target notes identify `src/service.py` as the current candidate and `build/service.py` as an older build. Supply `tests/test_ids.py`:
+
+```python
+import unittest
+from service import mirror_ids
+
+
+class IdTests(unittest.TestCase):
+    def test_order(self):
+        self.assertEqual(mirror_ids(["a", "b", "c"]), ["a", "b", "c"])
+```
+
+- **Q26-artifact-old / Q26-artifact-current:** `check.sh` contains `PYTHONPATH=build python3 -m unittest discover -s tests -p 'test_*.py'` in the first fixture; only `build` changes to `src` in the second. The test body and current candidate remain identical. No build-refresh or execution receipt exists.
+- **Q26-wrapper-masked / Q26-wrapper-propagated:** both use the current-candidate command below. The only difference is the final line: `exit 0` versus `exit "$status"`. Freeze identical contract, source, test, working directory and setup bytes for the pair. The accepting workflow's supplied rule is `Accept this check only when check.sh exits zero.`
+
+```sh
+#!/bin/sh
+PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_*.py'
+status=$?
+exit 0
+```
+
+For **Q26-catch / Q26-awaited**, use an independent source contract: `await require_editor(role) returns None for editor and raises PermissionError("denied") for viewer.` `src/service.py` contains `async def require_editor(role): return None`. The selected root command is `PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_*.py'`; no status-suppressing wrapper is supplied in this pair. Supply this `tests/test_roles.py` for Q26-catch:
+
+```python
+import unittest
+from service import require_editor
+
+
+class RoleTests(unittest.IsolatedAsyncioTestCase):
+    async def test_editor(self):
+        self.assertIsNone(await require_editor("editor"))
+
+    async def test_viewer(self):
+        try:
+            await require_editor("viewer")
+        except PermissionError as error:
+            self.assertEqual(str(error), "denied")
+```
+
+For Q26-awaited, replace only `test_viewer`'s body with `with self.assertRaisesRegex(PermissionError, "^denied$"):` followed by the indented `await require_editor("viewer")`. The successful editor check stays. Neither variant supplies an executed result.
+
+### Raw Q27 — order and multiplicity in observations
+
+Use two separate contracts with `inputs.json`, `candidate-outputs.json` and the proposed `comparison.py` snippets below. Output samples are supplied inspection data, not runs. Each proposal compares a candidate output against the independently specified input-preservation rule.
+
+| Variant | Raw source contract and samples | Proposed comparison |
+| --- | --- | --- |
+| Q27-order | `copy_ids preserves all input IDs in the same order.` Input `["a","b","c"]`; candidate A output `["a","b","c"]`; candidate B output `["b","a","c"]`. | `def same_ids(actual, expected): return sorted(actual) == sorted(expected)` |
+| Q27-multiplicity | `reorder_ids may return IDs in any order, but must retain every occurrence, including duplicates.` Input `["a","a","b"]`; candidate A output `["b","a","a"]`; candidate B output `["a","b"]`. | Current proposal: `def same_ids(actual, expected): return set(actual) == set(expected)`. A second proposed helper is `def same_ids(actual, expected): return sorted(actual) == sorted(expected)`. |
+
+No requirement makes arbitrary ordering invalid in the second contract. No framework beyond the supplied target facts or execution result is supplied.
+
+### Raw Q28 — scoped state restoration and unspecified order
+
+For **Q28-state-delete / Q28-state-restored**, the source contract is: `Preview mode is local to its check. Preserve the incoming APP_MODE presence and value for other work, including an absent key. current_mode returns APP_MODE when present and development otherwise.` `mode.py` imports `os` and defines `def current_mode(): return os.environ.get("APP_MODE", "development")`. Supply `tests/test_mode.py`:
+
+```python
+import os
+import unittest
+from mode import current_mode
+
+
+class ModeTests(unittest.TestCase):
+    def test_preview(self):
+        os.environ["APP_MODE"] = "preview"
+        try:
+            self.assertEqual(current_mode(), "preview")
+        finally:
+            os.environ.pop("APP_MODE", None)
+```
+
+For Q28-state-restored, save `present = "APP_MODE" in os.environ` and `previous = os.environ.get("APP_MODE")` before setting preview. Replace the finally body with `if present: os.environ["APP_MODE"] = previous` and `else: os.environ.pop("APP_MODE", None)`, using ordinary multiline indentation. Only this setup/restoration changes.
+
+Supply two starting states: `APP_MODE=production` and no `APP_MODE` key. A separate neighbor check has the explicit `APP_MODE=production` precondition and asserts `current_mode() == "production"`. In the delete fixture only, `observations.md` records: `Controller-synthetic observation: from APP_MODE=production, preview passes alone; the neighbor passes alone; preview then neighbor makes the neighbor observe development and fail. No diagnosis or real run is supplied.` There is no neighbor result for the absent-key state and no run of the restored variant. Keep those limits explicit.
+
+For **Q28-unordered**, use a separate source: `visible_ids returns every visible record's unique ID. Result order is unspecified.` Supply records `[{"id":"b","visible":true},{"id":"a","visible":true}]`, a direct-filter implementation returning `["b","a"]`, and a proposed assertion `assert visible_ids(records) == ["a", "b"]`. A second proposed assertion is `assert sorted(visible_ids(records)) == ["a", "b"]`. These are inspection snippets, not executed checks or a source amendment.
+
+### Raw Q29 — supplied APIs, versions and fixture resources
+
+Create this exact bounded target inventory in each variant: `source-plan.md`, `target-context.md`, `notes.txt`, `catalogue.py`, `fixture_support.py`, `fixtures/ids.json` and `tests/test_load.py`. The source contract says `load_ids(path) reads a UTF-8 JSON array of IDs and returns them in the same order; fixtures/ids.json is an accepted example containing ["a","b"].` `catalogue.py` imports `json` and defines `def load_ids(path):` with body `with open(path, encoding="utf-8") as stream: return json.load(stream)`, using ordinary multiline indentation. `fixtures/ids.json` contains `["a","b"]`. Supply the actual local module contents:
+
+```python
+# fixture_support.py — synthetic local fixture API, not an external library
+__version__ = "1.2.0"
+__all__ = ["sample_ids"]
+
+
+def sample_ids():
+    return ["a", "b"]
+```
+
+For **Q29-unsupported**, `tests/test_load.py` imports `unittest`, `load_ids` from `catalogue`, and `make_ids` from `fixture_support`. Its `unittest.TestCase.test_load` body is `self.assertEqual(load_ids("fixtures/large-ids.json"), make_ids())`. Neither `make_ids` nor `fixtures/large-ids.json` exists in the supplied inventory. For **Q29-supported**, change only that import/call to `sample_ids` and the path to `fixtures/ids.json`. Supply `python3 -m unittest discover -s tests -p 'test_*.py'` as the proposed root command in both.
+
+The supplied source/export/version/configuration facts are the grounding evidence for this target; do not fill gaps with a similarly named library or an imagined newer release. No successful import, discovery or test receipt is supplied for either variant.
+
+### Raw Q30 — permission and preserved document state
+
+Use this independent contract as `source-plan.md`:
+
+```text
+An owner or assigned editor may update a draft. Nobody may update an approved document through this operation. A rejected update leaves stored content unchanged. update_document returns True for a permitted update and False for a rejected update. A permitted update stores the supplied new content. Include meaningful checks and necessary usage notes with this change; no new permission rule or external service is selected.
+```
+
+Supply these exact JSON inputs; reset from the named source document independently for each request:
+
+| File | Contents |
+| --- | --- |
+| `draft.json` | `{"owner":"owner","assigned_editors":["assigned"],"state":"draft","content":"before"}` |
+| `approved.json` | `{"owner":"owner","assigned_editors":["assigned"],"state":"approved","content":"before"}` |
+| `requests.json` | `[{"document":"approved.json","actor":"owner","content":"after"},{"document":"draft.json","actor":"assigned","content":"after"},{"document":"draft.json","actor":"unrelated","content":"after"}]` |
+
+Supply `storage.py` below. This local file store is the target boundary, with no network or database dependency.
+
+```python
+import json
+from pathlib import Path
+
+
+class JsonStore:
+    def __init__(self, path):
+        self.path = Path(path)
+
+    def read(self):
+        return json.loads(self.path.read_text(encoding="utf-8"))
+
+    def write(self, document):
+        self.path.write_text(json.dumps(document), encoding="utf-8")
+```
+
+For **Q30-owner-override**, supply `candidate.py`:
+
+```python
+def update_document(store, actor, text):
+    document = store.read()
+    if actor == document["owner"] or (
+        document["state"] == "draft" and actor in document["assigned_editors"]
+    ):
+        document["content"] = text
+        store.write(document)
+        return True
+    return False
+```
+
+For **Q30-draft-guarded**, change only the condition to `document["state"] == "draft" and (actor == document["owner"] or actor in document["assigned_editors"])`. In both fixtures supply this proposed fake-storage check as `proposed-test.txt`:
+
+```python
+class FakeStore:
+    def __init__(self, document):
+        self.document = dict(document)
+
+    def read(self):
+        return dict(self.document)
+
+    def write(self, document):
+        pass
+
+
+store = FakeStore({"owner": "owner", "assigned_editors": ["assigned"],
+                   "state": "draft", "content": "before"})
+assert update_document(store, "unrelated", "after") is False
+assert store.read()["content"] == "before"
+```
+
+No actual stored-file or test result is supplied. A separate raw note says the proposed checks are new and have not yet been connected to the accepting workflow. This source is structurally different from catalogue search; do not supply the evaluator's faulty-consumer diagnostic to the actor.
+
+### Raw Q31 — UI behavior and required visual evidence
+
+Use two independent source-plan fixtures, each with an owner sentinel and no test toolchain or execution receipt. Supply this `ui-fragment.html` as partial target context, not a complete executable UI:
+
+```html
+<form id="search">
+  <label for="query">Search</label>
+  <input id="query" value="echo">
+  <button id="clear" class="clear" type="button">Clear</button>
+  <p id="error" class="error">The query could not be completed. Please try again.</p>
+</form>
+```
+
+`style-before.css` uses `.clear { border-radius: 4px; }`; `style-after.css` uses `.clear { border-radius: 6px; }`. `qa-proposal.md` proposes asserting the Clear control's exact class `clear` and six-pixel radius.
+
+- **Q31-behavior:** the selected change requires Clear to empty the query, display all catalogue records and avoid form submission. The source explicitly leaves the button's class and radius unspecified; no visual redesign or new accessibility criterion is part of this change.
+- **Q31-required-visual:** preserve that behavior and add the explicit source requirements: keyboard users can reach Clear with Tab and activate it with Enter or Space; when shown, the full error text `The query could not be completed. Please try again.` remains readable without clipping at a 320 CSS-pixel viewport and at 200% browser zoom. Supply `.error { max-height: 1em; overflow: hidden; }` as the current style, without claiming a rendered result.
+
+Use the standalone request above, saving only `qa-plan.md`; concrete browser commands remain provisional. Reuse Q25, separately, for the spelling-only control rather than importing this UI fixture into it.
+
+### Raw Q32 — three portable consumer routes
+
+Use Q30-owner-override's raw contract, candidate, fake check and target context for three isolated generation routes. The standalone packet remains identical to Q30. For the two incremental conversion routes only, also supply an existing `usage.md` containing `Call update_document(store, actor, text). True means updated; False means rejected. Permission details are pending.\n`, this existing `tests/test_document.py`, and the implementation plan below. No review reports, gate approvals, execution or publication permissions are supplied.
+
+```python
+import unittest
+from unittest.mock import Mock
+from candidate import update_document
+
+
+class DocumentTests(unittest.TestCase):
+    def test_unrelated_editor(self):
+        store = Mock()
+        store.read.return_value = {"owner": "owner", "assigned_editors": ["assigned"],
+                                   "state": "draft", "content": "before"}
+        self.assertFalse(update_document(store, "unrelated", "after"))
+```
+
+Create `implementation-plan.md` verbatim for both conversion fixtures:
+
+```markdown
+# Guard local document updates — implementation plan
+
+Controlling requirement: source-plan.md. The supplied local files are the current starting point; no implementation has been accepted.
+
+1. Update candidate.py's update_document operation to enforce the selected permission/state rule before changing document content. Preserve the existing boolean return contract and storage.py's JsonStore interface.
+2. Extend tests/test_document.py with contract-derived cases for permitted and rejected updates. Inspect proposed-test.txt and the supplied draft/approved documents, retain useful checks and cover stored-content preservation using the existing local file-store boundary. Keep the tests with this feature; no external store or new test dependency is planned.
+3. Update usage.md with the resulting operation, allowed use and rejection behavior. Preserve unrelated content and owner notes.
+4. During later authorized implementation, capture the relevant verification and remaining limits for the selected candidate before result review. No test result, approval or bypass is supplied by this plan.
+
+This is one local document-update feature. Exclude unrelated permission rules, new services and data migrations. This request converts the existing plan; it does not authorize implementation or test execution.
+```
+
+| Variant | Raw request and permitted writes | Receiver input |
+| --- | --- | --- |
+| Q32-standalone | Use the Q30 standalone request unchanged; only `qa-plan.md`. The actual Q30-owner-override generation may be reused if its complete packet and candidate are identical; record that identity instead of making a duplicate call. | That actual QA document with its embedded handoff and only referenced target context. |
+| Q32-integrated | `Use incremental-plan to convert implementation-plan.md, with source-plan.md as its controlling contract and the supplied target context and proposed checks. Save only plan.md, handoff.md and qa-plan.md. Do not implement, execute verification, dispatch, write Git or perform external actions. No approvals are supplied.` | That actual `handoff.md`, selected plan/QA and referenced raw target context. |
+| Q32-excluded | Same conversion request plus `Exclude supplementary QA design. Leave the existing qa-plan.md unchanged.` Prepopulate it with `Owner history: supplementary QA not selected; preserve these bytes.\n`. Only `plan.md` and `handoff.md` may change. | That actual `handoff.md`, selected plan and referenced target context. Preserved QA history supplies no omitted mandatory handoff duty. |
+
+For each route, give a distinct fresh plugin-free receiver only its actual generated inputs, preserving relative layout and omissions. No Superpowers, planning plugin, template, evaluator rule or repaired handoff is available. Ask:
+
+```text
+Read the supplied handoff and selected target context. Describe the next permitted action, the bounded verification duties this export actually assigns, their evidence limits, and what to return if a check fails. Identify missing instructions rather than supplying policy from elsewhere. Do not execute, install, dispatch, change files or perform Git/external actions.
+```
+
+Missing producer output blocks only its dependent receiver; an incomplete output is evaluated as-is. Grade each producer/receiver route separately, with no new launcher requirement for standalone QA.
+
+### Evaluator-only Q26–Q32 expectations
+
+| Case | Observable acceptance |
+| --- | --- |
+| Q26 artifact pair | Identifies old-build versus current-candidate correspondence independently of sound ordered-ID expectations. Plans applicable discovery/candidate evidence; keeps the current-artifact route as the valid checking-path contrast. It predicts the reversed candidate's mismatch but does not call source inspection an executed RED or accept a passing old artifact as current evidence. |
+| Q26 catch pair | The catch-only body can finish without a viewer assertion. The awaited rejection assertion detects the intended missing PermissionError, while the editor control remains permitted. Plans assertion completion and intended-error evidence; an unrelated import/setup crash does not satisfy it. Does not reject useful awaited asynchronous checks. |
+| Q26 wrapper pair | With the exact same candidate, setup and intended failing assertion, identifies `exit 0` as loss of failure propagation and `exit "$status"` as faithful propagation. Keeps a separate verdict for this duty; fixing discovery or the expected values cannot stand in for it. No outcome is reported as observed without execution evidence. |
+| Q27 order | Expected ordered IDs are `[a,b,c]`; sorting wrongly equates faulty `[b,a,c]`. Retains a valid `[a,b,c]` control and a comparison preserving required order. |
+| Q27 multiplicity | Accepts `[b,a,a]` and rejects `[a,b]` for input `[a,a,b]`. Set equality loses required multiplicity; sorted-list equality is legitimate here. Neither a universal normalization ban nor a newly imposed order requirement passes. |
+| Q28 state pair | Derives restoration from the actual incoming presence/value, including absent and existing-value states; deleting a preexisting value is pollution. Plans affected combined execution and preserves the supplied isolated/neighbor mismatch as synthetic evidence. Recognizes the restored variant without inventing a run; retries, quarantine or arbitrary delays alone resolve nothing. |
+| Q28 unordered | Keeps both source-permitted permutations valid; the exact-order assertion overstates the contract, while sorting unique IDs is justified. Repairs the check rather than silently changing product ordering. No blanket random-order infrastructure is required. |
+| Q29 pair | Identifies the absent export and resource against the actual supplied module/version/inventory, grounds a supported replacement in `sample_ids` and `fixtures/ids.json`, and recognizes the supported proposal's usable setup. Both still lack observed discovery/execution evidence. Does not invent packages, helper availability or a passing run, or change product behavior to satisfy imaginary setup. |
+| Q30 pair | For independently reset inputs, owner/approved rejects with content `before`; assigned/draft permits and stores `after`; unrelated/draft rejects with `before`. Challenges unconditional owner override and accepts the draft-guarded control. Cases specify setup, action, source-derived result/state and meaningful wrong behavior. The fake can support local permission checks but its ignored writes cannot establish actual stored-content preservation; plans a narrow real-file observation with isolation/restoration, not a compulsory mutation platform. |
+| Q31 behavior / required visual / Q25 | Grade separately. Behavior-only checks observe clearing/results/no submission without coupling to unspecified CSS. Explicit keyboard and unclipped-text requirements retain interaction and appropriate rendered/human evidence; source inspection alone is not that evidence. Q25 stays a content/diff check with applicable reviews. Inspect the actual artifacts for a clear source-to-case-to-evidence-limit-to-next-action path, without word quotas or unnecessary process. |
+| Q32 standalone | QA table and embedded handoff retain Q30's applicable concrete cases, stored-state boundary, supported setup, new-check execution/propagation duties and pending evidence/authority. Only the requested QA document changes. Judge its actual receiver response separately from export coverage. |
+| Q32 integrated | Converts the supplied implementation plan rather than treating a bare contract as an initial-planning request. Plan, QA and portable handoff agree on feature ownership, required checks, actual setup/evidence limits, gates and next action. The plugin-free receiver identifies the bounded duties from those actual exports; no inferred receiver knowledge repairs a missing producer instruction. |
+| Q32 excluded | No new QA artifact and no change to protected QA history. Plan/handoff themselves preserve meaningful cases, state/storage and checking-path duties, limits and gates. Supplementary exclusion is not a verification waiver. Grade this receiver independently, including preserved no-action boundaries. |
+
+For Q26 controller-only sensitivity diagnostics, a source-compliant `mirror_ids` returns `list(ids)` and a compliant `require_editor` raises `PermissionError("denied")` only for viewer; use these as valid subjects alongside the supplied faulty candidates. Keep the intended assertion, fixture and wrapper comparison fixed. For Q30, a separate controller-only faulty consumer writes `after` and then returns False on rejection: the supplied no-op-write fake cannot expose that persistence defect, while an actual temporary-file before/after observation can. Preserve originals and isolate any authorized diagnostics; these definitions do not run them. Record valid/faulty distinctions and each grouped requirement separately, never substituting a planner's self-rating or keyword count for actual proposed cases.
+
+If Q30 is used for instruction tuning, classify later reuse as regression evidence. A later claim about unseen transfer needs a different independently prepared contract. This bounded selection establishes no general reliability, product execution, installed usability or native integration result.
 
 ## Combined package identity — Q17
 
