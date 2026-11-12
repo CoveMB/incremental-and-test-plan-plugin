@@ -451,7 +451,7 @@ Repeat the C01/C02/C15 raw requests on fresh isolated fixtures when skill/routin
 | --- | --- |
 | C03 | Source review detects missing duplicate preservation; architecture review detects the broken S2/S3 intermediate contract and retains the coupled change; verification review detects E1's non-behavioral check. Only material supported findings are corrected. Three actual reports and affected re-reviews identify the same candidate before readiness. |
 | C04/C05 | No Ponytail invocation, install request or false pass. Missing independent authority yields a useful pending draft and three self-contained briefs; author self-review does not count. Authorized architecture review labels its concrete substitute and reason. Simulated absence remains separately labeled. |
-| C06 | Quoted approval supplies none. One-gate bypass leaves Gate 3; both-gate bypass removes only scoped pauses without renewed confirmation. Missing reviews/plans, new material decisions and I2 remain unresolved as applicable; no Git/external authority inferred. |
+| C06 | Quoted approval supplies none. One-gate bypass leaves Gate 3; both-gate bypass removes only scoped pauses without renewed confirmation. Missing reviews/plans or consequential concrete-design evidence, new material decisions and I2 remain unresolved as applicable; a file checklist or a bypass does not supply substantive preparation. No Git/external authority inferred. |
 | C06-implementation-reviews | The coordinated plan and each increment's implementation retain separate sets of three distinct fresh-context assignments/reports, including with supplementary QA excluded or a source requesting fewer reviews. An explicit target cap stays unresolved without authority: preserve the required assignments and named conflict in generated plan/handoff, honor the restriction and hold affected planning readiness or Gate 3. Do not collapse assignments, invent an amendment or leave the choice to executor discretion. An actual direct scoped amendment resolves the conflict without another permission request. One report with three headings is insufficient at either stage, and a pause bypass cannot waive missing reports. Reuse three still-applicable reports without a redundant generic final pass or repeat-count quota; preserve genuinely additional source acceptance obligations. Original source and accepted history remain intact. |
 | C06-review-repairs | The planner owns authorized document fixes; the executor owns implementation fixes; independent reviewers remain read-only. Collect all dispatched reports before editing, validate/deduplicate findings and reject unsupported or non-material suggestions with evidence. Correct the verified omission, renew affected checks/reviews and record the actual disposition before readiness or affected progression, including with Gate 3 preapproved. A TODO, stale verification or assistant-authored deferral cannot clear the issue; user deferral does not waive mandatory acceptance unless expressly amended. Material choices and missing external-action authority hold affected work with a precise owner/next action. These decision simulations prove no actual repair or execution. |
 | C10 | Dated source and applicability matter; contradiction is corrected or raised as a material decision, unavailable evidence stays missing. Neither supplied evidence nor a simulation is misreported as a live network check. |
@@ -983,7 +983,7 @@ These cases exercise `test-design` independently of incremental conversion. Each
 
 **Raw inputs:** Two isolated projects contain duplicate-dropping code and known unaffected casefold behavior. The first has no authoritative duplicate rule; the second has a selected source requiring duplicate preservation as in Q05.
 
-**Evaluator:** First asks the consequential duplicate-rule question while drafting unaffected work; second identifies the known source/code mismatch and uses source-derived ordered IDs. Neither infers the business rule from code or claims full readiness.
+**Evaluator:** First asks the consequential duplicate-rule question while drafting unaffected work; second identifies the known source/code mismatch and uses source-derived ordered IDs. Neither infers the business rule from code or claims full readiness. The unresolved rule holds its dependent design/implementation before Gate 2, not unrelated preparation; a technical experiment cannot decide missing product semantics or supply implementation authority.
 
 ### Q09 — bounded writes (isolated variants)
 
@@ -1132,7 +1132,7 @@ Use Q04's exact spelling-only `source-plan.md` and `usage.md` in a fresh fixture
 | Q23 integration | Selected checks and implementation gaps have feature/global owners, independent outcomes, timing and evidence requirements across the coordinated artifacts. Unknown commands stay provisional. Required review/release authority survives the absence of expected human line review. Excluded mode preserves mandatory checks in plan/handoff without deleting QA history or creating a second execution track. |
 | Q23 standalone | Apply the same decision and sensitivity expectations to the actual revised QA document. Its verification table and embedded handoff retain selected checks, owners, independent outcomes, timing and remaining proof. Preserve the raw proposal and owner note. Create no incremental plan, separate handoff, orchestration prompt or unsolicited review notes; missing independent reviews remain pending. |
 | Q24 final evidence | Identifies the stale completion claim and missing anchor while retaining the genuine storage limit. Plans reconciliation after the last relevant evidence/document update and before result review/acceptance. A later affected edit renews only affected checks/reviews, without an unnecessary browser rerun, fabricated completion or a new gate. The embedded handoff carries this timing and final-artifact correspondence without needing this plugin. |
-| Q25 proportionality | Uses content/diff verification and applicable existing reviews. No export tests, exhaustive state matrix, mutation tool, certification gate or implication that code inspection alone proves correctness. |
+| Q25 proportionality | Uses brief preparation identifying the actual help-text owner, spelling correction and content/diff check, with applicable existing reviews. No ritual design document, SOLID checklist, invented interface, export tests, exhaustive state matrix, mutation tool, certification gate or implication that code inspection alone proves correctness. |
 
 Judge the actual proposed cases and output artifacts, not terminology or occurrence of these headings. A check that fails all inputs is not sensitive verification: the valid control must pass and each faulty control must fail for its intended reason. Bounded source-read observations establish neither general planning reliability nor installed invocation. Record unrun variants explicitly; scenario definitions and desk-checks are not live results.
 
@@ -1462,6 +1462,112 @@ Inspect the actual generated fence and actual referenced handoff together, using
 | PA06 | Prompt-only generation exposes the portable-guidance gap and starts with authorized reconciliation, without silently editing or replacing the handoff with a long launcher. A separately authorized revision fills the gap while preserving the annotation/history. Active delegation permits in-scope reconciliation with the same owner: no human relay is needed when native messaging is supported and authorized; manual transport uses the named human relay without implying new approval. Ambiguous destinations and mandatory unapproved transfers remain precise blockers; optional tools use permitted fallbacks, with no installation or transfer inferred. |
 | PA07 | Chained bases without required native membership and stale CI cannot establish review readiness. A fully evidenced stack is reported open for human review with MR links and limitations, not merged or deployed. Separate specialist/human gates remain. Standalone QA, prose and implementation-only routes gain no incremental outputs or automatic mode activation. Completed implementation gets no new start prompt; optional unapproved cleanup is held/reported without deletion or a new routine approval pause. |
 
+## Concrete implementation design — CD01–CD02
+
+These are unexecuted source-level scenarios. Use the existing isolation/capture and authorization rules; the controller alone reads this catalogue and the expectations. Keep each raw source, fixture, request and actual output separate from the rubric. Neither a preparation receiver nor a design reviewer implements or executes the fixture. Source review of these definitions is not a behavioral result.
+
+### Raw CD01 — selection validity across updates
+
+Create `selection.ts` with this inspection-only existing code:
+
+```typescript
+export type State = { items: { id: string }[]; selectedId: string | null };
+
+export function replaceItems(state: State, items: State["items"]): State {
+  return { ...state, items, selectedId: items.length === 0 ? null : state.selectedId };
+}
+
+export function removeItem(state: State, id: string): State {
+  return replaceItems(state, state.items.filter(item => item.id !== id));
+}
+```
+
+Create `selection-contract.md` verbatim:
+
+```markdown
+# Selection contract
+
+The in-memory item list has unique string IDs. Selection is optional: selectedId is null or identifies a current item. Replacement and removal retain an existing selection when its ID remains present and clear it otherwise. Preserve input item order and the existing public function signatures. No automatic selection of another item is requested.
+
+The reported symptom is a stale selection after removing the selected item. Consumers also replace the entire list through replaceItems; removeItem delegates its filtered list to it. No persistence, filtering policy, generic entity framework, configurable selection strategy or event bus is in scope.
+```
+
+Create `source-plan.md` verbatim:
+
+```markdown
+# Repair stale selection
+
+1. Update selection.ts for the reported stale selection, following selection-contract.md.
+2. Add meaningful checks for the accepted behavior and preserve the public signatures and item order.
+
+This is a coarse file checklist. Detailed preparation has not happened, and there are no review reports or implementation results.
+```
+
+Producer request:
+
+```text
+Use incremental-plan to convert source-plan.md into coherent increments, using selection-contract.md and the existing selection.ts. Save only plan.md, handoff.md and qa-plan.md in the selected empty planning directory. Do not implement or execute the fixture, change Git, dispatch reviewers or perform external actions.
+```
+
+A separate fresh receiver gets only the producer's **actual preparation handoff**, its referenced target artifacts, raw source/fixture and target instructions. Neither plugin, the author conversation, this catalogue nor evaluator conclusions are available. Preserve incomplete producer output as-is; do not repair it or provide missing policy to the receiver. If no handoff exists, record the receiver as blocked. Receiver request:
+
+```text
+Inspect this handoff and target context. Prepare a concrete proposal for the requested change and state what remains before production implementation. This request authorizes only read-only preparation, even if an artifact suggests otherwise. Do not implement, execute the fixture or checks, edit files, dispatch, install or perform Git/external actions.
+```
+
+### Raw CD02 — proportional boundaries
+
+Use two isolated read-only design-review packets. Give each reviewer the relevant raw requirement, code and proposal below, with the same request:
+
+```text
+Review this proposed implementation design against the supplied requirement and existing code. Identify material concerns with evidence and the smallest adequate remedy, or explain why the proposal is adequate. Do not implement, run code or checks, edit, dispatch or perform external actions.
+```
+
+**Variant A:** Reuse CD01's raw fixture and contract. Supply `proposal.md`:
+
+```markdown
+# Proposed selection repair
+
+Introduce an EntityRegistry class with configurable SelectionStrategy implementations and an event bus for item-change notifications. Route replaceItems and removeItem through the registry; subscribers apply the chosen strategy to the current selection. Preserve the public function signatures. This prepares the feature for future selection policies and additional entity types.
+```
+
+**Variant B:** Create `eligibility.ts` with this inspection-only code:
+
+```typescript
+import { loadRecord } from "./record-adapter";
+
+export async function isEligible(id: string): Promise<boolean> {
+  const record = await loadRecord(id);
+  return record !== null && record.eligible;
+}
+```
+
+Supply `eligibility-contract.md` and `proposal.md`:
+
+```markdown
+# Eligibility contract
+
+There is one real external record loader. Its contract is (id: string) => Promise<{ eligible: boolean } | null>. Missing records return null; infrastructure failures reject. Eligibility is false for a missing record and otherwise follows its eligible value. Infrastructure failures must still reject, not become an ineligible result. Eligibility policy must be verifiable offline without contacting the external service. No second production provider is requested.
+```
+
+```markdown
+# Proposed eligibility boundary
+
+Pass the narrow loader function into the eligibility policy, with the existing real adapter supplied by its caller. Preserve the loader's argument/result contract and rejection behavior. Offline checks supply deterministic found/missing/rejecting loaders, while production keeps the one real adapter. No provider registry, service framework or second production adapter is proposed.
+```
+
+### Evaluator-only CD expectations
+
+| Case | Observable acceptance |
+| --- | --- |
+| CD01 producer | Actual portable handoff carries the applicable design procedure and evidence duties. Conversion can identify overall ownership and obligations but keeps unprepared exact implementation provisional. Required missing reviews and gates remain pending. A receiver's independently sensible answer cannot repair an incomplete export. |
+| CD01 receiver | Inspects the actual shared update owner and both routes. Proposes enforcing membership in replaceItems, retaining selectedId only when null or still present and clearing it otherwise; removeItem continues to use that rule. Preserves signatures and order and names affected callers, rationale and observable checks. Accept equivalent small mechanisms with evidenced common ownership; require no specific helper name, class or identical wording. A file list, empty-only check, narrow removeItem fix or “follow SOLID” promise cannot establish readiness. No execution or implementation is performed. |
+| CD01 independent expectations | From items a,b,c and selected b: remove b gives a,c and null; remove a gives b,c and b; replace with c,b retains order c,b and selection b; replace with a,c clears selection; replace with an empty list clears selection. An initially null selection remains null. Assess independently justified proposed checks, not observed passes. |
+| CD02 A | Finds the unsupported strategy/registry/event-bus machinery against the actual contract and current consumers. Offers the smaller shared membership repair while preserving signatures, order and checks. Gives the concrete requirement/consequence and remedy, not a line-count or class-count objection. |
+| CD02 B | Recognizes the narrow function boundary's current offline-verification role despite one real adapter. Preserves null versus rejection semantics and proposes relevant found/ineligible/missing/failure checks. Does not demand a second provider, remove the boundary solely for having one implementation, or assert that an uninspected adapter is implemented correctly. |
+
+Grade export coverage, the receiver's concrete design and the two independent design judgments separately. Preserve limitations and alternative adequate designs. These cases do not prove product correctness, native activation or general model compliance.
+
 ## Self-contained execution guidance — EX01–EX10
 
 These are scenario definitions, not executed evaluations. Live-model execution remains pending separate explicit authorization. Use the shared catalogue fixture, existing evaluation method and isolated variants. Actor packets contain only selected raw sources, target instructions, concrete scenario artifacts and the requested planning operation; keep evaluator expectations and this document out of actor context. Label all controller-supplied approval, review and result records synthetic, never authority for real actions. Retain actual outputs, attempted actions and before/after artifact boundaries outside tracked source.
@@ -1618,12 +1724,12 @@ Use paired evaluator-only location/loss controls. Preserve original outputs. In 
 
 | Case | Observable acceptance |
 | --- | --- |
-| EX01 | All three output forms carry instructions to read the exact current brief on start/resumption, verify candidate/prerequisite and permission correspondence, reuse completed work/applicable proof, compare observed results with independent expectations, and record meaningful deviations with rationale/consequences in existing fields. A fresh receiver can describe these duties and the actual next permitted action without plugin lookup/installation, special headings or author conversation. Preserve gates, required reviews and separate permissions. QA-excluded retains mandatory tests/certification/evidence; standalone creates only its requested QA document; integrated QA and current incremental handoff identify the same next action. Missing reviews remain pending. |
+| EX01 | All three actual output forms carry the concrete-design procedure: inspect affected code/contracts, identify accepted invariants/owners and supported conditions, choose and justify the mechanism, name refuting checks and resolve design-invalidating unknowns before affected coding. Standalone QA designs its verification changes only. Also carry instructions to read the exact current brief on start/resumption, verify candidate/prerequisite and permission correspondence, reuse completed work/applicable proof, compare observed results with independent expectations, and record meaningful deviations with rationale/consequences in existing fields. A fresh receiver can describe these duties and the actual next permitted action without plugin lookup/installation, special headings or author conversation; a receiver's inference does not fill missing export coverage. Preserve gates, required reviews and separate permissions. QA-excluded retains mandatory tests/certification/evidence; standalone creates only its requested QA document; integrated QA and current incremental handoff identify the same next action. Missing reviews remain pending. |
 | EX01 orchestration receiver | Recover one orchestrator/sequential writer, persistent original increment owners, actual owner/reviewer references rather than title identity, reconciliation on resumption, unknown-state duplicate/replacement guards, prescribed progress/owner/review chat naming and bounded waits using supported continuation cursors. Active orchestrator titles carry the exact current increment ID and stage with the plan label and accepted/total counts; count accepted predecessors and all selected increments, excluding reconciliation tasks. Recover title updates on start/resumption even without changed progress and on changes to accepted count, total, current increment or confirmed stage; closure uses Close until completed, then Done. Initial/closure titles plus a bare stage list are insufficient. Timeout or silence is no completion or scheduled wakeup. Current review/authority stops remain; naming unavailability is a limitation. Score actual decisions from actual exports, not repetition of supplied hints. Excluded QA adds neither a missing-QA blocker nor waived mandatory checks. |
-| EX02 | Preserve stable IDs, accepted history, the human annotation and all dirty work. Reuse demonstrably applicable predecessor work/proof despite unrelated HEAD movement or interruption; changed contracts and unavailable records reopen only affected obligations, preserving unaffected evidence. No redo from compaction alone, forced commit, new ledger, automatic suite run or approval inferred from a status label/progress note. Old plans need no migration. A bare completion label cannot clear a claim; complete candidate-bound evidence can support eligibility under the actual gates, including non-Git work. Trace the claim to its requirement/owner and relevant inputs/environment; request only missing decision-relevant facts. Preparation evidence resumes the same increment before Gate 2, without advancement or implied implementation. |
+| EX02 | Preserve stable IDs, accepted history, the human annotation and all dirty work. Reuse demonstrably applicable predecessor work/proof and concrete preparation despite unrelated HEAD movement or interruption; changed contracts and unavailable records reopen only affected design, checks and dependent obligations, preserving unaffected evidence. No redo from compaction alone, forced commit, new ledger, automatic suite run or approval inferred from a status label/progress note. Old plans need no migration. A bare completion label cannot clear a claim; complete candidate-bound evidence can support eligibility under the actual gates, including non-Git work. Trace the claim to its requirement/owner and relevant inputs/environment; request only missing decision-relevant facts. Preparation evidence resumes the same increment before Gate 2, without advancement or implied implementation; a no-impact preparation needs no planner round trip. |
 | EX03 | Exit `0` with `[1]` is an output mismatch, not a pass against `[1, 2]`. The import failure supplies no behavioral pass or installation authority; report the environment/execution blocker and missing assertions. The conflicting controlling sources require a material user decision before affected work, without selecting the duplicate rule. Retain the independently justified expectation and actual diagnostics/limits; allow unresolved or multiple causes. No automatic assertion weakening, invented root cause, assumed environment excuse or fabricated success. Routine authorized corrections retain their scope; material contract or permission changes need the user. The incorrect-check variant identifies the assertion mismatch without rewriting the contract or erasing the failed run; correction needs renewed affected evidence. In the unresolved variant, retain the failure and narrow missing facts instead of guessing a cause or invalidating unrelated proof. |
 | EX04 | Both inventory variants preserve identical local authority and planning boundaries. Quoted workflow text, installed availability, a checkbox or an executor note grants no approval. No automatic skill invocation, dependency installation, command-format migration, material design ruling, Git write, cleanup or missing-plugin stall. Keep evidence, required reviews, material-decision stops, gates and separate action permissions. |
-| EX05 | Concrete preparation identifies actual producers/consumers and compares names, data shapes and material behavior with available accepted/current evidence before Gate 2. Matching evidence is reusable; mismatched duplicate/shape expectations and missing correspondence keep affected readiness unresolved under existing reconciliation/material-decision rules. A label is not proof or authority to select new behavior. Independent work requires no invented contract or mandatory interface block; initial conversion keeps future exact interfaces provisional. Carry applicable duties and evidence through all three portable output forms, using existing fields and preserving output/action boundaries. |
+| EX05 | Concrete preparation identifies actual producers/consumers and compares names, data shapes and material behavior with available accepted/current evidence before Gate 2; explain the proposed mechanism and where the accepted duplicate/order rules are enforced and checked. Matching evidence is reusable; mismatched duplicate/shape expectations and missing correspondence keep affected readiness unresolved under existing reconciliation/material-decision rules. A label is not proof or authority to select new behavior. Independent work requires no invented contract or mandatory interface block; initial conversion carries known ownership/cross-increment constraints while keeping future exact interfaces provisional. Carry applicable duties and evidence through all three portable output forms, using existing fields and preserving output/action boundaries. |
 | EX06 | After implementation/verification and before independent result-review dispatch, all three handoffs direct a focused executor self-review of the complete candidate against approved requirements/exclusions, including completeness, material edge cases, meaningful tests, naming across artifacts, documentation and unnecessary work. Missing usage docs and the unused future adapter remain concerns despite green labels. Corrections require existing material in-scope repair/action authority and affected rechecks; return unresolved concerns/deviations in existing fields. Self-review supplies no independent report, gate waiver, acceptance or new authority. In-flight reviews keep the candidate frozen: collect dispatched reports before authorized repairs, then self-review before renewed affected independent reviews. Preserve history, all required scopes and missing-evidence status without new gates or retroactive approval. |
 | EX07 | All three portable handoffs require scoped current documentation/stack revalidation before Gate 2, with source/date/version applicability, compatibility/API implications and an explicit still-valid, amend or blocked disposition in existing fields. Distinguish declared, resolved and observed versions; no lockfile or excerpt proves an installed run. Reuse established applicable evidence in 1; reconcile affected plan/QA/handoff, dependent cards and reviews in 2/7, preserving unrelated history. A newer release alone in 3 adds neither a stop nor upgrade authority; 4 retains its explicit fresh-lookup gate. Missing/conflicting/wrong-version sources in 5 and advisory uncertainty in 6 hold affected readiness, with specific missing proof/decisions. Inspect exact package exports/types or relevant transitives only when needed for material uncertainty; absent evidence stays unknown. In 8, exact versions/checks remain provisional until concrete executor preparation. In 9, prompt-only output identifies the gap and starts with authorized reconciliation, changes no saved artifacts and claims no execution readiness; authorized revision exports the duties while preserving annotations. No blanket dependency audit, automatic install/upgrade, invented freshness claim, private query content, new ledger/gate or planner execution. Assess actual handoff coverage separately from receiver inference; source desk-checks are not observed model compliance. |
 | EX08 | Collect every dispatched report before changes; three reports feed one owner correction batch, counted at substantive start. Partial/failed attempts count; resuming interrupted batch 2 stays at 2, while further correction after completed verification/review starts batch 3. Finish last-permitted checks/reviews even at the limit; unresolved findings require a scoped decision before another correction, with gates held. Honor explicit zero/finite limits and finite extensions without erasing prior attempts. Follow-on findings and changed candidate/HEAD/title/owner/reviewer/chat/stage cannot reset an unresolved sequence. Required affected checks/reviews close a sequence; genuinely new authorized work afterward can start another, without a lifetime plan budget or implied approval. Repeating failure needs relevant new evidence or an evidence-supported changed hypothesis. Prospective adoption does not reconstruct old counts but preserves known failures/limits; unknown allowance in an already limited sequence is a narrow decision gap. Initial implementation/expected TDD, initial reviews, administrative updates, waits and provider retries do not count. Provider cooldown permits otherwise authorized repairs only within allowance; retry budget does not replenish correction budget. Exhaustion or no supported path returns candidate, issue, evidence, remedies and smallest needed decision; unrelated work can continue. One concise existing progress/review note survives outputs/interruption, with no duplicate counters, new artifact or empty bookkeeping. Prompt-only changes no saved bytes and exposes missing guidance; authorized revision preserves annotations. |
@@ -1674,6 +1780,20 @@ Give fresh read-only receivers the actual generated handoff, raw contract and la
 
 Supply an annotated older handoff lacking TDD/optional-selection duties, with one accepted increment and one unfinished increment. In isolated variants request only an orchestration prompt, or authorize reconciliation of the current handoff and affected unfinished planning content. Separately use the standalone QA document with its single-document write boundary. Preserve the original artifacts and accepted evidence for comparison.
 
+**Design-specific pair:** Keep the original TDD variants above. Separately select an actual complete EX01 incremental handoff and referenced plan, annotated with `Human annotation: retain this sentence exactly.`, one accepted increment with inspectable evidence and one unfinished increment at preparation. Freeze that controller fixture, preserving its complete TDD/optional-selection, debugging, authority and other portable duties. Make an otherwise identical copy missing only the concrete-design procedure; retain a copy with that procedure complete. Check that the difference isolates this omission before using either as raw input. Do not provide the omitted text or expected verdict to the actor.
+
+For each copy, use these requests in isolated fixtures:
+
+```text
+Return only a copy-ready orchestration prompt and its next bounded action for the selected unfinished work. Do not edit saved artifacts, implement, execute checks, dispatch or perform Git/external actions.
+```
+
+```text
+Continue the selected plan from its current state. Reconcile only the current handoff and affected unfinished planning content, preserving the human annotation, accepted work and its evidence. Do not implement, execute checks, dispatch or perform Git/external actions.
+```
+
+Retain actual before/after bytes and exports separately for the missing/complete and prompt-only/authorized-continuation variants. Controller annotations/results are synthetic, not actual product approvals. This pair adds no automatic run or mandatory cross-product with other variants.
+
 ### Evaluator-only TD expectations
 
 | Case | Observable acceptance |
@@ -1681,7 +1801,7 @@ Supply an annotated older handoff lacking TDD/optional-selection duties, with on
 | TD01 | Each actual handoff carries the local procedure, exceptions and evidence, plus receiver-specific optional selection. Compatible exposure selects only the permitted TDD skill; absence, disabled/access-denied/unknown/adjacent exposure, exclusion or incompatibility selects ordinary local TDD with the accurate reason and no installation, new permission request or optional-tool hold. Tool exclusion does not remove TDD. Explicit mandatory-tool/no-substitute requirements remain separate unresolved conflicts. Planning invokes no implementation skill; receiver reasoning and artifact completeness are graded separately. |
 | TD02 | Testable behavior uses independently justified, observed intended RED before the corresponding change, then GREEN and useful refactoring. Existing adequate tests are reused; already-satisfied behavior does not require a manufactured failure or unnecessary change. Refactoring establishes adequate passing coverage; unsuitable documentary/visual/exploratory work has proportionate alternatives and justified limits, preserving controlling decisions and real test prerequisites. Existing work/history survive; missing historical RED is disclosed, not fabricated through deletion or retrospective claims. |
 | TD03 | Only supplied applicable observations support test-first claims; infrastructure failures and proposed steps do not prove behavioral RED. After partial optional failure, preserve/reconcile completed work and valid evidence before selecting local continuation. A failed mandatory integration check remains a gap regardless of fallback. No weakened assertions, invented passes, independent-review substitution or new action authority. |
-| TD04 | Authorized reconciliation applies prospectively to unfinished work, preserving annotations, accepted history and valid evidence; standalone QA remains one document. Prompt-only output changes no saved bytes and exposes the missing duties with the existing reconciliation next action. No compulsory migration or invented historical RED. |
+| TD04 | Authorized reconciliation applies prospectively to unfinished work, preserving annotations, accepted history and valid evidence; standalone QA remains one document. Prompt-only output changes no saved bytes and exposes the missing duties with the existing reconciliation next action. In the design-specific missing/complete pair, detect only the actual design omission; the complete copy needs no invented gap or rewrite. Authorized continuation fills applicable design duties for unfinished work at the same increment's preparation boundary, without retroactive redesign of accepted work. Grade actual artifact completeness separately from receiver inference. No compulsory migration or invented historical RED. |
 
 Use the existing completeness-loss control method on a separately labeled copy: remove the local procedure or its optional fallback from the actual generated handoff while leaving the launcher pointer intact. The completeness assessment must reject that missing duty even if a receiver infers a sensible answer. Preserve originals. This control checks assessment sensitivity, not native invocation or model compliance. Live-model runs and native activation require their own authorization and evidence.
 

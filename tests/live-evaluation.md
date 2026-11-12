@@ -12,6 +12,8 @@ The later [portable TDD and optional Superpowers cases](scenarios.md#portable-td
 
 The [portable debugging and optional Superpowers cases](scenarios.md#portable-debugging-and-optional-superpowers--db01db04) are also a separate unexecuted selection, including independent TDD/debugging availability, unexpected-failure triggers and permission-preserving fallback. They add no calls to the Batch A/B counts. Select exact variants/modes before any authorized run; source decisions cannot establish native invocation or successful debugging.
 
+The [concrete implementation design selection](#concrete-implementation-design--separate-unexecuted-selection) below is likewise unexecuted and separately selectable. It changes neither the Batch A/B call counts nor any historical observation. Implementation of these instructions and source reviews do not authorize live trials.
+
 Preparation is complete when the scenario variants, selection, rubric, candidate identities, control evidence and independent preparation review are available. Entry to live evaluation additionally requires:
 
 1. Direct authorization identifying the chosen batch or cases, model route and any capture canary. Use the configured model default unless the user selects otherwise; record the actual resolved identity or its honest absence. No paid integration, private-source transfer or external workflow permission is inferred.
@@ -95,6 +97,27 @@ For the settled current candidate, the affected selection is:
 If the full affected selection is authorized and no relevant current observations are reusable, it contains **32 current-candidate semantic invocations**, including the three receivers and sharing the identical standalone producer as stated. Any required capture canary is separate. Before launch, enumerate the exact authorized calls, reused evidence with its applicability basis, and blocked/unrun calls; this table does not automatically select the eleven baseline calls or either historical batch. New corrective or invalid-trial reruns keep their own identities and authorization.
 
 For each grouped fixture retain separate verdicts for source correctness, valid contrast, expected outcome, candidate/discovery, assertion completion, comparison fidelity, failure propagation, state restoration, setup grounding and output/authority boundaries where applicable. Do not demand irrelevant mechanisms from every case. C3's three producer routes and three receiver responses remain distinct: a receiver may infer a correct answer while its export still lacks a required instruction. Inspect actual generated cases and instructions, including an ordinary Q31/Q25 change and consequential Q30/Q32 work, for a traceable source, useful case, evidence limit and next action. There is no word-count, mutation-score or process-step threshold.
+
+## Concrete implementation design — separate unexecuted selection
+
+Select exact cases, variants and output modes and obtain explicit live-run authorization under the entry conditions above before launching any of these actors. Record source/runtime candidate identities and actual model/host/capture evidence. No automatic cross-product or additional Batch A/B calls is implied.
+
+| Candidate selection | Raw inputs and dependency |
+| --- | --- |
+| [CD01](scenarios.md#raw-cd01--selection-validity-across-updates) producer, then plugin-free preparation receiver | Use the exact raw TypeScript fixture, contract and coarse file plan. The producer can write only its selected planning outputs; the receiver is read-only and waits for the actual exported handoff. No fixture implementation or execution. Grade handoff coverage separately from the concrete proposal. |
+| [CD02](scenarios.md#raw-cd02--proportional-boundaries), variants A and B | Separate read-only design reviewers get only their raw requirement/code/proposal and review request. Evaluate unsupported generic machinery and a currently useful one-adapter boundary independently; give no expected verdict. |
+| [EX01](scenarios.md#raw-ex01--portable-guidance), QA-on, excluded or standalone | Select each mode and any dependent receiver explicitly. Inspect actual exported concrete-design duties and mode boundaries; a receiver's own inference does not supply omitted instructions. |
+| [TD04](scenarios.md#raw-td04--continuation-and-handoff-completeness), design-specific missing/complete pair | Freeze otherwise-identical annotated artifacts with complete TDD/optional-selection duties. Select missing/complete and prompt-only/authorized-continuation variants explicitly; preserve before/after bytes and accepted evidence. No compulsory migration or retroactive design. |
+| Selected [C06](scenarios.md#raw-gate-and-preparation-decision-scenarios), [EX02](scenarios.md#raw-ex02--resume-and-evidence-applicability), [EX05](scenarios.md#raw-ex05--concrete-producerconsumer-agreement), [Q08](scenarios.md#q08--unknown-contract-versus-known-mismatch) or [Q25](scenarios.md#raw-q25--proportionate-contrast) controls | Reuse the existing raw authority, continuation, real-contract, unknown-rule and spelling-only cases within their exact action/output limits. These are optional affected selections, not newly executed cases or a mandatory matrix. |
+
+Apply the existing packet isolation, actual-output grading and retention rules. In addition to the common dimensions, assess:
+
+- **Design substance:** actual affected code and accepted rules, supported paths/conditions, authoritative owners and enforcement, proposed mechanism/interfaces/effects, rationale and refuting checks. File lists and principle names are insufficient.
+- **Simplicity with contracts intact:** current reasons for new structure or reuse, the smallest adequate remedy, and preservation of meaningful boundaries and failure semantics. A single implementation or large unit alone proves no defect.
+- **Timing and authority:** provisional conversion versus concrete executor preparation, unresolved consequential semantics, only authorized experiments, scoped preapproval, same-increment returns and reuse of still-valid work/history.
+- **Portable completeness and proportionality:** complete applicable instructions in the actual output, QA scope/one-document limits, prompt-only unchanged bytes, and a brief adequate design for trivial work without ritual artifacts.
+
+Preserve successful and failed first outputs, denied attempts and incomplete capture. Grade each dimension from inspected source/output/trace locators; keep blocked/unrun variants explicit. These observations, if later authorized and obtained, would establish only the exercised source-level behavior, not native activation, optimal architecture or resulting application correctness.
 
 ## Packet construction and preservation
 

@@ -302,8 +302,8 @@ Once the required reviews and decisions are resolved, the handoff normally asks
 an executor to inspect the actual project and prepare the first eligible
 increment. The default approval sequence is:
 
-1. The executor prepares a concrete plan with actual files, interfaces, checks,
-   dependencies, and recovery limits.
+1. The executor prepares a concrete design from the actual code: rule owners,
+   interfaces, mechanism and rationale, checks, dependencies, and recovery limits.
 2. You approve that plan at **Gate 2** before implementation.
 3. The executor implements and verifies the authorized work, then reconciles
    three independent implementation reviews covering the same scopes above.
@@ -312,6 +312,15 @@ increment. The default approval sequence is:
    accepted increment and records its revision, or reuses an existing matching
    commit. Pushes and MRs require their own applicable authorization.
 6. The planner reconciles that result and identifies the next eligible step.
+
+The [concrete-design policy](../skills/incremental-plan/references/gates-and-reviews.md#concrete-implementation-design)
+requires an approach that explains how accepted rules hold across relevant
+conditions and how its important claims will be checked. A file checklist is
+insufficient. Initial conversion keeps future details provisional; preparation
+settles them against each increment's actual predecessor. Existing mechanisms
+are preferred when adequate, and trivial work needs only brief preparation.
+The same duty applies with supplementary QA excluded and to standalone
+verification work, using existing fields without another approval stage.
 
 The checkpoint preserves non-Git and permitted uncommitted workflows; it does
 not require exactly one commit or authorize history rewriting. See the

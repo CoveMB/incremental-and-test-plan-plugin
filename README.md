@@ -143,6 +143,11 @@ approval of the concrete implementation plan; **Gate 3** is your approval of the
 verified result. Explicit scoped preapproval can remove a routine pause, while
 required preparation, reviews, evidence, and project-specific gates still apply.
 
+Before Gate 2, the executor establishes a [concrete, justified design](skills/incremental-plan/references/gates-and-reviews.md#concrete-implementation-design)
+from the actual code: where the rules belong, how the change works, why that
+structure fits, and which checks could disprove it. Detail stays proportionate;
+this uses existing plan fields and adds no architecture document or approval step.
+
 When implementation remains, incremental planning also returns a copy-ready
 **Implementation orchestration prompt** unless you ask to omit it. You can send
 it to a separate execution chat. Generating the prompt starts no work, and its
