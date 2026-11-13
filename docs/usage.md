@@ -392,6 +392,20 @@ Host restrictions still apply. Missing mandatory evidence remains a blocker.
 The [preapproved orchestration policy](../skills/incremental-plan/references/gates-and-reviews.md#preapproved-orchestration)
 defines the full scope.
 
+### Skills, plugins and saved work
+
+Skills and plugins used in this workflow keep your selected document locations,
+templates and allowed outputs. Their default folders do not authorize extra
+plans, ledgers or another execution workflow. Adding, disabling, removing or
+replacing an aid does not by itself restart work or change those locations.
+The executor checks current capability and permissions at the next relevant
+boundary, preserves work already completed or running, and uses newly available
+aids only for remaining work. Existing decisions, correction counts and valid
+evidence remain applicable. Continue without an optional aid where its existing
+fallback rules permit; required tools, reviews and permissions still apply.
+See the shared [artifact ownership](../skills/incremental-plan/references/gates-and-reviews.md#owners-and-authority)
+and [continuity rules](../skills/incremental-plan/references/gates-and-reviews.md#execution-discipline-carried-by-a-handoff).
+
 ### TDD and optional Superpowers
 
 For testable new or changed behavior and bug fixes, implementation handoffs default
