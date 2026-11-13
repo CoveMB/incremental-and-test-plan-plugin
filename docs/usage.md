@@ -271,7 +271,7 @@ Planning produces a draft, then reconciles three distinct independent reports:
 
 | Review | What it checks |
 | --- | --- |
-| Source fidelity | Requirements, exclusions, constraints, and source-defined gates are preserved |
+| Source fidelity | Requirements, exclusions, constraints, and source-defined gates are preserved; [consequential gaps](../references/verification-design.md#consequences-reversibility-and-material-questions) in the selected behavior are surfaced |
 | Architecture and simplicity | Boundaries are coherent, intermediate results are safe, and unnecessary complexity is avoided |
 | Verification quality | Checks have justified expected outcomes and can detect material failures |
 

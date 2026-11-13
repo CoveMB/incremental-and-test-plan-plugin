@@ -14,6 +14,8 @@ The [portable debugging and optional Superpowers cases](scenarios.md#portable-de
 
 The [concrete implementation design selection](#concrete-implementation-design--separate-unexecuted-selection) below is likewise unexecuted and separately selectable. It changes neither the Batch A/B call counts nor any historical observation. Implementation of these instructions and source reviews do not authorize live trials.
 
+The [requirements-discovery selection](#requirements-discovery--separate-unexecuted-selection) is also separately selectable and **NOT RUN**. It covers unannounced consequential omissions, sufficient-requirements and scope controls, existing-reviewer responsibility and actual portable continuation. It adds no historical batch calls or live-run authorization.
+
 Preparation is complete when the scenario variants, selection, rubric, candidate identities, control evidence and independent preparation review are available. Entry to live evaluation additionally requires:
 
 1. Direct authorization identifying the chosen batch or cases, model route and any capture canary. Use the configured model default unless the user selects otherwise; record the actual resolved identity or its honest absence. No paid integration, private-source transfer or external workflow permission is inferred.
@@ -118,6 +120,56 @@ Apply the existing packet isolation, actual-output grading and retention rules. 
 - **Portable completeness and proportionality:** complete applicable instructions in the actual output, QA scope/one-document limits, prompt-only unchanged bytes, and a brief adequate design for trivial work without ritual artifacts.
 
 Preserve successful and failed first outputs, denied attempts and incomplete capture. Grade each dimension from inspected source/output/trace locators; keep blocked/unrun variants explicit. These observations, if later authorized and obtained, would establish only the exercised source-level behavior, not native activation, optimal architecture or resulting application correctness.
+
+## Requirements discovery — separate unexecuted selection
+
+**Status: NOT RUN.** Use [RD01–RD06](scenarios.md#requirements-discovery--rd01rd06)
+under the existing entry conditions, isolation/capture, preservation and semantic
+grading rules. Obtain explicit authorization for the exact cases, variants, modes
+and model route before launch. No automatic historical sweep or mode cross-product
+is required.
+
+Freeze the unchanged baseline runtime and settled candidate runtime separately.
+Use the same raw fixtures, selected authoritative inputs, action boundaries and
+model route in fresh isolated contexts for each comparison. Retain runtime/brief
+identities and genuine first outputs. RD06 continuation receives only its own
+actual producer output/context and direct synthetic decision turn; receivers
+receive actual exported artifacts without plugin sources or evaluator material.
+Stop any trial whose effective input/capture boundary cannot be established.
+
+| Selectable focus | Inputs and dependency |
+| --- | --- |
+| [RD01](scenarios.md#raw-rd01--shared-project-change-requests), discovery | Ordinary existing-plan conversion; QA-on by default. Select the excluded variant separately when assessing that portability claim. |
+| [RD02](scenarios.md#raw-rd02--authoritative-shared-view-contract), sufficient requirements | Same source plus the selected authoritative contract; detect unnecessary questioning or replacement of a valid product choice. |
+| [RD03](scenarios.md#raw-rd03--independent-requirements-review), reviewer responsibility | Raw source and neutral proposed increment plus the actual baseline/candidate requirements-review brief, not evaluator wording. Read-only. |
+| [RD04](scenarios.md#raw-rd04--concurrent-announcement-editing), different interaction | Raw plan and inspection-only existing write path; no stale-edit hint or conflict-policy answer. |
+| [RD05](scenarios.md#raw-rd05--selected-sorting-increment), current-scope control | Selected deterministic sorting work and independent later review work; only existing plan/handoff updates. |
+| [RD06](scenarios.md#raw-rd06--decision-continuation-and-portable-receiver), continuity/export/receiver | Requires the actual RD01 question and usable outputs, then the direct synthetic answer and actual updated artifacts. Preserve a failed prerequisite and mark its dependent continuation/receiver blocked. |
+| RD06 targeted standalone producer/receiver | RD04 raw input through test-design; only `qa-plan.md`, then its actual embedded handoff for a fresh plugin-free read-only receiver. Select when assessing the changed standalone consumer. |
+
+The core behavioral comparison is RD01/RD02/RD04 discovery and false-positive
+behavior. Select reviewer ownership, current-increment scope, excluded-QA and
+standalone portability, and continuation where those claims are evaluated; do not
+infer an unselected route from another route's result. Reuse relevant historical
+Q04/Q08/Q25, Q30/Q32, concrete-design, authority and continuation evidence only when
+its actual candidate, inputs and scope still support the claim. Renew affected
+evidence rather than the historical catalogue.
+
+Grade concrete missing decisions, grounded consequences, source/decision lookup,
+absence of unauthorized choices, increment scope, dependent-work disposition,
+accepted-answer reuse, exported instructions and action limits from actual
+outputs/actions. Keep RD06 continuity, export completeness and receiver behavior
+separate. Accept reasonable wording and legitimate product alternatives; question
+counts, vocabulary and exact prose are not success criteria. Preserve passed,
+failed, unresolved-capture and blocked/unrun cases separately.
+
+If the baseline already succeeds, retain that counterevidence. Asking more questions
+without discovering a consequential omission is not improvement. Do not fabricate
+RED, repair a producer's output for its receiver or repeat unchanged trials until
+a pass. Later observations support only bounded differences in the exercised
+cases, not a general discovery probability, exhaustive completeness or native
+usability. Source review and deterministic validation alone establish no measured
+behavioral improvement.
 
 ## Packet construction and preservation
 
