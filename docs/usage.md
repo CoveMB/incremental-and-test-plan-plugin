@@ -217,13 +217,28 @@ coverage gaps are assigned to the feature increments that own them, or to a
 named obligation spanning the plan. Detailed verification design lives in the
 QA document; the incremental plan sets the implementation order.
 
-QA should identify materially different outcomes, such as cancellation or an
-unchanged result, and checks that would detect the relevant wrong behavior.
-Where a check's effectiveness is uncertain and consequential, plan a small
-known-bad control or equivalent evidence. Keep uncovered conditions explicit,
-and reconcile delivery claims and links after the final relevant update.
-These duties remain important when human code inspection is limited; they
-do not waive required reviews or establish release safety.
+QA first derives material expectations from requirements, accepted examples and
+amendments, then inspects code and existing tests. Each material case or group
+makes its input/setup, action, expected outcome or relation, source and detectable
+wrong behavior clear. Expectations inferred only from existing behavior are
+labelled characterization; they cannot decide an unspecified or changed rule.
+
+Where the checking path is new, changed, unproven or material, the plan asks for
+evidence that the intended cases run against the right candidate, assertions
+complete, comparisons preserve required distinctions and failures reach the
+accepting workflow. Ground setup in actual tools and fixtures, restore shared
+state and run affected tests together during authorized execution. Investigate
+repeat/order issues when justified; a green retry alone does not explain a failure.
+Required visual and accessibility outcomes remain, without default assertions
+on incidental styling. Useful fakes and legitimate normalization remain valid
+within their evidence limits.
+
+For consequential uncertainty about a check, plan a small valid/faulty control or
+equivalent evidence. Preserve diagnostic failures while assessing corrections
+against the contract. Keep uncovered conditions explicit and reconcile delivery
+claims and links after the final relevant update. The [verification guide](../references/verification-design.md)
+owns these decisions; they add no tool, test-count or repetition requirement,
+waive no required review, and do not establish release safety.
 
 | What you want | Add to your request |
 | --- | --- |
@@ -256,7 +271,7 @@ Planning produces a draft, then reconciles three distinct independent reports:
 
 | Review | What it checks |
 | --- | --- |
-| Source fidelity | Requirements, exclusions, constraints, and source-defined gates are preserved |
+| Source fidelity | Requirements, exclusions, constraints, and source-defined gates are preserved; [consequential gaps](../references/verification-design.md#consequences-reversibility-and-material-questions) in the selected behavior are surfaced |
 | Architecture and simplicity | Boundaries are coherent, intermediate results are safe, and unnecessary complexity is avoided |
 | Verification quality | Checks have justified expected outcomes and can detect material failures |
 
@@ -287,8 +302,8 @@ Once the required reviews and decisions are resolved, the handoff normally asks
 an executor to inspect the actual project and prepare the first eligible
 increment. The default approval sequence is:
 
-1. The executor prepares a concrete plan with actual files, interfaces, checks,
-   dependencies, and recovery limits.
+1. The executor prepares a concrete design from the actual code: rule owners,
+   interfaces, mechanism and rationale, checks, dependencies, and recovery limits.
 2. You approve that plan at **Gate 2** before implementation.
 3. The executor implements and verifies the authorized work, then reconciles
    three independent implementation reviews covering the same scopes above.
@@ -297,6 +312,15 @@ increment. The default approval sequence is:
    accepted increment and records its revision, or reuses an existing matching
    commit. Pushes and MRs require their own applicable authorization.
 6. The planner reconciles that result and identifies the next eligible step.
+
+The [concrete-design policy](../skills/incremental-plan/references/gates-and-reviews.md#concrete-implementation-design)
+requires an approach that explains how accepted rules hold across relevant
+conditions and how its important claims will be checked. A file checklist is
+insufficient. Initial conversion keeps future details provisional; preparation
+settles them against each increment's actual predecessor. Existing mechanisms
+are preferred when adequate, and trivial work needs only brief preparation.
+The same duty applies with supplementary QA excluded and to standalone
+verification work, using existing fields without another approval stage.
 
 The checkpoint preserves non-Git and permitted uncommitted workflows; it does
 not require exactly one commit or authorize history rewriting. See the

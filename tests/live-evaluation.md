@@ -6,9 +6,15 @@ This is a controller-only runbook for the behavior changes after the historical 
 
 The selected changes concern preapproved authority, the short launcher and portable handoff, QA case selection/sensitivity/final evidence, conditional research assessment, documentation/stack revalidation and provider-review decisions. Preserve historical results against their original candidates. In particular, a historical **20/20 protected-paragraph** comparison does not grade the current [launcher/handoff contract](../skills/incremental-plan/assets/orchestration-prompt-template.md#portable-coverage-check).
 
+The [meaningful test-planning selection](#meaningful-test-planning-affected-selection) separately covers source-derived cases, assurance-preserving repairs, effective checking paths, grounded setup/state isolation and the three portable output routes. It maps plan references A1/A2 to Q01/Q02 extensions and B1–B4/C1–C3 to Q26–Q32. It does not add calls to the historical Batch A/B counts, authorize a launch or require a broad historical rerun.
+
 The later [portable TDD and optional Superpowers cases](scenarios.md#portable-tdd-and-optional-superpowers--td01td04) are a separate unexecuted selection. They add no calls to the Batch A/B counts below. Select their exact variants and output modes explicitly before any authorized run; source-level receiver decisions do not establish native skill invocation.
 
 The [portable debugging and optional Superpowers cases](scenarios.md#portable-debugging-and-optional-superpowers--db01db04) are also a separate unexecuted selection, including independent TDD/debugging availability, unexpected-failure triggers and permission-preserving fallback. They add no calls to the Batch A/B counts. Select exact variants/modes before any authorized run; source decisions cannot establish native invocation or successful debugging.
+
+The [concrete implementation design selection](#concrete-implementation-design--separate-unexecuted-selection) below is likewise unexecuted and separately selectable. It changes neither the Batch A/B call counts nor any historical observation. Implementation of these instructions and source reviews do not authorize live trials.
+
+The [requirements-discovery selection](#requirements-discovery--separate-unexecuted-selection) is also separately selectable and **NOT RUN**. It covers unannounced consequential omissions, sufficient-requirements and scope controls, existing-reviewer responsibility and actual portable continuation. It adds no historical batch calls or live-run authorization.
 
 Preparation is complete when the scenario variants, selection, rubric, candidate identities, control evidence and independent preparation review are available. Entry to live evaluation additionally requires:
 
@@ -23,7 +29,7 @@ The current task may prepare these inputs without running any subject. Launch-ti
 
 ## Selected calls and dependencies
 
-Each row below identifies exact variants, not the whole scenario family. One invocation means one fresh context and first attempt; the controller grades existing outputs without launching an additional model grader. The table selects **17 Batch A + 17 Batch B semantic invocations**. One shared capture canary is separate: **35 live calls** if both batches and that canary are authorized and every dependency is available. Non-model preparation/probes/calibration are not included in that count.
+Each row in the historical Batch A/B tables identifies exact variants, not the whole scenario family. One invocation means one fresh context and first attempt; the controller grades existing outputs without launching an additional model grader. Those tables select **17 Batch A + 17 Batch B semantic invocations**. One shared capture canary is separate: **35 live calls** if both batches and that canary are authorized and every dependency is available. Non-model preparation/probes/calibration are not included in that count. The later affected selections are independent; do not run these historical batches merely because runtime guidance changed.
 
 Finish and assess Batch A before Batch B. Preserve failures and investigate their scope; a shared candidate or capture defect holds affected later calls. Do not repeat unchanged trials for a passing grade. A justified repair or invalid-trial rerun needs its own identity and applicable authorization. Report blocked/unrun calls against the original selection.
 
@@ -64,6 +70,107 @@ For the four provider packets, use two synthetic dependent increments, current-h
 
 These are read-only reasoning trials. Even correct decisions establish no actual native wait, request serialization, provider response, review completion or dependent dispatch.
 
+## Meaningful test-planning affected selection
+
+This is a prepared selection, not a record of launched or passed cases. First inspect available raw historical evidence for Q01, Q01-combined, Q01-held-out, Q02 unchanged/amended/missing-baseline, Q03, Q04 and Q25, plus relevant EX03 and Q10/Q11 receiver observations. Record the exact original candidate, packet, route, first output, capture/diagnostics and limits before deciding applicability. A named scenario or old aggregate pass count is not reusable raw proof. Reuse unchanged source facts, controls and observations only for the claims their actual inputs support; changed instructions or output routes need affected current observations. In particular, legacy QA-excluded evidence does not establish QA-on or standalone behavior, and Q04's spelling input does not by itself grade Q25's coordinated artifacts. Preserve counterevidence where the unchanged baseline already succeeds.
+
+When equivalent applicable evidence is unavailable, prioritize the exact **Q26 six variants, Q27 two variants and Q28 three variants** below against a separately frozen unchanged baseline. These are eleven possible baseline semantic calls, requiring their own applicable authorization and the same entry checks. They are not included in the current-candidate count and are not permission to restore an older snapshot over current work. Preserve the original baseline identity and use the same raw contracts and grading distinctions for the comparison.
+
+For the settled current candidate, the affected selection is:
+
+| Focus | Exact selected variants | Fresh semantic calls before applicable evidence reuse | Output boundary or dependency |
+| --- | --- | ---: | --- |
+| A1 shared assumption | [Q01 and Q01-valid](scenarios.md#raw-q01--shared-wrong-assumption) | 2 | Legacy reconciliation: only plan/handoff, with explicit supplementary-QA exclusion. Preserve the source-compliant contrast and weak test's useful coverage. |
+| A1 combined/transfer controls | [Q01-combined](scenarios.md#raw-q01-combined--generated-verification-sensitivity), [Q01-held-out](scenarios.md#raw-q01-held-out--event-filtering-without-an-index) | 2 | Standalone QA only. Select their explicit standalone requests; no additional default-QA generation is implied by this row. Keep controller diagnostics private. |
+| A2 repair/amendment | [Q02 unchanged, amended, repair-copy, repair-skip](scenarios.md#raw-q02--weakened-regression-and-scoped-amendment) | 4 | Separate legacy reconciliation fixtures; only plan/handoff. Actual amendment and unsupported repair remain distinct. Missing-baseline evidence is inspected for reuse, not an additional selected call. |
+| Combined boundary | [Q03](scenarios.md#raw-q03--missing-combined-journey) | 1 | Legacy plan/handoff reconciliation with explicit exclusion; retain missing real command/search evidence. |
+| B1 candidate/discovery | [Q26-artifact-old, Q26-artifact-current](scenarios.md#raw-q26--candidate-assertion-and-failure-propagation) | 2 | Standalone QA. Same intended test/current candidate, different selected artifact path. |
+| B1 assertion completion | Q26-catch, Q26-awaited | 2 | Standalone QA. Retain editor success and viewer rejection distinctions without a fabricated run. |
+| B1 failure propagation | Q26-wrapper-masked, Q26-wrapper-propagated | 2 | Standalone QA. Freeze identical contract/candidate/setup/assertion; only the wrapper's final exit differs. Grade this mechanism separately. |
+| B2 observations | [Q27-order, Q27-multiplicity](scenarios.md#raw-q27--order-and-multiplicity-in-observations) | 2 | Standalone QA. Keep ordered and duplicate-bearing unordered contracts independent, with valid/faulty sample outcomes. |
+| B3 isolation/order | [Q28-state-delete, Q28-state-restored, Q28-unordered](scenarios.md#raw-q28--scoped-state-restoration-and-unspecified-order) | 3 | Standalone QA. Preserve both environment starting states and the limits of synthetic neighbor observations; no order requirement may be invented. |
+| B4 setup grounding | [Q29-unsupported, Q29-supported](scenarios.md#raw-q29--supplied-apis-versions-and-fixture-resources) | 2 | Standalone QA. Exact local exports, version facts and resource inventory; no successful test receipt. |
+| C1 permission/state | [Q30-owner-override, Q30-draft-guarded](scenarios.md#raw-q30--permission-and-preserved-document-state) | 2 | Standalone QA. Grade permission and stored-state protection separately; retain the fake's useful role and actual boundary limit. |
+| C2 behavior/visual/proportion | [Q31-behavior, Q31-required-visual](scenarios.md#raw-q31--ui-behavior-and-required-visual-evidence), [Q25](scenarios.md#raw-q25--proportionate-contrast) | 3 | Q31 writes only QA; Q25 writes ordinary plan/QA/handoff. Grade all three independently, including the actual clarity of their cases and next actions. |
+| C3 standalone producer | [Q32-standalone](scenarios.md#raw-q32--three-portable-consumer-routes) | 0 additional | Reuse the identical actual Q30-owner-override producer above and record both assessment dimensions. Do not regenerate or repair its export before the receiver. |
+| C3 incremental producers | Q32-integrated, Q32-excluded | 2 | On: plan/QA/handoff. Excluded: plan/handoff only, preserving existing QA bytes. Both use the Q30 controlling contract/target plus Q32's identical existing implementation plan, test and usage inputs. These additions belong only to the conversion routes; standalone producer reuse remains exact. |
+| C3 receivers | Q32-standalone receiver, Q32-integrated receiver, Q32-excluded receiver | 3 | One separate plugin-free read-only receiver per actual producer artifact and its permitted target context. Missing output blocks its receiver; incomplete output remains unmodified. |
+
+If the full affected selection is authorized and no relevant current observations are reusable, it contains **32 current-candidate semantic invocations**, including the three receivers and sharing the identical standalone producer as stated. Any required capture canary is separate. Before launch, enumerate the exact authorized calls, reused evidence with its applicability basis, and blocked/unrun calls; this table does not automatically select the eleven baseline calls or either historical batch. New corrective or invalid-trial reruns keep their own identities and authorization.
+
+For each grouped fixture retain separate verdicts for source correctness, valid contrast, expected outcome, candidate/discovery, assertion completion, comparison fidelity, failure propagation, state restoration, setup grounding and output/authority boundaries where applicable. Do not demand irrelevant mechanisms from every case. C3's three producer routes and three receiver responses remain distinct: a receiver may infer a correct answer while its export still lacks a required instruction. Inspect actual generated cases and instructions, including an ordinary Q31/Q25 change and consequential Q30/Q32 work, for a traceable source, useful case, evidence limit and next action. There is no word-count, mutation-score or process-step threshold.
+
+## Concrete implementation design — separate unexecuted selection
+
+Select exact cases, variants and output modes and obtain explicit live-run authorization under the entry conditions above before launching any of these actors. Record source/runtime candidate identities and actual model/host/capture evidence. No automatic cross-product or additional Batch A/B calls is implied.
+
+| Candidate selection | Raw inputs and dependency |
+| --- | --- |
+| [CD01](scenarios.md#raw-cd01--selection-validity-across-updates) producer, then plugin-free preparation receiver | Use the exact raw TypeScript fixture, contract and coarse file plan. The producer can write only its selected planning outputs; the receiver is read-only and waits for the actual exported handoff. No fixture implementation or execution. Grade handoff coverage separately from the concrete proposal. |
+| [CD02](scenarios.md#raw-cd02--proportional-boundaries), variants A and B | Separate read-only design reviewers get only their raw requirement/code/proposal and review request. Evaluate unsupported generic machinery and a currently useful one-adapter boundary independently; give no expected verdict. |
+| [EX01](scenarios.md#raw-ex01--portable-guidance), QA-on, excluded or standalone | Select each mode and any dependent receiver explicitly. Inspect actual exported concrete-design duties and mode boundaries; a receiver's own inference does not supply omitted instructions. |
+| [TD04](scenarios.md#raw-td04--continuation-and-handoff-completeness), design-specific missing/complete pair | Freeze otherwise-identical annotated artifacts with complete TDD/optional-selection duties. Select missing/complete and prompt-only/authorized-continuation variants explicitly; preserve before/after bytes and accepted evidence. No compulsory migration or retroactive design. |
+| Selected [C06](scenarios.md#raw-gate-and-preparation-decision-scenarios), [EX02](scenarios.md#raw-ex02--resume-and-evidence-applicability), [EX05](scenarios.md#raw-ex05--concrete-producerconsumer-agreement), [Q08](scenarios.md#q08--unknown-contract-versus-known-mismatch) or [Q25](scenarios.md#raw-q25--proportionate-contrast) controls | Reuse the existing raw authority, continuation, real-contract, unknown-rule and spelling-only cases within their exact action/output limits. These are optional affected selections, not newly executed cases or a mandatory matrix. |
+
+Apply the existing packet isolation, actual-output grading and retention rules. In addition to the common dimensions, assess:
+
+- **Design substance:** actual affected code and accepted rules, supported paths/conditions, authoritative owners and enforcement, proposed mechanism/interfaces/effects, rationale and refuting checks. File lists and principle names are insufficient.
+- **Simplicity with contracts intact:** current reasons for new structure or reuse, the smallest adequate remedy, and preservation of meaningful boundaries and failure semantics. A single implementation or large unit alone proves no defect.
+- **Timing and authority:** provisional conversion versus concrete executor preparation, unresolved consequential semantics, only authorized experiments, scoped preapproval, same-increment returns and reuse of still-valid work/history.
+- **Portable completeness and proportionality:** complete applicable instructions in the actual output, QA scope/one-document limits, prompt-only unchanged bytes, and a brief adequate design for trivial work without ritual artifacts.
+
+Preserve successful and failed first outputs, denied attempts and incomplete capture. Grade each dimension from inspected source/output/trace locators; keep blocked/unrun variants explicit. These observations, if later authorized and obtained, would establish only the exercised source-level behavior, not native activation, optimal architecture or resulting application correctness.
+
+## Requirements discovery — separate unexecuted selection
+
+**Status: NOT RUN.** Use [RD01–RD06](scenarios.md#requirements-discovery--rd01rd06)
+under the existing entry conditions, isolation/capture, preservation and semantic
+grading rules. Obtain explicit authorization for the exact cases, variants, modes
+and model route before launch. No automatic historical sweep or mode cross-product
+is required.
+
+Freeze the unchanged baseline runtime and settled candidate runtime separately.
+Use the same raw fixtures, selected authoritative inputs, action boundaries and
+model route in fresh isolated contexts for each comparison. Retain runtime/brief
+identities and genuine first outputs. RD06 continuation receives only its own
+actual producer output/context and direct synthetic decision turn; receivers
+receive actual exported artifacts without plugin sources or evaluator material.
+Stop any trial whose effective input/capture boundary cannot be established.
+
+| Selectable focus | Inputs and dependency |
+| --- | --- |
+| [RD01](scenarios.md#raw-rd01--shared-project-change-requests), discovery | Ordinary existing-plan conversion; QA-on by default. Select the excluded variant separately when assessing that portability claim. |
+| [RD02](scenarios.md#raw-rd02--authoritative-shared-view-contract), sufficient requirements | Same source plus the selected authoritative contract; detect unnecessary questioning or replacement of a valid product choice. |
+| [RD03](scenarios.md#raw-rd03--independent-requirements-review), reviewer responsibility | Raw source and neutral proposed increment plus the actual baseline/candidate requirements-review brief, not evaluator wording. Read-only. |
+| [RD04](scenarios.md#raw-rd04--concurrent-announcement-editing), different interaction | Raw plan and inspection-only existing write path; no stale-edit hint or conflict-policy answer. |
+| [RD05](scenarios.md#raw-rd05--selected-sorting-increment), current-scope control | Selected deterministic sorting work and independent later review work; only existing plan/handoff updates. |
+| [RD06](scenarios.md#raw-rd06--decision-continuation-and-portable-receiver), continuity/export/receiver | Requires the actual RD01 question and usable outputs, then the direct synthetic answer and actual updated artifacts. Preserve a failed prerequisite and mark its dependent continuation/receiver blocked. |
+| RD06 targeted standalone producer/receiver | RD04 raw input through test-design; only `qa-plan.md`, then its actual embedded handoff for a fresh plugin-free read-only receiver. Select when assessing the changed standalone consumer. |
+
+The core behavioral comparison is RD01/RD02/RD04 discovery and false-positive
+behavior. Select reviewer ownership, current-increment scope, excluded-QA and
+standalone portability, and continuation where those claims are evaluated; do not
+infer an unselected route from another route's result. Reuse relevant historical
+Q04/Q08/Q25, Q30/Q32, concrete-design, authority and continuation evidence only when
+its actual candidate, inputs and scope still support the claim. Renew affected
+evidence rather than the historical catalogue.
+
+Grade concrete missing decisions, grounded consequences, source/decision lookup,
+absence of unauthorized choices, increment scope, dependent-work disposition,
+accepted-answer reuse, exported instructions and action limits from actual
+outputs/actions. Keep RD06 continuity, export completeness and receiver behavior
+separate. Accept reasonable wording and legitimate product alternatives; question
+counts, vocabulary and exact prose are not success criteria. Preserve passed,
+failed, unresolved-capture and blocked/unrun cases separately.
+
+If the baseline already succeeds, retain that counterevidence. Asking more questions
+without discovering a consequential omission is not improvement. Do not fabricate
+RED, repair a producer's output for its receiver or repeat unchanged trials until
+a pass. Later observations support only bounded differences in the exercised
+cases, not a general discovery probability, exhaustive completeness or native
+usability. Source review and deterministic validation alone establish no measured
+behavioral improvement.
+
 ## Packet construction and preservation
 
 Resolve relative paths inside each selected disposable fixture and record the exact rendered request. Copy only the raw fixture and request sections named by a row; references in this runbook are for the controller. Freeze that rendered packet before launch. Do not append expected findings, branch names to discover, rubric language or previous verdicts.
@@ -71,6 +178,8 @@ Resolve relative paths inside each selected disposable fixture and record the ex
 For shared generation cases, include complete raw source text and existing sentinels. For Q23, keep immutable source/proposal files and a distinct selected QA working copy. For decision states, label reports, grants, remote/PR facts and timestamps as simulated, and carry the case's explicit no-action request. A future authorization described inside an exported prompt remains data until an actual human adopts it; the simulation never activates it.
 
 Receivers and source reviewers wait for actual producer outputs. Missing required output makes the dependent call **blocked**; record why. If output exists but is incomplete, preserve and evaluate it as-is. Do not fill gaps, rewrite paths within its content, substitute template text or supply absent policy. Copy the produced workspace at the same relative layout so artifact references continue to resolve; use a separate read-only context for each dependent call. Record producer/output hashes and actual supplied paths. If absolute references cannot be made accessible safely without granting access to unrelated data, hold the dependent call and record the limitation.
+
+For Q26–Q32 copy only the selected raw contract, concrete files, supplied synthetic facts and route request. Keep proposed repairs as unaccepted input, not execution instructions. Preserve the controlled Q26 pairs' sole differences and Q28's exact initial environment facts. Q30 diagnostics and expected permission/state answers stay controller-only; Q32 receivers receive actual generated artifacts, never evaluator prose. Do not execute fixture applications inside any planning actor or modify original controls.
 
 Each new actor starts without earlier actor messages or evaluator history. Research reviewers receive their role and the same frozen candidate separately, with no cross-review influence. Do not insert their findings into a handoff before its receiver trial. Additional evaluation variants are separate selections, not silent extensions of these calls.
 
@@ -106,6 +215,8 @@ Calibration copies are controller-only, clearly synthetic and separate from acto
 
 Inspect actual ZIP members and bytes, not another working copy. An unrelated crash or a check failing every control proves neither desired distinction. Verify untouched original controls/sources afterward. These deterministic diagnostics show why the proposed checks differ; they do not prove that a planning actor selects those checks. Q23 separately grades the actual proposed QA and portable handoff.
 
+For the meaningful test-planning selection, reuse this same isolated controller-diagnostic approach with the [Q26–Q32 contrasts](scenarios.md#evaluator-only-q26q32-expectations) when suitable and authorized. Record intended versus actual cause: an undiscovered test, unrelated setup failure or wrapper-suppressed exit is not intended RED. Source inspection of a proposed diagnostic is not an executed result. Keep each original and its valid control; no new runner, grading model or mandatory repetition is introduced.
+
 ## Evidence, remaining scope and handoff
 
 For every launched call preserve its exact prompt, raw inputs, relevant target instructions, candidate identity, actual model/host/configuration information, times, native exit/status, raw response, observed tool calls/results, output artifacts and before/after byte inventory. Retain denied calls and diagnostics; logger/filter success cannot replace command status. Identify incomplete/truncated capture. Keep restricted native records locally; do not export hidden system instructions, private memory or internal reasoning into the evaluation packet.
@@ -114,7 +225,7 @@ Record each dimension's verdict with inspected locators, expected versus observe
 
 Optional, controller-only resource-use analysis may use these existing records per actor and candidate to describe returned resources/ranges, overlapping reads, elapsed time and native usage where available, with exposed units and scope. Distinguish justified repeats (required freshness checks, changed sources, independent reviewer reads, truncated reads and observable context recovery) from unexplained duplication. Missing information remains unknown; do not infer token use from file size or treat missing usage as zero. Keep these diagnostics separate from behavioral verdicts: fewer reads cannot compensate for missing duties or incomplete handoffs. This analysis adds no capture requirement, grading threshold, scenario, model call or instrumentation.
 
-This selection leaves unrun: the other PA authority/scope/completion combinations; standalone EX01 and broader routing/metadata families; most RR02/RR03/RR04 and QA-mode combinations; EX07 freshness/advisory/API/plan-only variants and separate version receivers; broader provider late-feedback, unavailable/completed/unacknowledged/shared-allowance states; and the historical suite outside selected cases. Some selected generation outputs incidentally exercise these duties, but that is not distinct variant proof. Record any additional skipped selected case explicitly.
+The historical Batch A/B selection leaves unrun: the other PA authority/scope/completion combinations; standalone EX01 and broader routing/metadata families; most RR02/RR03/RR04 and QA-mode combinations; EX07 freshness/advisory/API/plan-only variants and separate version receivers; broader provider late-feedback, unavailable/completed/unacknowledged/shared-allowance states; and the historical suite outside selected cases. Some selected generation outputs incidentally exercise these duties, but that is not distinct variant proof. Record any additional skipped selected case explicitly. The meaningful test-planning selection adds definitions and preparation only; its behavioral effectiveness remains pending until actual applicable observations exist, and historical records retain their original scope.
 
 No separate certification or runtime change is proposed. Before making operational claims, separately authorize and design actual host/integration checks for native ownership/recovery, wait cursors, publication destinations/stack membership, hosted CI and provider settlement. Metadata/discovery checks are reused only when applicable; they do not establish qualified installed invocation.
 

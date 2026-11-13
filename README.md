@@ -113,6 +113,11 @@ Supply a plan, a project, or both. The handoff is embedded in the QA document;
 there is no separate incremental plan or handoff file. Proposed commands and
 paths remain provisional when the project has not been inspected.
 
+QA cases connect concrete inputs and actions to independently justified expected
+outcomes and the wrong behavior they should detect. Where warranted, they also
+plan evidence that the intended tests actually run, preserve relevant distinctions
+and remain reliable together. See [QA options](docs/usage.md#choose-how-qa-fits).
+
 ### Continue after implementation
 
 ```text
@@ -137,6 +142,11 @@ A reviewed plan normally hands off preparation to an executor. **Gate 2** is you
 approval of the concrete implementation plan; **Gate 3** is your approval of the
 verified result. Explicit scoped preapproval can remove a routine pause, while
 required preparation, reviews, evidence, and project-specific gates still apply.
+
+Before Gate 2, the executor establishes a [concrete, justified design](skills/incremental-plan/references/gates-and-reviews.md#concrete-implementation-design)
+from the actual code: where the rules belong, how the change works, why that
+structure fits, and which checks could disprove it. Detail stays proportionate;
+this uses existing plan fields and adds no architecture document or approval step.
 
 When implementation remains, incremental planning also returns a copy-ready
 **Implementation orchestration prompt** unless you ask to omit it. You can send
