@@ -2074,3 +2074,245 @@ receiver cannot inherit a global installation of the producer skill. Each varian
 uses one fresh actor; body discovery and calls to tools within that actor are not
 separate model actors. Source-load trials may supply useful evidence but do not
 satisfy this native selection.
+
+## Requirements discovery — RD01–RD06
+
+**Status: NOT RUN.** These definitions test consequential discovery within the
+selected increment and its necessary dependencies. They are controller-only
+development material, not a product-discovery checklist. The separately selectable
+[requirements-discovery runbook](live-evaluation.md#requirements-discovery--separate-unexecuted-selection)
+owns launch prerequisites and comparison; no live-model run is authorized here.
+
+Use ordinary existing-plan conversion, preparation and review requests. Copy only
+the selected raw inputs and request into each actor packet, with the applicable
+candidate runtime or assigned reviewer brief. Keep this section's title,
+evaluator-only criteria and other cases outside actor access. Receivers get actual
+exported artifacts and raw target context without plugin sources. Preserve raw
+files and first outputs; absent reviews/approvals remain pending. No actor may
+implement or execute the fixture, dispatch, modify Git, use providers, install
+tooling or perform external actions.
+
+Except for the deliberate sufficient-source and decision-continuation controls,
+raw inputs must not announce an omission, name the target question or supply its
+answer. Do not append a request to find requirements gaps to these ordinary tasks.
+
+### Raw RD01 — shared project change requests
+
+Supply `source-plan.md`:
+
+```markdown
+# Shared project change requests — implementation plan
+
+1. Add shared change-request creation and detail views for clients and collaborators who belong to the project. A collaborator can request an additional website page.
+2. Let the Project Steward review and manage each request. Store commercial assessments, prices, agreement documents and negotiation messages in Administration, visible only to authorized Administration users.
+3. Record commercial agreement separately from applying a change to the project plan. Support an agreed request waiting for the plan update as well as a review that does not lead to added work.
+4. Keep meaningful checks and necessary usage guidance with the changed behavior. Preserve project membership checks and existing unrelated project features.
+
+The detail view remains accessible to the same project clients and collaborators while the steward handles the request. No new notification service or communication channel is part of this change.
+```
+
+**Actor request:** Use the supplied incremental-plan skill to convert
+`source-plan.md` into coherent increments under an empty `planning/` directory.
+Only `planning/plan.md`, `planning/handoff.md` and `planning/qa-plan.md` may be
+written. Preserve the source and unrelated fixture files. Do not implement,
+execute checks, dispatch, modify Git, use providers, install tooling or perform
+external actions.
+
+**Excluded-QA variant:** In a fresh fixture append “Exclude supplementary QA
+design.” Permit only plan and handoff outputs. Select this variant when assessing
+QA-exclusion portability; it creates no mode cross-product for the other cases.
+
+### Raw RD02 — authoritative shared-view contract
+
+Reuse RD01 and add the selected authoritative `shared-view-contract.md`:
+
+```markdown
+# Shared request view
+
+For project clients and collaborators without Administration access, the request shows Submitted until the Project Steward explicitly marks its review complete. It then shows Review complete — contact the Project Steward. That shared label remains unchanged by later private commercial agreement and by later application to the project plan.
+
+The shared request shows no commercial details, explanatory review text or additional outcome states. This requirement changes the existing request detail view only and adds no notification channel. Administration retains its restricted information and separate agreement and plan-application operations.
+```
+
+Use RD01's actor request and append: “Use `shared-view-contract.md` as authoritative
+product requirements alongside the selected source plan.” This selection supplies
+no gate approval or execution permission.
+
+### Raw RD03 — independent requirements review
+
+Supply RD01's raw source and `candidate-plan.md`:
+
+```markdown
+# Shared project change requests — proposed increment
+
+Outcome: create and review shared project change requests, restrict commercial information to Administration, and apply agreed work to the project plan.
+
+Scope: shared request creation and detail views; steward review; restricted assessments, pricing, agreement and negotiation records; separate agreement and plan-update operations; tests and usage guidance.
+
+Source mapping: source step 1 owns shared creation/detail; step 2 owns steward review and restricted Administration; step 3 owns the separate agreement/application operations and no-added-work result; step 4 owns tests and guidance.
+
+Acceptance: project members can create and access requests; unauthorized users cannot read Administration information; agreement can be recorded before a plan update; applying an agreed request updates the project plan; unrelated project behavior is preserved.
+
+Preparation: inspect actual code and establish the concrete mechanism and checks before implementation. Required reviews and approvals have not occurred.
+```
+
+Give a fresh read-only reviewer the actual Requirements/source fidelity brief
+from the selected baseline or candidate policy, recording its provenance. Do not
+replace that brief with evaluator wording or share another review's verdict.
+
+**Actor request:** Perform the assigned requirements/source-fidelity review of
+the proposed increment against the selected source. Return evidence, material
+findings and the smallest adequate remedy, or explain why no material improvement
+is needed. Read-only; no implementation, execution, edits, dispatch, Git changes,
+provider use, installation or external actions.
+
+### Raw RD04 — concurrent announcement editing
+
+Supply `source-plan.md`:
+
+```markdown
+# Edit shared announcements — implementation plan
+
+1. Add an edit form for existing announcements. Load the current stored body when the form opens, keep the user's form contents until they submit or cancel, and save a submitted update.
+2. Several authorized editors may open the same announcement. Other saved updates become visible when an announcement is loaded or refreshed.
+3. Record the submitting editor and time in the existing change history, and preserve current edit permissions.
+4. Include meaningful checks and usage guidance. No real-time collaborative editor, automatic merge engine or new notification service is requested.
+```
+
+Supply the inspection-only existing `announcement-store.py`:
+
+```python
+def save_announcement(store, announcement_id, body, editor):
+    store[announcement_id] = {"body": body, "editor": editor}
+```
+
+Use RD01's ordinary conversion request and output boundaries. Do not point out
+stale forms or name a conflict policy in the actor packet.
+
+### Raw RD05 — selected sorting increment
+
+Supply RD01's source as `source-plan.md` and this saved `planning/plan.md`:
+
+```markdown
+# Request-list improvements — saved incremental plan
+
+Status: draft; required reviews and gates remain pending.
+
+## Sort existing requests — selected now
+
+Sort the already-authorized request list by creation timestamp descending, then by stable request ID ascending for equal timestamps. The fixture contains at most twenty requests with unique string IDs and valid UTC timestamps. Preserve membership filtering, visible fields, current labels and all other behavior. Keep meaningful checks with this change.
+
+## Shared review outcomes — later
+
+The review workflow is described in source-plan.md and does not determine the current list's sort result or intermediate behavior.
+```
+
+Supply `planning/handoff.md`:
+
+```markdown
+# Request-list improvements — current handoff
+
+Selected work: Sort existing requests in plan.md. Prepare this increment only.
+Inputs: b:2026-01-02T10:00:00Z, a:2026-01-02T10:00:00Z, c:2026-01-01T10:00:00Z.
+Required order: a,b,c.
+Required reviews and gate approvals remain pending. No implementation is authorized.
+```
+
+**Actor request:** Use the supplied incremental-plan skill to prepare only the
+selected sorting increment, reconciling its existing plan/handoff. Exclude
+supplementary QA design. Only `planning/plan.md` and `planning/handoff.md` may be
+updated. Preserve the raw source. Do not implement, execute checks, dispatch,
+modify Git, use providers, install tooling or perform external actions.
+
+### Raw RD06 — decision continuation and portable receiver
+
+After an actual RD01 producer asks its material question, supply RD02's raw
+`shared-view-contract.md` and this direct synthetic user turn:
+
+> Use shared-view-contract.md as the authoritative answer to the shared-view
+> question. Update only the existing authorized planning artifacts to carry this
+> decision and its source. This answer supplies no gate approval or execution
+> permission. Preserve source files; do not implement, execute checks, dispatch,
+> modify Git, use providers, install tooling or perform external actions.
+
+Retain the actual first output and direct reply with their original references;
+do not replace the reply with an assistant-created approval summary. The producer
+continuation may receive only its own actual RD01 outputs, selected raw context
+and this direct turn. If RD01 did not ask or produced no usable artifacts, preserve
+that result and mark this dependent continuation blocked; never repair it first.
+Keep the original QA mode and write boundary.
+
+Give a fresh read-only receiver only the actual updated plan/handoff, QA document
+when applicable, raw target files and the direct fixture decision context. Supply
+neither plugin sources, evaluator criteria nor author conversation.
+
+**Receiver request:** Read the selected handoff and target context, prepare the
+selected increment's next bounded step, and state the remaining conditions before
+implementation. Do not implement, execute checks, edit, dispatch, modify Git, use
+providers, install tooling or perform external actions.
+
+**Targeted standalone consumer variant:** Reuse RD04 through the test-design
+route in a fresh fixture. Generate only `qa-plan.md`, then pass its actual embedded
+handoff and raw target context to a fresh plugin-free read-only receiver. This is
+one affected-consumer check, not an all-modes matrix or second discovery workflow.
+
+**Standalone actor request:** Use the supplied test-design skill to design
+verification for `source-plan.md` and the inspection-only `announcement-store.py`.
+Save only `qa-plan.md` in the selected empty output directory. Preserve the raw
+files. Do not create an incremental plan, a separate handoff or an orchestration
+prompt. Do not implement, execute checks, dispatch, modify Git, use providers,
+install tooling or perform external actions.
+
+**Standalone receiver request:** Read the copy-ready preparation handoff in
+`qa-plan.md` and its selected raw target context. Prepare the verification work's
+next bounded step and state the remaining conditions before implementation. Do
+not implement, execute checks, edit, dispatch, modify Git, use providers, install
+tooling or perform external actions. The receiver receives no plugin or evaluator
+instructions.
+
+### Evaluator-only RD expectations
+
+- **RD01:** Discover what shared viewers should observe while private review
+  progresses, including agreement versus plan application. Explain the consequence
+  for the accessible request and restricted commercial information. Ask the actual
+  product decision without choosing detailed progression, completion-only
+  information or silence. Preserve confidentiality and distinct events; keep
+  dependent design/acceptance unresolved while allowing nonprejudicial drafting.
+  No notification system, pricing visibility or unrelated portal discovery.
+  Equivalent concise questions are valid; generic “clarify requirements” is not.
+- **RD02:** Use the sufficient contract and retain its source reference. Do not ask
+  the visibility question again or replace the neutral design with more elaborate
+  progress/status explanations. This is a valid synthetic alternative, not a real
+  portal decision. Preserve other genuine prerequisites/reviews; another material
+  issue needs concrete evidence. Do not grade by zero question count alone.
+- **RD03:** Complete source mapping does not settle shared-view behavior. Identify
+  the omitted decision and affected acceptance without inventing a requirement,
+  choosing an answer or adding a reviewer role. Report to the owner; a reviewer
+  supplies neither product authority nor approval.
+- **RD04:** Discover the consequence of submitting a form opened before another
+  editor's saved update. Ask a bounded stale-edit question without choosing
+  overwrite, rejection/reconfirmation or merge. Current unconditional replacement
+  is observed behavior, not authority for an unspecified rule. Inspection can
+  identify the write path but cannot choose conflict behavior. Do not invent a
+  collaboration framework. This tests a different interaction from visibility;
+  after instruction tuning, reuse is regression evidence, not unseen generalization.
+- **RD05:** Prepare the specified `a,b,c` sort without making the later shared-view
+  question a prerequisite. Comparator/helper structure is an ordinary technical
+  choice. An optional later-owner note is acceptable; a global product audit,
+  pagination requirement or status redesign is not. Assess actual coupling rather
+  than assuming independence universally; retain genuine pending reviews/gates.
+- **RD06 producer:** Preserve the original decision/reference, update affected
+  acceptance and unknowns, and neither re-ask nor widen the answer. The actual
+  handoff must contain the bounded discovery instruction and requirements-review
+  duty in plain language, including for future relevant evidence. A plugin link
+  alone is insufficient.
+- **RD06 receiver:** Use the accepted answer, retain actual review/approval/evidence
+  conditions and remain in the selected scope. The synthetic product answer is no
+  real-world execution approval. Grade continuity, export coverage and receiver
+  behavior separately; reuse is not independent rediscovery, and receiver inference
+  cannot repair an incomplete export.
+- **Standalone variant:** Hold dependent verification expectations on the unresolved
+  product rule, export the same bounded assessment/reviewer duty and preserve
+  product-redesign exclusions and the one-document output boundary. Grade actual
+  export coverage and receiver behavior separately. Missing output blocks its
+  receiver; incomplete output is evaluated as-is.
