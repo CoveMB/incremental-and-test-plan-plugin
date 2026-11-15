@@ -89,6 +89,12 @@ return path for each relay. The three independent scopes, gates and separate
 action permissions still apply. An automatic-only requirement stays blocked if
 any required operation needs a relay. Missing title operations alone are nonblocking.
 
+When several authorized assignments are already running, a supported grouped
+wait can return actionable results with fewer status calls. Keep each target's
+own cursor, errors and pending state, respect deadlines and host capacity, and
+use the verified per-target or manual route where needed. Existing dispatch and
+review sequencing still apply.
+
 Missing skill, denied access, absent shared resource or wrong candidate: record
 the exact identity/path and blocked operation, and resolve the specific conflict.
 Do not silently select another copy, bypass permissions, install optional reviews,
