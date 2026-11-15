@@ -79,14 +79,21 @@ and [skills guide](https://antigravity.google/docs/skills) (checked 2026-10-29).
 
 ### Coordination and troubleshooting
 
-Use the [host capability mapping](../references/host-compatibility.md) before
-exporting execution or review handoffs. Native coordination requires actual
-supported and authorized operations. The standalone IDE baseline is manual:
-the user opens fresh owner/reviewer chats or supplies qualified independent human
-reports and relays results to the coordinator. Handoffs identify that human,
-destination, packet and return route; the three independent scopes, gates and
-separate action permissions remain. An automatic-only requirement stays blocked
-where the host cannot meet it. Missing title operations alone are nonblocking.
+Use the [coordination transport mapping](../references/host-compatibility.md#coordination-transport)
+before exporting an execution or review handoff. Verify assignment, resumption,
+reporting and waiting per role. For example, keep native reviewer reports under
+the increment owner when the owner's return to the orchestrator needs a human
+relay. The standalone IDE uses manual routes where native operations remain
+unverified. The launcher and handoff name the human, destination, packet and
+return path for each relay. The three independent scopes, gates and separate
+action permissions still apply. An automatic-only requirement stays blocked if
+any required operation needs a relay. Missing title operations alone are nonblocking.
+
+When several authorized assignments are already running, a supported grouped
+wait can return actionable results with fewer status calls. Keep each target's
+own cursor, errors and pending state, respect deadlines and host capacity, and
+use the verified per-target or manual route where needed. Existing dispatch and
+review sequencing still apply.
 
 Missing skill, denied access, absent shared resource or wrong candidate: record
 the exact identity/path and blocked operation, and resolve the specific conflict.
@@ -341,6 +348,13 @@ These are the defaults described by the
 Applicable scoped preapproval can remove a named pause; it does not remove
 preparation, checks, independent reviews, or material decisions. Project-specific
 and specialist gates remain in force.
+
+During incremental execution, owners send concise returns with links to the
+underlying checks, reports and decisions. The orchestrator inspects what the
+next decision needs and reuses still-applicable evidence, expanding inspection
+when access, changes or uncertainty require it. Fresh independent reviewers
+still inspect their assigned sources and candidate. Token savings have not been
+measured. See the [execution discipline](../skills/incremental-plan/references/gates-and-reviews.md#execution-discipline-carried-by-a-handoff).
 
 ### Use the orchestration prompt
 
