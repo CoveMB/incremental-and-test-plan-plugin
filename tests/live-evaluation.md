@@ -16,6 +16,8 @@ The [concrete implementation design selection](#concrete-implementation-design--
 
 The [requirements-discovery selection](#requirements-discovery--separate-unexecuted-selection) is also separately selectable and **NOT RUN**. It covers unannounced consequential omissions, sufficient-requirements and scope controls, existing-reviewer responsibility and actual portable continuation. It adds no historical batch calls or live-run authorization.
 
+The [execution-exchange selection](#execution-exchange--separate-unexecuted-selection) is **NOT RUN**. It assesses the portable returns and receiving decisions separately from the optional execution-efficiency comparison.
+
 Preparation is complete when the scenario variants, selection, rubric, candidate identities, control evidence and independent preparation review are available. Entry to live evaluation additionally requires:
 
 1. Direct authorization identifying the chosen batch or cases, model route and any capture canary. Use the configured model default unless the user selects otherwise; record the actual resolved identity or its honest absence. No paid integration, private-source transfer or external workflow permission is inferred.
@@ -170,6 +172,18 @@ a pass. Later observations support only bounded differences in the exercised
 cases, not a general discovery probability, exhaustive completeness or native
 usability. Source review and deterministic validation alone establish no measured
 behavioral improvement.
+
+## Execution exchange — separate unexecuted selection
+
+Select exact variants under the same entry, isolation, capture and grading requirements. This selection adds no calls to the historical Batch A/B counts. Freeze and record the twelve runtime files for the candidate, retaining controller fixtures separately.
+
+1. Generate two artifact pairs using [C20-orchestration-defaults](scenarios.md#c20-orchestration-raw-variants), one with supplementary QA on and one with it excluded. Assess each actual prompt and handoff separately, including the first action, portable return duties and existing authority. Keep every actual output, including incomplete exports.
+2. Use those actual artifacts with fresh read-only receivers for the [execution exchange variants](scenarios.md#c20-orchestration-execution-exchange-affected-variants). In each QA mode run the complete-return and inaccessible-evidence contrasts. Use a manual route with a named relay for at least one inaccessible-evidence call. Select one uncertain repair with connected consumer drift and one interrupted owner with context to restore. Receivers get only their own original export and selected raw target evidence. Keep plugin text, evaluator expectations and earlier verdicts out of the packets.
+3. Grade which proof was inspected, reused, renewed or requested, the actual next decision and any retained hold. Separate missing exports from incorrect receiver actions. Reuse applicable C20 authority, waiting and frozen-review controls where they still cover the candidate. Keep blocked and unrun dependencies visible.
+
+An optional execution comparison requires separate explicit authorization. Freeze pre-exchange and changed guidance, and run them on the same synthetic two-increment project in isolated contexts and workspaces. Use the same model and settings, target rules, initial project artifacts, available tools and result-acceptance milestone. Exercise a clean accepted increment and an increment with a controlled repair and affected re-review. Include the owner, orchestrator, reviewers, retries and repairs in the execution measurement. Record generation overhead separately if it differs.
+
+Use native usage records where available. Report total input, cached input as a subset, output and separately exposed reasoning according to provider counting rules. Report elapsed time, calls, repeated reads, rework and observed requirement, gate or evidence failures. Leave missing telemetry unknown. Compare efficiency only at equivalent completed scope and evidence coverage. Retain incomplete and failed runs, and report a small comparison as exploratory. Source checks and scenario definitions establish no measured savings.
 
 ## Packet construction and preservation
 

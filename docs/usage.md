@@ -343,6 +343,13 @@ Applicable scoped preapproval can remove a named pause; it does not remove
 preparation, checks, independent reviews, or material decisions. Project-specific
 and specialist gates remain in force.
 
+During incremental execution, owners send concise returns with links to the
+underlying checks, reports and decisions. The orchestrator inspects what the
+next decision needs and reuses still-applicable evidence, expanding inspection
+when access, changes or uncertainty require it. Fresh independent reviewers
+still inspect their assigned sources and candidate. Token savings have not been
+measured. See the [execution discipline](../skills/incremental-plan/references/gates-and-reviews.md#execution-discipline-carried-by-a-handoff).
+
 ### Use the orchestration prompt
 
 For creation and authorized revision or continuation with unfinished increments,
