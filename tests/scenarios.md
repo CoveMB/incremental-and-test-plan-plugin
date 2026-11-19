@@ -1540,10 +1540,12 @@ Inspect this handoff and target context. Prepare a concrete proposal for the req
 
 ### Raw CD02 — proportional boundaries
 
-Use two isolated read-only design-review packets. Give each reviewer the relevant raw requirement, code and proposal below, with the same request:
+Select each variant independently: A, B, B2, C1 or C2. Each fresh read-only reviewer receives only its selected raw requirement/code/proposal, the request below, and the frozen candidate's `skills/incremental-plan/references/gates-and-reviews.md` with its referenced resources available at their package-relative paths. This is the existing architecture/human-reviewability assignment through the source-read route, not another actor or evaluation call. Preserve the supplied policy verbatim; do not substitute a summary or excerpt chosen to imply a verdict. Keep this controller catalogue, evaluator expectations, sibling packets and earlier verdicts outside actor context. Use neutral actor-visible filenames/titles such as those below and identifiers A, B, B2, C1 or C2, without expected-outcome labels.
+
+Record the frozen revision/content identities, exact supplied inputs and resource paths, and the actual policy/resource reads for each selected reviewer. Supplying a path alone does not establish exposure. If inspection of the architecture brief and referenced concrete-design criteria cannot be established, record a policy-coverage gap. A separately selected raw-only judgment can be a labeled general-reasoning control, not evidence of applying this policy. Use the same request for each source-read reviewer:
 
 ```text
-Review this proposed implementation design against the supplied requirement and existing code. Identify material concerns with evidence and the smallest adequate remedy, or explain why the proposal is adequate. Do not implement, run code or checks, edit, dispatch or perform external actions.
+Inspect and apply the Architecture/human reviewability/simplicity brief in the supplied frozen gates-and-reviews.md and its referenced Concrete implementation design criteria. Read relevant connected resources as needed. Review this proposed implementation design against the supplied requirement and existing code. Identify material concerns with evidence and the smallest adequate remedy, or explain why the proposal is adequate. Identify the guidance and source files you actually inspected and any limitations. Do not implement, run code or checks, edit, dispatch or perform external actions.
 ```
 
 **Variant A:** Reuse CD01's raw fixture and contract. Supply `proposal.md`:
@@ -1579,6 +1581,124 @@ There is one real external record loader. Its contract is (id: string) => Promis
 Pass the narrow loader function into the eligibility policy, with the existing real adapter supplied by its caller. Preserve the loader's argument/result contract and rejection behavior. Offline checks supply deterministic found/missing/rejecting loaders, while production keeps the one real adapter. No provider registry, service framework or second production adapter is proposed.
 ```
 
+Supply this concrete `eligibility-proposal.ts`. `RecordProvider` is the synthetic shape of the existing provider operation, not a second service or a dependency to install. The caller supplies `toRecordLoader(provider)` in production and a deterministic loader in offline checks:
+
+```typescript
+type RecordValue = { eligible: boolean };
+type LoadRecord = (id: string) => Promise<RecordValue | null>;
+type RecordProvider = { records: { get(id: string): Promise<RecordValue | null> } };
+
+export function toRecordLoader(provider: RecordProvider): LoadRecord {
+  return id => provider.records.get(id);
+}
+
+export async function isEligible(id: string, loadRecord: LoadRecord): Promise<boolean> {
+  const record = await loadRecord(id);
+  return record !== null && record.eligible;
+}
+```
+
+Include these accepted examples in `eligibility-contract.md` for both B and B2; they describe the source contract, not a judgment of either proposal:
+
+| Provider outcome for the requested ID | Required loader outcome | Required eligibility outcome |
+| --- | --- | --- |
+| `{ eligible: true }` | That record | `true` |
+| `{ eligible: false }` | That record | `false` |
+| `null` | `null` | `false` |
+| Rejected retrieval, for example `Error("unavailable")` | Rejection | Rejection |
+
+**Variant B2:** Reuse B's raw code, contract/examples and `proposal.md` unchanged. In its separate `eligibility-proposal.ts`, replace only `toRecordLoader` with the following proposed implementation; keep the same types and `isEligible` function:
+
+```typescript
+export function toRecordLoader(provider: RecordProvider): LoadRecord {
+  return async id => {
+    try {
+      return await provider.records.get(id);
+    } catch {
+      return null;
+    }
+  };
+}
+```
+
+**Variants C1 and C2:** Supply the same inspection-only source files, proposal and accepted before/after examples below. Only the rule-ownership paragraph in `publication-contract.md` differs between packets; do not supply both paragraphs to either actor.
+
+`article.ts`:
+
+```typescript
+export type Article = { approved: boolean; embargoed: boolean; archived: boolean };
+```
+
+`preview.ts`:
+
+```typescript
+import type { Article } from "./article";
+
+export function canOfferPublication(article: Article): boolean {
+  return article.approved && !article.embargoed;
+}
+```
+
+`publish-command.ts`:
+
+```typescript
+import type { Article } from "./article";
+
+export function canPublishDirectly(article: Article): boolean {
+  return article.approved && !article.embargoed;
+}
+```
+
+`scheduled-job.ts`:
+
+```typescript
+import type { Article } from "./article";
+
+export function canPublishOnSchedule(article: Article): boolean {
+  return article.approved && !article.embargoed;
+}
+```
+
+Common `publication-contract.md` text:
+
+```markdown
+# Publication decisions
+
+Article fields are booleans. The preview UI calls canOfferPublication to show its action. The direct command calls canPublishDirectly, and the scheduled job calls canPublishOnSchedule without going through the preview or direct command. Each function returns its decision without mutating the article or performing publication. Preserve these public signatures and effects.
+
+The current accepted behavior in each path is approved && !embargoed, including for archived articles; the existing code satisfies it. The accepted update makes each path return false for archived articles as well. Preserve all other results. No configurable policy framework, registry or new publication path is requested.
+```
+
+Append exactly the selected ownership paragraph:
+
+- **C1:** `All three paths apply the same publication-eligibility rule owned by editorial policy. For the same article they must agree. Because the scheduled job and direct command can run without the preview, changing only the preview would leave those entry points applying the older rule; withholding an action in the UI would not prevent either route from allowing publication. The accepted update applies to that one rule across these existing consumers.`
+- **C2:** `These paths answer independently owned questions: the editorial team owns the preview recommendation, the direct-command team owns immediate publication admission, and the scheduling team owns scheduled publication admission. Their current predicates happen to match; no shared policy requires them to remain identical. Each owner has separately accepted the archived-article exclusion for this update. Preserve those independent ownership boundaries and all specified current outcomes; do not invent later differences.`
+
+Include this table of accepted outcomes for each of the three functions in both packets. It supplies current and requested behavior, not an extraction recommendation:
+
+| approved | embargoed | archived | Current result | Required result after update |
+| --- | --- | --- | --- | --- |
+| false | false | false | false | false |
+| false | false | true | false | false |
+| false | true | false | false | false |
+| false | true | true | false | false |
+| true | false | false | true | true |
+| true | false | true | true | false |
+| true | true | false | false | false |
+| true | true | true | false | false |
+
+Common `proposal.md`:
+
+```markdown
+# Proposed publication update
+
+Keep the three existing functions and files. In each function, replace its return expression with:
+
+    return article.approved && !article.embargoed && !article.archived;
+
+Keep each exported signature and the input object unchanged. Check each function against the accepted input/result table. No new dependency or publication mechanism is proposed.
+```
+
 ### Evaluator-only CD expectations
 
 | Case | Observable acceptance |
@@ -1587,9 +1707,13 @@ Pass the narrow loader function into the eligibility policy, with the existing r
 | CD01 receiver | Inspects the actual shared update owner and both routes. Proposes enforcing membership in replaceItems, retaining selectedId only when null or still present and clearing it otherwise; removeItem continues to use that rule. Preserves signatures and order and names affected callers, rationale and observable checks. Accept equivalent small mechanisms with evidenced common ownership; require no specific helper name, class or identical wording. A file list, empty-only check, narrow removeItem fix or “follow SOLID” promise cannot establish readiness. No execution or implementation is performed. |
 | CD01 independent expectations | From items a,b,c and selected b: remove b gives a,c and null; remove a gives b,c and b; replace with c,b retains order c,b and selection b; replace with a,c clears selection; replace with an empty list clears selection. An initially null selection remains null. Assess independently justified proposed checks, not observed passes. |
 | CD02 A | Finds the unsupported strategy/registry/event-bus machinery against the actual contract and current consumers. Offers the smaller shared membership repair while preserving signatures, order and checks. Gives the concrete requirement/consequence and remedy, not a line-count or class-count objection. |
-| CD02 B | Recognizes the narrow function boundary's current offline-verification role despite one real adapter. Preserves null versus rejection semantics and proposes relevant found/ineligible/missing/failure checks. Does not demand a second provider, remove the boundary solely for having one implementation, or assert that an uninspected adapter is implemented correctly. |
+| CD02 policy exposure | For each selected source-read variant, establish the exact frozen policy/resources supplied and actual inspection of its architecture brief and concrete-design criteria before crediting policy coverage. A missing read/capture is a coverage gap even if the judgment is sensible. Record a raw-only control separately; no automatic invocation, portable completeness or causal wording improvement follows from a source-read judgment. |
+| CD02 B | Recognizes the narrow function boundary's current offline-verification role despite one real adapter. The proposed adapter preserves null versus rejection semantics; assess found/ineligible/missing/failure checks against the contract. Does not demand a second provider or remove the boundary solely for having one implementation. Inspection of this synthetic proposal proves no real provider integration or uninspected adapter. |
+| CD02 B2 | Identifies the catch-all adapter's behavioral substitution defect despite its compatible type/signature: a rejected retrieval becomes null, making isEligible resolve false instead of rejecting. Preserve the useful boundary and restore failure propagation with the smallest adequate change; do not replace it with a registry or demand another provider. Ground the decisive failure check in the accepted contract, not signature compatibility alone. |
+| CD02 C1 | Recognizes that existing output is correct and the proposed update can produce every required result, while assessing the concrete maintenance consequence of one editorial rule repeated across independent entry points: the accepted archive clause requires coordinated changes, and a preview-only edit leaves command/scheduled decisions out of agreement. Trace the current consumers and shared ownership; a small shared predicate with the existing wrappers may localize that rule. Do not claim a current runtime bug, require historical change statistics, or infer mandatory extraction from copy count/shared ownership alone. Accept evidence-backed retention of the small copies if extraction has no material benefit, with the specific consequence and strongest practical alternative addressed. |
+| CD02 C2 | Uses the independently owned decisions to assess the same code/proposal differently: visual similarity and today's matching truth tables do not establish one shared policy. Retaining these small predicates can preserve their actual boundaries. Do not invent divergence, rewrite unrelated inputs or impose a shared rule/framework. Accept another adequate design only with evidence that it preserves the independent contracts and offers material benefit. |
 
-Grade export coverage, the receiver's concrete design and the two independent design judgments separately. Preserve limitations and alternative adequate designs. These cases do not prove product correctness, native activation or general model compliance.
+Grade export coverage, the CD01 receiver's concrete design, CD02 policy exposure and each individually selected design judgment separately. Preserve limitations and alternative adequate designs. Use Q25's ordinary help-text control, EX02's reuse boundaries and existing unknown-handling cases by reference when separately selected; do not add calls or treat their definitions as passes. These cases do not prove product correctness, native activation, automatic skill invocation, portable-export completeness, improvement caused by the changed wording or general model compliance.
 
 ## Self-contained execution guidance — EX01–EX10
 
@@ -1761,7 +1885,7 @@ Use paired evaluator-only location/loss controls. Preserve original outputs. In 
 
 | Case | Observable acceptance |
 | --- | --- |
-| EX01 | All three actual output forms carry the concrete-design procedure: inspect affected code/contracts, identify accepted invariants/owners and supported conditions, choose and justify the mechanism, name refuting checks and resolve design-invalidating unknowns before affected coding. Standalone QA designs its verification changes only. Also carry instructions to read the exact current brief on start/resumption, verify candidate/prerequisite and permission correspondence, reuse completed work/applicable proof, compare observed results with independent expectations, and record meaningful deviations with rationale/consequences in existing fields. A fresh receiver can describe these duties and the actual next permitted action without plugin lookup/installation, special headings or author conversation; a receiver's inference does not fill missing export coverage. Preserve gates, required reviews and separate permissions. QA-excluded retains mandatory tests/certification/evidence; standalone creates only its requested QA document; integrated QA and current incremental handoff identify the same next action. Missing reviews remain pending. |
+| EX01 | Assess QA-on, QA-excluded and standalone actual outputs separately. Each carries the concrete-design procedure: inspect affected code/contracts, identify accepted invariants/owners and supported conditions, choose and justify the mechanism, name refuting checks and resolve design-invalidating unknowns before affected coding. Inspect the exported criteria themselves for applicable responsibility/locality and information hiding; shared versus independently owned rules; behavioral substitution, including failures/effects; required variation and consumer-oriented dependency boundaries rather than an unchanged wide SDK; suitable types/state representations with runtime validation/concurrency and access controls retained; adequate composition/delegation with justified subtypes; and predictable caller-visible behavior with resource/asynchronous lifecycle ownership. They require concrete code/consumer evidence and a violated contract or specific maintenance consequence with the smallest adequate in-scope remedy; current correct output does not preclude a structural concern, and neither a runtime bug nor change-frequency statistics is a prerequisite. They distinguish static interface narrowing from runtime data removal/access enforcement, preserve useful one-implementation boundaries and reject unsupported pattern/style refactors. Standalone QA designs its verification changes only. Also carry instructions to read the exact current brief on start/resumption, verify candidate/prerequisite and permission correspondence, reuse completed work/applicable proof, compare observed results with independent expectations, and record meaningful deviations with rationale/consequences in existing fields. A fresh receiver can describe these duties and the actual next permitted action without plugin lookup/installation, special headings or author conversation; a receiver's inference does not fill missing export coverage. Preserve gates, required reviews and separate permissions. QA-excluded retains mandatory tests/certification/evidence; standalone creates only its requested QA document; integrated QA and current incremental handoff identify the same next action. Missing reviews remain pending. |
 | EX01 orchestration receiver | Recover one orchestrator/sequential writer, persistent original increment owners, actual owner/reviewer references rather than title identity, reconciliation on resumption, unknown-state duplicate/replacement guards, prescribed progress/owner/review chat naming and bounded waits using supported continuation cursors. Active orchestrator titles carry the exact current increment ID and stage with the plan label and accepted/total counts; count accepted predecessors and all selected increments, excluding reconciliation tasks. Recover title updates on start/resumption even without changed progress and on changes to accepted count, total, current increment or confirmed stage; closure uses Close until completed, then Done. Initial/closure titles plus a bare stage list are insufficient. Timeout or silence is no completion or scheduled wakeup. Current review/authority stops remain; naming unavailability is a limitation. Score actual decisions from actual exports, not repetition of supplied hints. Excluded QA adds neither a missing-QA blocker nor waived mandatory checks. |
 | EX01 grouped waits and launcher receiver | Use a supported bounded group only for already-active authorized assignments, preserving each target identity/cursor and the earliest deadline. Inspect every returned result/error, promptly handle actionable returns, retain pending or uncertain targets and cover targets outside capacity through verified routes. Respect single-target and manual fallbacks, denied actions and sequential review dispatch. Complete available review assignments before repairs. If a required review cannot be dispatched, repairs may proceed after all dispatched reports return, while acceptance remains pending. An in-flight reviewer holds repairs. Renew affected checks/reviews after repair and require all applicable reports for acceptance. Read the correction procedure before applying it, preserve attempt accounting and escalate exhaustion. A missing/inaccessible procedure requires reconciliation before affected execution, preserving prompt-only write boundaries. Assess actual exports and decisions in QA-on and excluded modes; a correct guess supplies no missing export coverage. |
 | EX01 routing receiver | Recover the actual per-role routes, their existing candidate/progress fields and the first permitted action without author history or plugin policy. Use the latest valid cursor while an active bounded wait is useful; do not reread unchanged snapshots or infer completion from a timeout. Refresh stale evidence in a bounded way, leave any gap visible and promptly handle a verified return or eligible delegated decision. In the human-only case checkpoint and yield under the applicable target policy, verify a saved pause where authorized, and reassess before resuming on a relevant reply. An unrelated reply does not resume work, silent notifications with an active schedule fail the pause check, and an explicit fixed cadence remains until separately amended. For the cooldown, use successive bounded waits through verified eligibility within the existing finite bounds, without early polling or yielding merely because a single wait ended. When sustained waiting and wakeup are unavailable, name who must return to which chat with what evidence and when. Denial, missing evidence and unavailable routes remain blockers for the affected scope. A correct receiver guess cannot earn coverage for a deficient fence or handoff. |
